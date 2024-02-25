@@ -2,9 +2,11 @@ import os
 from urllib.parse import quote
 current_directory=os.getcwd()
 file_names=set(os.listdir(current_directory))
-blog=open('blog.xml','r',encoding='utf-8').read()
-blog_backup=blog
-replace_list=[]
+for name in file_names:
+    if (not name.startswith('._')) and 0<name.count('→') and name.endswith('.docx'):
+        if name.replace('.docx','_01.png') not in file_names:
+            print('Warning:',name,'does not have a corresponding docx file!')
+exit(0)
 while 0<blog.count("<title type='text'>一簡多繁辨析之"):
     blog=blog[blog.index("<title type='text'>一簡多繁辨析之")+len("<title type='text'>一簡多繁辨析之"):]
     title=blog[:blog.index('</title>')]
