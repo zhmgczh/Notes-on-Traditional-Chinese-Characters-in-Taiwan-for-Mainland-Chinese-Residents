@@ -2316,6 +2316,16 @@ div.comment { margin-top: 25px; }
 	float: right; 
 }
 
+.comment-form-url {
+	width: 100%;
+	float: left;
+}
+
+.comment-form-cookies-consent {
+	display: block;
+	float: left;
+}
+
 /* In Comment List --------------------------- */
 
 .commentlist .comment-respond {
