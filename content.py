@@ -1,4 +1,4 @@
-import os,docx,pickle,smtplib
+import os,docx,pickle,csv,smtplib,hashlib
 from urllib.parse import quote
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
@@ -44,18 +44,23 @@ def send_article(subject,article):
     msg.attach(MIMEText(article,'html'))
     text=msg.as_string()
     server.sendmail(origin_email_address,target_email_address,text)
-def main(mode=0):
+def main(mode=0,email=False):
     if 0==mode:
         with open('atom.pkl','rb') as inp:
             atom=pickle.load(inp)
             indices=pickle.load(inp)
+            hashcodes=pickle.load(inp)
     else:
-        atom=list()
+        atom=[]
         indices={-1}
+        hashcodes={}
     max_index=max(indices)
     current_directory=os.getcwd()
     file_names=set(os.listdir(current_directory))
-    initialize_smtp()
+    if email:
+        initialize_smtp()
+    else:
+        article_library=[['id','title','content','excerpt','category']]
     for name in file_names:
         if (not name.startswith('._')) and 0<name.count('→') and name.endswith('.docx'):
             index=int(name.split('.')[0])
@@ -71,15 +76,30 @@ def main(mode=0):
                 article+=full_text[i]+'</p>\n<p>'
             article+=full_text[-1]+'</p>\n'
             img_url='https://raw.githubusercontent.com/zhmgczh/Notes-on-Traditional-Chinese-Characters-in-Taiwan-for-Mainland-Chinese-Residents/master/'+quote(corresponding_png)
-            article+='<img src="'+img_url+'" alt="'+full_text[0]+'">'
+            article+='<a href="'+img_url+'" target="_blank"><img src="'+img_url+'" alt="'+full_text[0]+'"></a>'
             title=full_text[0][len('《大陸居民臺灣正體字講義》'):]
-            send_article(title,article)
-            atom.append(id)
+            h=hashlib.new('sha256')
+            h.update((str(id)+'#####'+title+'#####'+article+'#####'+full_text[0]+'#####').encode())
+            if index in indices and index in hashcodes and h.hexdigest()==hashcodes[index]:
+                continue
+            else:
+                hashcodes[index]=h.hexdigest()
+                print(id)
+            if email:
+                send_article(title,article)
+            else:
+                article_library.append([index,title,article,full_text[0],'一簡多繁辨析'])
+            atom.append(title)
             indices.add(index)
         if (not name.startswith('._')) and 0<name.count('→') and name.endswith('_01.png'):
             if name.replace('_01.png','.docx') not in file_names:
                 print('Warning:',name,'does not have a corresponding docx file!')
-    server.quit()
+    if email:
+        server.quit()
+    else:
+        with open('import.csv','w',encoding='utf-8') as import_file:
+            writer=csv.writer(import_file)
+            writer.writerows(article_library)
     difference_set=set(range(1,max_index+1)).difference(indices)
     if 0!=len(difference_set):
         print('Error: Indices not found ',difference_set)
@@ -88,9 +108,12 @@ def main(mode=0):
     with open('atom.pkl','wb') as outp:
         pickle.dump(atom,outp,pickle.HIGHEST_PROTOCOL)
         pickle.dump(indices,outp,pickle.HIGHEST_PROTOCOL)
+        pickle.dump(hashcodes,outp,pickle.HIGHEST_PROTOCOL)
 if '__main__'==__name__:
     import sys
-    if 2==len(sys.argv):
+    if 3==len(sys.argv):
+        main(int(sys.argv[1]),bool(sys.argv[2]))
+    elif 2==len(sys.argv):
         main(int(sys.argv[1]))
     else:
         main()
