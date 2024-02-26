@@ -112,27 +112,27 @@
 							
 							<!--<div class="post-author">
 								
-								<a class="avatar" href="<?php echo $author_posts_url; ?>">
-									<?php echo get_avatar( $author_id, 100 ); ?>
+								<a class="avatar" href="<?php //echo $author_posts_url; ?>">
+									<?php //echo get_avatar( $author_id, 100 ); ?>
 								</a>
 								
-								<h4 class="title"><a href="<?php echo $author_posts_url; ?>"><?php the_author_meta( 'display_name' ); ?></a></h4>
+								<h4 class="title"><a href="<?php //echo $author_posts_url; ?>"><?php //the_author_meta( 'display_name' ); ?></a></h4>
 
 								<?php
 
-								$author_description = get_the_author_meta( 'description' );
+								// $author_description = get_the_author_meta( 'description' );
 
-								if ( $author_description ) : ?>
+								// if ( $author_description ) : ?>
 
 									<div class="post-author-description">
-										<?php echo wpautop( $author_description ); ?>
+										<?//php echo wpautop( $author_description ); ?>
 									</div><!-- .post-author-description -->
 
-								<?php endif; ?>
+								<?php //endif; ?>
 
 							<!--</div><!-- .post-author -->
 
-							<?php rowling_related_posts(); ?>
+							<?php //rowling_related_posts(); ?>
 						
 						<?php endif; ?>
 										

@@ -73,7 +73,7 @@ def get_mistakes(character):
     addition+='</div>'
     return addition
 def main(mode=0,email=False):
-    if 0!=mode:
+    if 0==mode:
         with open('atom.pkl','rb') as inp:
             atom=pickle.load(inp)
             indices=pickle.load(inp)
@@ -91,7 +91,7 @@ def main(mode=0,email=False):
     else:
         article_library=[['id','title','content','excerpt','category']]
     for name in file_names:
-        if (not name.startswith('._')) and 0<name.count('→') and name.endswith('.docx'):
+        if (not name.startswith('._')) and (not name.startswith('.~')) and 0<name.count('→') and name.endswith('.docx'):
             index=int(name.split('.')[0])
             max_index=max(index,max_index)
             id=name.split('.')[1].strip()
