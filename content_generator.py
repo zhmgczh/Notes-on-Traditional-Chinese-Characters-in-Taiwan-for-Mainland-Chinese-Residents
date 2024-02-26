@@ -7,6 +7,8 @@ def get_text(filename):
     full_text=[]
     for para in doc.paragraphs:
         full_text.append(para.text)
+    for inline_shape in doc.inline_shapes:
+        print(filename,'!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
     return full_text
 origin_email_address=None
 target_email_address=None
