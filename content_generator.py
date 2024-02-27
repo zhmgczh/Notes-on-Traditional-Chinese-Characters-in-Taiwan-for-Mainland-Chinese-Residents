@@ -1,14 +1,38 @@
-import os,docx,pickle,csv,smtplib,hashlib
+import os,docx,pickle,csv,smtplib,hashlib,io,base64
 from urllib.parse import quote
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-def get_text(filename):
+from PIL import Image
+def insert_picture(text,imgs,id):
+    joint_text=''.join(text)
+    if joint_text.count('||')!=len(imgs) or joint_text.count('|')!=len(imgs)*2:
+        print('Warning: the | and the number of pictures do not match!')
+        return text
+    index=1
+    text_index=0
+    for image in imgs:
+        image_bytesIO=io.BytesIO()
+        image.save(image_bytesIO,format='PNG')
+        binary_data=image_bytesIO.getvalue()
+        base64_encoded=base64.b64encode(binary_data).decode('utf-8')
+        html_img_tag=f'<img src="data:image/png;base64,{base64_encoded}" alt="《大陸居民臺灣正體字講義》一簡多繁辨析條目「'+id+'」疑難雜字('+str(index)+'")>'
+        while 0==text[text_index].count('||'):
+            text_index+=1
+        text[text_index]=text[text_index].replace('||',html_img_tag,1)
+        index+=1
+    return text
+def get_text(filename,id):
     doc=docx.Document(filename)
+    imgs=[]
+    for inline_shape in doc.inline_shapes:
+        img_id=inline_shape._inline.graphic.graphicData.pic.blipFill.blip.embed
+        image_part=doc.part.related_parts[img_id]
+        image=Image.open(io.BytesIO(image_part._blob))
+        imgs.append(image)
     full_text=[]
     for para in doc.paragraphs:
         full_text.append(para.text)
-    for inline_shape in doc.inline_shapes:
-        print(filename,'!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
+    full_text=insert_picture(full_text,imgs,id)
     return full_text
 origin_email_address=None
 target_email_address=None
@@ -101,7 +125,7 @@ def main(mode=0,email=False):
             if corresponding_png not in file_names:
                 print('Error:',name,'does not have a corresponding png file!')
                 continue
-            full_text=get_text(name)
+            full_text=get_text(name,id)
             article='<p>'
             for i in range(1,len(full_text)-1):
                 article+=full_text[i]+'</p>\n<p>'
