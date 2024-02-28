@@ -1,19 +1,23 @@
 function set_cookie(cname, cvalue, exdays = 3650) {
-  var d = new Date();
-  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-  var expires = 'expires=' + d.toGMTString();
-  document.cookie = cname + '=' + encodeURI(cvalue) + ';' + expires;
+  // var d = new Date();
+  // d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+  // var expires = 'expires=' + d.toGMTString();
+  // document.cookie = cname + '=' + encodeURI(cvalue) + ';' + expires;
+  localStorage.setItem(cname, cvalue);
 }
 function get_cookie(cname) {
-  var name = cname + '=';
-  var ca = document.cookie.split(';');
-  for (var i = 0; i < ca.length; ++i) {
-    var c = ca[i].trim();
-    if (0 == c.indexOf(name)) {
-      return decodeURI(c.substring(name.length, c.length));
-    }
-  }
-  return '';
+  // var name = cname + '=';
+  // var ca = document.cookie.split(';');
+  // for (var i = 0; i < ca.length; ++i) {
+  //   var c = ca[i].trim();
+  //   if (0 == c.indexOf(name)) {
+  //     return decodeURI(c.substring(name.length, c.length));
+  //   }
+  // }
+  // return '';
+  // Retrieve
+  var value = localStorage.getItem(cname)
+  return null === value ? '' : value;
 }
 function add_favorite() {
   var title = document.title;
@@ -59,11 +63,12 @@ var records = get_cookie('records');
 if ('' != records) {
   set_cookie('records', records);
 }
-var records_array = ('' != records ? records.split(',') : []).map(Number);
-result.sort((a, b) => a[0].localeCompare(b[0], 'zh-Hant-TW'));
+var records_array = ('' != records ? records.split(',') : []);
+result.sort((a, b) => a.localeCompare(b, 'zh-Hant-TW'));
 var main_string = '';
 for (var i = 0; i < result.length; ++i) {
-  main_string += '<tr><td>' + result[i][0].substring('一簡多繁辨析之'.length) + '</td><td>' + '<a href="https://www.zh-tw.top/一簡多繁辨析/' + result[i][0] + '" target="_blank">點擊打開</a>' + '</td><td>' + '<input type="checkbox" id="yijianduofanbianxi_' + result[i][1] + '" onclick="checkbox_onclick(' + "'" + result[i][1] + "'" + ')"' + (records_array.includes(result[i][1]) ? ' checked' : '') + '>' + '</td></tr>';
+  var title_tag = result[i].substring('一簡多繁辨析之'.length);
+  main_string += '<tr><td>' + title_tag + '</td><td>' + '<a href="https://www.zh-tw.top/一簡多繁辨析/' + result[i] + '" target="_blank">點擊打開</a>' + '</td><td>' + '<input type="checkbox" id="yijianduofanbianxi_' + title_tag + '" onclick="checkbox_onclick(' + "'" + title_tag + "'" + ')"' + (records_array.includes(title_tag) ? ' checked' : '') + '>' + '</td></tr>';
 }
 var main = document.getElementById('main_一簡多繁辨析_table');
 main.innerHTML = main_string;
