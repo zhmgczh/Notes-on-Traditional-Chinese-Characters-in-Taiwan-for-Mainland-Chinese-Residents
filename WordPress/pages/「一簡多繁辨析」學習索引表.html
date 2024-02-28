@@ -1,0 +1,45 @@
+<style>
+  input[type=text] {
+    width: 40%;
+  }
+
+  input[type=search] {
+    width: 40%;
+  }
+</style>
+<div style="text-align: center;">
+  <a
+    href="/%e8%87%ba%e7%81%a3%e6%ad%a3%e9%ab%94%e5%ad%97%e8%88%87%e5%a4%a7%e9%99%b8%e7%b0%a1%e5%8c%96%e5%ad%97%e5%b0%8d%e7%85%a7%e7%b4%a2%e5%bc%95%e7%b8%bd%e8%a1%a8/"><button>跳轉到《臺灣正體字與大陸簡化字對照索引總表》</button></a>
+</div>
+<link href='https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css' rel='stylesheet'>
+</link>
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js'></script>
+<script src='https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js'></script>
+<table id="myTable"
+  style="border-collapse: collapse; border: 3px solid purple; table-layout: fixed; text-align: center; width: 100%;"
+  class="display">
+  <thead>
+    <tr>
+      <th>「正」→「簡」</th>
+      <th>講義連結</th>
+      <th>已學習</th>
+    </tr>
+  </thead>
+  <tbody id="main_一簡多繁辨析_table">
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+<p style="text-align:center;">跳轉到第<input type="text" id="page_index_jump" style="text-align:center;" />頁 <button
+    onclick="jump_page();">立即前往</button></p>
+<p style="text-align: center;">（本表可助您在本地瀏覽器中記錄學習進度）</p>
+<div style="text-align: center;">
+  <a href="/about/" style="text-align:center;"><button>返回「講義簡介及使用指南」</button></a>
+</div>
+<script>
+  var result = {{CODE_yijianduofanbianxi}};
+  {{CODEmain_function}}
+</script>

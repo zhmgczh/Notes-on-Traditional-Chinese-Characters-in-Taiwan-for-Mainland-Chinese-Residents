@@ -146,7 +146,7 @@ def main(mode=0,email=False):
                 send_article(title,article)
             else:
                 article_library.append([index,title,article,full_text[0],'一簡多繁辨析'])
-            atom.add(title)
+            atom.add((title,index))
             indices.add(index)
         if (not name.startswith('._')) and 0<name.count('→') and name.endswith('_01.png'):
             if name.replace('_01.png','.docx') not in file_names:
@@ -160,8 +160,11 @@ def main(mode=0,email=False):
     difference_set=set(range(1,max_index+1)).difference(indices)
     if 0!=len(difference_set):
         print('Error: Indices not found ',difference_set)
+    atom_list=list(atom)
+    for i in range(len(atom_list)):
+        atom_list[i]=list(atom_list[i])
     atom_file=open('atom.js','w',encoding='utf-8')
-    atom_file.write(str(list(atom)))
+    atom_file.write(str(atom_list))
     with open('atom.pkl','wb') as outp:
         pickle.dump(atom,outp,pickle.HIGHEST_PROTOCOL)
         pickle.dump(indices,outp,pickle.HIGHEST_PROTOCOL)
