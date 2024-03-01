@@ -1,0 +1,19 @@
+<!-- clipboard.js -->
+<script type="text/javascript" src="/wp-content/themes/rowling/clipboard/clipboard.min.js"></script>
+<script type="text/javascript">
+    var clipboard=new ClipboardJS('.copy');
+    clipboard.on('success',function(e)
+    {
+        e.clearSelection();
+        alert('複製成功，您複製的內容為「'+e.text+'」。');
+    });
+    clipboard.on('error',function(e)
+    {
+        alert('複製失敗。');
+    });
+</script>
+<button id="self_address" class="copy" data-clipboard-text="https://www.zh-tw.top/">複製本頁網址</button>
+<script>
+    var self_address=document.getElementById('self_address');
+    self_address.setAttribute('data-clipboard-text',window.location.href);
+</script>
