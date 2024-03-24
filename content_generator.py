@@ -1,8 +1,9 @@
-import os,docx,pickle,csv,smtplib,hashlib,io,base64
+import os,docx,pickle,csv,smtplib,hashlib,io,base64,json
 from urllib.parse import quote
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from PIL import Image
+from tabulate import tabulate
 def insert_picture(text,imgs,id):
     joint_text=''.join(text)
     if joint_text.count('||')!=len(imgs) or joint_text.count('|')!=len(imgs)*2:
@@ -98,6 +99,87 @@ def get_mistakes(character):
         addition+='<div style="text-align:center;">'+entry[1].replace('\\n','<br/>\n')+'</div>\n'
     addition+='</div>'
     return addition
+final_json={}
+stroke_json={}
+dictionary_links_html='''
+<tag id="stroke_pos"></tag>
+<center><button onclick="close_stroke()">關閉「筆順<!--筆順學習-->」</button></center>
+<center>
+  <div id="stroke_player" style="width:348px;height:470px;display:none;">載入中，請稍後...</div>
+</center>
+<script src="https://stroke-order.learningweb.moe.edu.tw/js/playerShare.js"></script>
+<script>
+    function jumpTo(anchor_id) {
+        var url = location.href;
+        location.href = '#' + anchor_id;
+        history.replaceState(null, null, url);
+    }
+    var stroke_id = '';
+    function load_stroke(current_id) {
+        var my_div = document.getElementById('stroke_player');
+        if (current_id != stroke_id) {
+            var playerShare = new PlayerShare('https://stroke-order.learningweb.moe.edu.tw/', current_id, '0', 'zh_TW');
+            playerShare.load();
+            my_div.style.removeProperty('display');
+            stroke_id = current_id;
+            jumpTo('stroke_pos');
+        }
+        else {
+            my_div.style['display'] = 'none';
+            my_div.innerHTML = '';
+            stroke_id = '';
+        }
+    }
+    function close_stroke() {
+        var my_div = document.getElementById('stroke_player');
+        my_div.style['display'] = 'none';
+        my_div.innerHTML = '';
+        stroke_id = '';
+    }
+</script>'''
+dictionary_dict={'《國語辭典》（萌典）':'https://www.moedict.tw/#####',
+                 '國字標準字體筆順學習網':'https://stroke-order.learningweb.moe.edu.tw/charactersQueryResult.do?words=#####',
+                 '《國語辭典簡編本》':'https://dict.concised.moe.edu.tw/search.jsp?word=#####',
+                 '《重編國語辭典修訂本》':'https://dict.revised.moe.edu.tw/search.jsp?word=#####',
+                 '《成語典》':'https://dict.idioms.moe.edu.tw/idiomList.jsp?idiom=#####',
+                 '漢語多功能字庫（香港）':'https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=#####'}
+def load_dictionaries():
+    global final_json,stroke_json
+    with open('Dictionaries/final_table_normalized_renewed.json') as final_table:
+        final_json_tmp=json.load(final_table)
+    with open('Dictionaries/stroke_table_normalized_renewed.json') as stroke_table:
+        stroke_json_tmp=json.load(stroke_table)
+    for key in final_json_tmp:
+        for sub_key in final_json_tmp[key]:
+            if sub_key not in final_json or ''==final_json[sub_key]:
+                final_json[sub_key]=final_json_tmp[key][sub_key]
+    for key in stroke_json_tmp:
+        for sub_key in stroke_json_tmp[key]:
+            if sub_key not in stroke_json or ''==stroke_json[sub_key]:
+                stroke_json[sub_key]=stroke_json_tmp[key][sub_key]
+def get_dictionary_links(characters):
+    global final_json,stroke_json,dictionary_links_html,dictionary_dict
+    table=[['']+characters]
+    finals=['《教育部異體字字典》']
+    for character in characters:
+        if character in final_json and ''!=final_json[character]:
+            finals.append('<a href="https://dict.variants.moe.edu.tw/dictView.jsp?ID='+final_json[character]+'" target="_blank">打開</a>')
+        else:
+            finals.append('-')
+    table.append(finals)
+    for dictionary in dictionary_dict:
+        entry=[dictionary]
+        for character in characters:
+            entry.append('<a href="'+dictionary_dict[dictionary].replace('#####',quote(character))+'" target="_blank">打開</a>')
+        table.append(entry)
+    strokes=['筆順學習']
+    for character in characters:
+        if character in stroke_json and ''!=stroke_json[character]:
+            strokes.append('<button onclick="load_stroke('+"'"+stroke_json[character]+"'"+');">開關</button>')
+        else:
+            strokes.append('-')
+    table.append(strokes)
+    return '<br/>\n<p>文獻連結：</p>\n<div style="text-align:center;">\n'+tabulate(table,tablefmt='unsafehtml')+dictionary_links_html+'</div>'
 def main(mode=0,email=False):
     if 0==mode:
         with open('atom.pkl','rb') as inp:
@@ -112,6 +194,7 @@ def main(mode=0,email=False):
     current_directory=os.getcwd()
     file_names=set(os.listdir(current_directory))
     load_mistakes()
+    load_dictionaries()
     if email:
         initialize_smtp()
     else:
@@ -132,8 +215,10 @@ def main(mode=0,email=False):
             article+=full_text[-1]+'</p>\n'
             img_url='https://raw.githubusercontent.com/zhmgczh/Notes-on-Traditional-Chinese-Characters-in-Taiwan-for-Mainland-Chinese-Residents/master/'+quote(corresponding_png)
             article+='<a href="'+img_url+'" target="_blank"><img src="'+img_url+'" alt="'+full_text[0]+'"></a>'
-            for character in id.split('→')[0].split('、'):
+            characters=id.split('→')[0].split('、')
+            for character in characters:
                 article+=get_mistakes(character)
+            article+=get_dictionary_links(characters)
             title=full_text[0][len('《大陸居民臺灣正體字講義》'):]
             h=hashlib.new('sha256')
             h.update((str(id)+'#####'+title+'#####'+article+'#####'+full_text[0]+'#####').encode())
