@@ -165,7 +165,7 @@ def get_dictionary_links(characters):
         if character in final_json and ''!=final_json[character]:
             finals.append('<a href="https://dict.variants.moe.edu.tw/dictView.jsp?ID='+final_json[character]+'" target="_blank">打開</a>')
         else:
-            finals.append('-')
+            finals.append('<a href="https://dict.variants.moe.edu.tw/search.jsp?QTP=0&WORD='+quote(character)+'" target="_blank">打開</a>')
     table.append(finals)
     for dictionary in dictionary_dict:
         entry=[dictionary]
@@ -177,7 +177,7 @@ def get_dictionary_links(characters):
         if character in stroke_json and ''!=stroke_json[character]:
             strokes.append('<button onclick="load_stroke('+"'"+stroke_json[character]+"'"+');">開關</button>')
         else:
-            strokes.append('-')
+            strokes.append('<a href="https://stroke-order.learningweb.moe.edu.tw/charactersQueryResult.do?words='+quote(character)+'" target="_blank">打開</a>')
     table.append(strokes)
     return '<br/>\n<p>文獻連結：</p>\n<div style="text-align:center;">\n'+tabulate(table,tablefmt='unsafehtml')+dictionary_links_html+'</div>'
 def main(mode=0,email=False):
