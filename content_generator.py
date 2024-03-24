@@ -103,7 +103,7 @@ final_json={}
 stroke_json={}
 dictionary_links_html='''
 <tag id="stroke_pos"></tag>
-<center><button onclick="close_stroke()">關閉「筆順<!--筆順學習-->」</button></center>
+<center><button onclick="close_stroke()">關閉「筆順學習」</button></center>
 <center>
   <div id="stroke_player" style="width:348px;height:470px;display:none;">載入中，請稍後...</div>
 </center>
