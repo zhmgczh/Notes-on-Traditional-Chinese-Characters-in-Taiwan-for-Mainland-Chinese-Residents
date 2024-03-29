@@ -8,6 +8,7 @@ def insert_picture(text,imgs,id):
     joint_text=''.join(text)
     if joint_text.count('||')!=len(imgs) or joint_text.count('|')!=len(imgs)*2:
         print('Warning: the | and the number of pictures do not match!')
+        print(joint_text)
         return text
     index=1
     text_index=0
@@ -31,8 +32,21 @@ def get_text(filename,id):
         image=Image.open(io.BytesIO(image_part._blob))
         imgs.append(image)
     full_text=[]
+    bianyi_count=0
     for para in doc.paragraphs:
-        full_text.append(para.text)
+        if para.text.startswith('辨意：'):
+            bianyi_count+=1
+            text=para.text
+            text=text.replace('辨意：','辨意：<br/>')
+            text=text.replace('。','。<br/>')
+            if text.endswith('<br/>'):
+                text=text[:-len('<br/>')]
+            full_text.append(text)
+        else:
+            full_text.append(para.text)
+    if 1!=bianyi_count:
+        print('Error in',filename,id,': the number of 辨意 paragraph is not 1!')
+        exit()
     full_text=insert_picture(full_text,imgs,id)
     return full_text
 origin_email_address=None
