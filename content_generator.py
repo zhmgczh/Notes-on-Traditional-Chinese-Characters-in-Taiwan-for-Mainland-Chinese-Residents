@@ -41,6 +41,10 @@ def get_text(filename,id):
             text=text.replace('。','。<br/>')
             if text.endswith('<br/>'):
                 text=text[:-len('<br/>')]
+            table=text.split('<br/>')
+            for i in range(len(table)):
+                table[i]=[table[i]]
+            text=tabulate(table,tablefmt='unsafehtml')
             full_text.append(text)
         else:
             full_text.append(para.text)
