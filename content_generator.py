@@ -142,6 +142,7 @@ dictionary_dict={'《國語辭典》（萌典）':'https://www.moedict.tw/#####'
                  '《國語辭典簡編本》':'https://dict.concised.moe.edu.tw/search.jsp?word=#####',
                  '《重編國語辭典修訂本》':'https://dict.revised.moe.edu.tw/search.jsp?word=#####',
                  '《成語典》':'https://dict.idioms.moe.edu.tw/idiomList.jsp?idiom=#####',
+                 '中國哲學書電子化計劃':'https://ctext.org/dictionary.pl?if=gb&char=#####',
                  '漢語多功能字庫（香港）':'https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=#####'}
 def load_dictionaries():
     global final_json,stroke_json
