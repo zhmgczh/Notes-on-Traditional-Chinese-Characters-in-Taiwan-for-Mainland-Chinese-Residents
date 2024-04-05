@@ -112,7 +112,7 @@ def get_mistakes(character):
     entries=mistakes_dict[character]
     addition='<br/>\n<p>誤用舉例：</p>\n<div style="text-align:center;">\n'
     for entry in entries:
-        img_url='https://raw.githubusercontent.com/zhmgczh/Notes-on-Traditional-Chinese-Characters-in-Taiwan-for-Mainland-Chinese-Residents/master/Sample_of_Mistakes/'+quote(entry[0])
+        img_url='https://cdn.githubraw.com/zhmgczh/Notes-on-Traditional-Chinese-Characters-in-Taiwan-for-Mainland-Chinese-Residents/master/Sample_of_Mistakes/'+quote(entry[0])
         addition+='<a href="'+img_url+'" target="_blank"><img src="'+img_url+'" alt="'+entry[1].replace('\\n',' ')+'"></a><br/>\n'
         addition+='<div style="text-align:center;">'+entry[1].replace('\\n','<br/>\n')+'</div>\n'
     addition+='</div>'
@@ -232,7 +232,7 @@ def main(mode=0,email=False):
             for i in range(1,len(full_text)-1):
                 article+=full_text[i]+'</p>\n<p>'
             article+=full_text[-1]+'</p>\n'
-            img_url='https://raw.githubusercontent.com/zhmgczh/Notes-on-Traditional-Chinese-Characters-in-Taiwan-for-Mainland-Chinese-Residents/master/'+quote(corresponding_png)
+            img_url='https://cdn.githubraw.com/zhmgczh/Notes-on-Traditional-Chinese-Characters-in-Taiwan-for-Mainland-Chinese-Residents/master/'+quote(corresponding_png)
             article+='<a href="'+img_url+'" target="_blank"><img src="'+img_url+'" alt="'+full_text[0]+'"></a>'
             characters=id.split('→')[0].split('、')
             for character in characters:
