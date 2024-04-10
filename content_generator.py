@@ -25,26 +25,28 @@ def insert_picture(text,imgs,id):
         index+=1
     return text
 converter=Converter()
-converter_log=set()
+converter_dictionary={}
 def convert_all_pinyin(text):
-    global converter,converter_log
+    global converter,converter_dictionary
     all_pinyin=converter.extract_all_pinyin(text)
-    for pinyin in all_pinyin:
-        converted=converter.convert_pinyin(pinyin)
+    for i in range(len(all_pinyin)):
+        converted=converter.convert_pinyin(all_pinyin[i])
         pinyin_comp=converted[0]
         zhuyin=converted[1]
-        text=text.replace(pinyin,pinyin+'~'+zhuyin)
-        converter_log.add((pinyin,zhuyin))
-        if pinyin_comp!=pinyin:
-            print('Warning: Pinyin',pinyin,'might be confused and should be writed as',pinyin_comp,'.')
+        text=text.replace(all_pinyin[i],'[[[['+str(i)+']]]]')
+        converter_dictionary[all_pinyin[i]]=zhuyin
+        if pinyin_comp!=all_pinyin[i]:
+            print('Warning: Pinyin',all_pinyin[i],'might be confused and should be writed as',pinyin_comp,'.')
+    for i in range(len(all_pinyin)):
+        text=text.replace('[[[['+str(i)+']]]]',all_pinyin[i]+'~'+converter_dictionary[all_pinyin[i]])
     return text
 def write_converter_log(filename):
-    global converter_log
+    global converter_dictionary
     with open(filename,mode='w',encoding='utf-8') as csv_file:
         csv_writer=csv.writer(csv_file)
-        converter_log=reversed(sorted(list(converter_log),key=lambda x:len(x[0])))
+        converter_log=reversed(sorted(list(converter_dictionary.keys()),key=len))
         for log in converter_log:
-            csv_writer.writerow(list(log))
+            csv_writer.writerow([log,converter_dictionary[log]])
 def get_text(filename,id):
     doc=docx.Document(filename)
     imgs=[]
