@@ -27,7 +27,7 @@ def insert_picture(text,imgs,id):
 converter=Converter()
 converter_log=set()
 def convert_all_pinyin(text):
-    all_pinyin=converter.extract_all_pinyin(text)
+    all_pinyin=set(converter.extract_all_pinyin(text))
     for pinyin in all_pinyin:
         converted=converter.convert_pinyin(pinyin)
         pinyin_comp=converted[0]
