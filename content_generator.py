@@ -303,4 +303,4 @@ if '__main__'==__name__:
     elif 2==len(sys.argv):
         main(int(sys.argv[1]))
     else:
-        main()
+        main(1)
