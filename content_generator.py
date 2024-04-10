@@ -27,6 +27,7 @@ def insert_picture(text,imgs,id):
 converter=Converter()
 converter_log=set()
 def convert_all_pinyin(text):
+    global converter,converter_log
     all_pinyin=converter.extract_all_pinyin(text)
     for pinyin in all_pinyin:
         converted=converter.convert_pinyin(pinyin)
@@ -38,8 +39,10 @@ def convert_all_pinyin(text):
             print('Warning: Pinyin',pinyin,'might be confused and should be writed as',pinyin_comp,'.')
     return text
 def write_converter_log(filename):
+    global converter_log
     with open(filename,mode='w',encoding='utf-8') as csv_file:
         csv_writer=csv.writer(csv_file)
+        converter_log=sorted(list(converter_log),key=len)
         for log in converter_log:
             csv_writer.writerow(list(log))
 def get_text(filename,id):
