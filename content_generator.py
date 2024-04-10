@@ -30,13 +30,14 @@ def convert_all_pinyin(text):
     global converter,converter_dictionary
     all_pinyin=converter.extract_all_pinyin(text)
     for i in range(len(all_pinyin)):
-        converted=converter.convert_pinyin(all_pinyin[i])
-        pinyin_comp=converted[0]
-        zhuyin=converted[1]
+        if all_pinyin[i] not in converter_dictionary:
+            converted=converter.convert_pinyin(all_pinyin[i])
+            pinyin_comp=converted[0]
+            zhuyin=converted[1]
+            converter_dictionary[all_pinyin[i]]=zhuyin
+            if pinyin_comp!=all_pinyin[i]:
+                print('Warning: Pinyin',all_pinyin[i],'might be confused and should be writed as',pinyin_comp,'.')
         text=text.replace(all_pinyin[i],'[[[['+str(i)+']]]]')
-        converter_dictionary[all_pinyin[i]]=zhuyin
-        if pinyin_comp!=all_pinyin[i]:
-            print('Warning: Pinyin',all_pinyin[i],'might be confused and should be writed as',pinyin_comp,'.')
     for i in range(len(all_pinyin)):
         text=text.replace('[[[['+str(i)+']]]]',all_pinyin[i]+'~'+converter_dictionary[all_pinyin[i]])
     return text
