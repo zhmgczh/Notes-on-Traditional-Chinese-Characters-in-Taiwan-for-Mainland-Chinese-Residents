@@ -25,12 +25,19 @@ def insert_picture(text,imgs,id):
         index+=1
     return text
 converter=Converter()
+converter_log=set()
 def convert_all_pinyin(text):
     all_pinyin=converter.extract_all_pinyin(text)
     for pinyin in all_pinyin:
         zhuyin=converter.convert_pinyin(pinyin)[1]
         text=text.replace(pinyin,pinyin+'~'+zhuyin)
+        converter_log.add((pinyin,zhuyin))
     return text
+def write_converter_log(filename):
+    with open(filename,mode='w',encoding='utf-8') as csv_file:
+        csv_writer=csv.writer(csv_file)
+        for log in converter_log:
+            csv_writer.writerow(list(log))
 def get_text(filename,id):
     doc=docx.Document(filename)
     imgs=[]
@@ -275,6 +282,7 @@ def main(mode=0,email=False):
         print('Error: Indices not found ',difference_set)
     atom_file=open('atom.js','w',encoding='utf-8')
     atom_file.write(str(list(atom)))
+    write_converter_log('pinyin_zhuyin_converter_log.csv')
     with open('atom.pkl','wb') as outp:
         pickle.dump(atom,outp,pickle.HIGHEST_PROTOCOL)
         pickle.dump(indices,outp,pickle.HIGHEST_PROTOCOL)
