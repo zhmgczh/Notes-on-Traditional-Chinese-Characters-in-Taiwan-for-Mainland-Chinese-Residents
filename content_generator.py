@@ -42,7 +42,7 @@ def write_converter_log(filename):
     global converter_log
     with open(filename,mode='w',encoding='utf-8') as csv_file:
         csv_writer=csv.writer(csv_file)
-        converter_log=sorted(list(converter_log),key=len)
+        converter_log=reversed(sorted(list(converter_log),key=lambda x:len(x[0])))
         for log in converter_log:
             csv_writer.writerow(list(log))
 def get_text(filename,id):
