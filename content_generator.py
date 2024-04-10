@@ -4,6 +4,7 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from PIL import Image
 from tabulate import tabulate
+from PinyinZhuyinConverter.Converter import Converter
 def insert_picture(text,imgs,id):
     joint_text=''.join(text)
     if joint_text.count('||')!=len(imgs) or joint_text.count('|')!=len(imgs)*2:
@@ -23,6 +24,13 @@ def insert_picture(text,imgs,id):
         text[text_index]=text[text_index].replace('||',html_img_tag,1)
         index+=1
     return text
+converter=Converter()
+def convert_all_pinyin(text):
+    all_pinyin=converter.extract_all_pinyin(text)
+    for pinyin in all_pinyin:
+        zhuyin=converter.convert_pinyin(pinyin)[1]
+        text=text.replace(pinyin,pinyin+'~'+zhuyin)
+    return text
 def get_text(filename,id):
     doc=docx.Document(filename)
     imgs=[]
@@ -34,9 +42,10 @@ def get_text(filename,id):
     full_text=[]
     bianyi_count=0
     for para in doc.paragraphs:
-        if para.text.startswith('辨意：'):
+        para_text=convert_all_pinyin(para.text)
+        if para_text.startswith('辨意：'):
             bianyi_count+=1
-            text=para.text
+            text=para_text
             text=text.replace('辨意：','辨意：<br/>')
             text=text.replace('。','。<br/>')
             if text.endswith('<br/>'):
@@ -47,7 +56,7 @@ def get_text(filename,id):
             text=tabulate(table,tablefmt='unsafehtml')
             full_text.append(text)
         else:
-            full_text.append(para.text)
+            full_text.append(para_text)
     if 1!=bianyi_count:
         print('Error in',filename,id,': the number of 辨意 paragraph is not 1!')
         exit()
