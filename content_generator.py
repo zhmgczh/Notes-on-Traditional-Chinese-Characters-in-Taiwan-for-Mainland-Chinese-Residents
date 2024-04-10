@@ -29,9 +29,13 @@ converter_log=set()
 def convert_all_pinyin(text):
     all_pinyin=converter.extract_all_pinyin(text)
     for pinyin in all_pinyin:
-        zhuyin=converter.convert_pinyin(pinyin)[1]
+        converted=converter.convert_pinyin(pinyin)
+        pinyin_comp=converted[0]
+        zhuyin=converted[1]
         text=text.replace(pinyin,pinyin+'~'+zhuyin)
         converter_log.add((pinyin,zhuyin))
+        if pinyin_comp!=pinyin:
+            print('Warning: Pinyin',pinyin,'might be confused and should be writed as',pinyin_comp,'.')
     return text
 def write_converter_log(filename):
     with open(filename,mode='w',encoding='utf-8') as csv_file:
