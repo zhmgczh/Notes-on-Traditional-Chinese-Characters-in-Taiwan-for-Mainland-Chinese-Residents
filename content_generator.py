@@ -58,9 +58,11 @@ def get_text(filename,id):
         image=Image.open(io.BytesIO(image_part._blob))
         imgs.append(image)
     full_text=[]
+    pure_text=[]
     bianyi_count=0
     for para in doc.paragraphs:
         para_text=convert_all_pinyin(para.text)
+        pure_text.append(para_text)
         if para_text.startswith('辨意：'):
             bianyi_count+=1
             text=para_text
@@ -79,7 +81,7 @@ def get_text(filename,id):
         print('Error in',filename,id,': the number of 辨意 paragraph is not 1!')
         exit()
     full_text=insert_picture(full_text,imgs,id)
-    return full_text
+    return full_text,pure_text
 origin_email_address=None
 target_email_address=None
 server=None
@@ -254,7 +256,8 @@ def main(mode=0,email=False):
             if corresponding_png not in file_names:
                 print('Error:',name,'does not have a corresponding png file!')
                 continue
-            full_text=get_text(name,id)
+            full_text,pure_text=get_text(name,id)
+            pure_text='\n'.join(pure_text)
             article='<p>'
             for i in range(1,len(full_text)-1):
                 article+=full_text[i]+'</p>\n<p>'
@@ -267,7 +270,7 @@ def main(mode=0,email=False):
             article+=get_dictionary_links(characters)
             title=full_text[0][len('《大陸居民臺灣正體字講義》'):]
             h=hashlib.new('sha256')
-            h.update((str(id)+'#####'+title+'#####'+article+'#####'+full_text[0]+'#####').encode())
+            h.update((str(id)+'#####'+title+'#####'+article+'#####'+pure_text+'#####').encode())
             if index in indices and index in hashcodes and h.hexdigest()==hashcodes[index]:
                 continue
             else:
@@ -276,7 +279,7 @@ def main(mode=0,email=False):
             if email:
                 send_article(title,article)
             else:
-                article_library.append([index,title,article,full_text[0],'一簡多繁辨析'])
+                article_library.append([index,title,article,pure_text,'一簡多繁辨析'])
             atom.add(title)
             indices.add(index)
         if (not name.startswith('._')) and 0<name.count('→') and name.endswith('_01.png'):
