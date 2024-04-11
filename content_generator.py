@@ -263,7 +263,7 @@ def main(mode=0,email=False):
                 article+=full_text[i]+'</p>\n<p>'
             article+=full_text[-1]+'</p>\n'
             img_url='https://cdn.githubraw.com/zhmgczh/Notes-on-Traditional-Chinese-Characters-in-Taiwan-for-Mainland-Chinese-Residents/master/'+quote(corresponding_png)
-            article+='<a href="'+img_url+'" target="_blank"><img src="'+img_url+'" alt="'+pure_text[0]+'"></a>'
+            article+='<a href="'+img_url+'" target="_blank"><img src="'+img_url+'" alt="'+full_text[0]+'"></a>'
             characters=id.split('→')[0].split('、')
             for character in characters:
                 article+=get_mistakes(character)
