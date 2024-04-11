@@ -225,7 +225,7 @@ def get_dictionary_links(characters):
         else:
             strokes.append('<a href="https://stroke-order.learningweb.moe.edu.tw/charactersQueryResult.do?words='+quote(character)+'" target="_blank">打開</a>')
     table.append(strokes)
-    return '<br/>\n<p>文獻連結：</p>\n<div style="text-align:center;">\n'+tabulate(table,tablefmt='unsafehtml')+dictionary_links_html+'</div>'
+    return '<br/>\n<p>文獻連結：</p>\n<div style="text-align:center;">\n'+tabulate(table,tablefmt='unsafehtml')+'</div>'+dictionary_links_html
 def main(mode=0,email=False):
     if 0==mode:
         with open('atom.pkl','rb') as inp:
