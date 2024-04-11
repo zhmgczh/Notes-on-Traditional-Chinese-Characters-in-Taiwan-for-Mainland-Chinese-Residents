@@ -40,7 +40,7 @@ def convert_all_pinyin(text):
                 exit()
         text=text.replace(all_pinyin[i],'[[[['+str(i)+']]]]')
     for i in range(len(all_pinyin)):
-        text=text.replace('[[[['+str(i)+']]]]',all_pinyin[i]+'~'+converter_dictionary[all_pinyin[i]])
+        text=text.replace('[[[['+str(i)+']]]]',all_pinyin[i]+'['+converter_dictionary[all_pinyin[i]]+']')
     return text
 def write_converter_log(filename):
     global converter_dictionary
@@ -305,4 +305,4 @@ if '__main__'==__name__:
     elif 2==len(sys.argv):
         main(int(sys.argv[1]))
     else:
-        main(1)
+        main()
