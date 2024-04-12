@@ -142,7 +142,7 @@ def get_mistakes(character):
     addition='<br/>\n<p>誤用舉例（「'+character+'」）：</p>\n<div style="text-align:center;">\n'
     for entry in entries:
         img_url='https://cdn.githubraw.com/zhmgczh/Notes-on-Traditional-Chinese-Characters-in-Taiwan-for-Mainland-Chinese-Residents/master/Sample_of_Mistakes/'+quote(entry[0])
-        addition+='<a href="'+img_url+'" target="_blank"><img src="'+img_url+'" alt="'+entry[1].replace('\\n',' ')+'"></a><br/>\n'
+        addition+='<a href="'+img_url+'" target="_blank"><img src="'+img_url+'" alt="'+entry[1].replace('\\n',' ')+'"></a>\n'
         addition+='<div style="text-align:center">'+entry[1].replace('\\n','<br/>\n')+'</div>\n'
     addition+='</div>'
     return addition
@@ -227,7 +227,7 @@ def get_dictionary_links(characters):
         else:
             strokes.append('<a href="https://stroke-order.learningweb.moe.edu.tw/charactersQueryResult.do?words='+quote(character)+'" target="_blank">打開</a>')
     table.append(strokes)
-    return '<br/>\n<p">文獻連結：</p>\n<div style="text-align:center;">\n'+tabulate(table,tablefmt='unsafehtml')+'</div>'+dictionary_links_html
+    return '<br/>\n<p>文獻連結：</p>\n<div style="text-align:center;">\n'+tabulate(table,tablefmt='unsafehtml')+'</div>'+dictionary_links_html
 def main(mode=0,email=False):
     if 0==mode:
         with open('atom.pkl','rb') as inp:
