@@ -139,7 +139,7 @@ def get_mistakes(character):
     if character not in mistakes_dict:
         return ''
     entries=mistakes_dict[character]
-    addition='<br/>\n<p>誤用舉例（「'+character+'」）：</p>\n<div style="text-align:center;">\n'
+    addition='<br/>\n<p>誤用舉例──「'+character+'」：</p>\n<div style="text-align:center;">\n'
     for entry in entries:
         img_url='https://cdn.githubraw.com/zhmgczh/Notes-on-Traditional-Chinese-Characters-in-Taiwan-for-Mainland-Chinese-Residents/master/Sample_of_Mistakes/'+quote(entry[0])
         addition+='<a href="'+img_url+'" target="_blank"><img src="'+img_url+'" alt="'+entry[1].replace('\\n',' ')+'"></a>\n'
