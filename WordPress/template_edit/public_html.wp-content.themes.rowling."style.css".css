@@ -438,7 +438,7 @@ td {
 	padding: 10px;
 	margin: 0;
 	overflow: visible;
-	/*line-height: 120%;*/
+	line-height: /*120%*/1.7;
 	border-bottom: 1px solid #DDD;
 }
 
