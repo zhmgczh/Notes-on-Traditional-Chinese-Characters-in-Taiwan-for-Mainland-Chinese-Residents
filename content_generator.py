@@ -120,6 +120,7 @@ def send_article(subject,article):
 mistakes_dict={}
 def load_mistakes():
     global mistakes_dict
+    mistakes_dict={}
     with open('Sample_of_Mistakes/sample_of_mistakes.csv',mode='r',encoding='utf-8') as mistakes_file:
         mistakes=csv.reader(mistakes_file)
         filename_index=character_index=comment_index=-1
@@ -144,7 +145,6 @@ def get_mistakes(character):
         img_url='https://cdn.githubraw.com/zhmgczh/Notes-on-Traditional-Chinese-Characters-in-Taiwan-for-Mainland-Chinese-Residents/master/Sample_of_Mistakes/'+quote(entry[0])
         addition+='<div><a href="'+img_url+'" target="_blank"><img src="'+img_url+'" alt="'+entry[1].replace('\\n',' ')+'"></a></div>\n'
         addition+='<div>'+entry[1].replace('\\n','<br/>\n')+'</div><br/>\n'
-    addition=addition[:-len('<br/>\n')]+'\n'
     addition+='</div>'
     return addition
 final_json={}
