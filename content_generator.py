@@ -310,5 +310,5 @@ if '__main__'==__name__:
         main(int(sys.argv[1]))
     else:
         main()
-        input('Do you want to continue to generate a whole content backup? (Press Enter to reply "YES")')
+        input('Do you want to continue to generate a whole content backup? (Press Enter to reply "YES") ')
         main(1)
