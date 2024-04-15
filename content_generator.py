@@ -295,8 +295,8 @@ def main(mode=0,email=False):
     difference_set=set(range(1,max_index+1)).difference(indices)
     if 0!=len(difference_set):
         print('Error: Indices not found ',difference_set)
-    atom_file=open('atom.js','w',encoding='utf-8')
-    atom_file.write(str(list(atom)))
+    with open('atom.js','w',encoding='utf-8') as atom_file:
+        atom_file.write(str(list(atom)))
     write_converter_log('pinyin_zhuyin_converter_log.csv')
     with open('atom.pkl','wb') as outp:
         pickle.dump(atom,outp,pickle.HIGHEST_PROTOCOL)
