@@ -230,6 +230,8 @@ def get_dictionary_links(characters):
     table.append(strokes)
     return '<p>文獻連結：</p>\n<div style="text-align:center;">\n'+tabulate(table,tablefmt='unsafehtml')+'</div>'+dictionary_links_html
 def main(mode=0,email=False):
+    original_directory=os.getcwd()
+    os.chdir(os.path.dirname(os.path.abspath(__file__)))
     if 0==mode:
         with open('atom.pkl','rb') as inp:
             atom=pickle.load(inp)
@@ -302,6 +304,7 @@ def main(mode=0,email=False):
         pickle.dump(atom,outp,pickle.HIGHEST_PROTOCOL)
         pickle.dump(indices,outp,pickle.HIGHEST_PROTOCOL)
         pickle.dump(hashcodes,outp,pickle.HIGHEST_PROTOCOL)
+    os.chdir(original_directory)
 if '__main__'==__name__:
     import sys
     if 3==len(sys.argv):
@@ -312,3 +315,6 @@ if '__main__'==__name__:
         main()
         input('Do you want to continue to generate a whole content backup? (Press Enter to reply "YES") ')
         main(1)
+        input('Do you want to continue to generate a whole website? (Press Enter to reply "YES") ')
+        from WebsiteGenerator import generator
+        generator.main()
