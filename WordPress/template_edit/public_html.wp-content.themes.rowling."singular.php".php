@@ -36,18 +36,12 @@
 								<?php if ( comments_open() && ! post_password_required() ) : ?>
 									<span class="post-comments">
 										<?php 
-										// comments_popup_link(
-										// 	'<span class="fa fw fa-comment"></span>0<span class="resp"> ' . __( 'Comments', 'rowling' ) . '</span>', 
-										// 	'<span class="fa fw fa-comment"></span>1<span class="resp"> ' . __( 'Comment', 'rowling' ) . '</span>', 
-										// 	'<span class="fa fw fa-comment"></span>%<span class="resp"> ' . __( 'Comments', 'rowling' ) . '</span>'
-										// ); 
+										comments_popup_link(
+											'<span class="fa fw fa-comment"></span>0<span class="resp"> ' . __( 'Comments', 'rowling' ) . '</span>', 
+											'<span class="fa fw fa-comment"></span>1<span class="resp"> ' . __( 'Comment', 'rowling' ) . '</span>', 
+											'<span class="fa fw fa-comment"></span>%<span class="resp"> ' . __( 'Comments', 'rowling' ) . '</span>'
+										); 
 										?>
-										<a href="#respond">
-											<!-- <span class="fa fw fa-comment"></span>0
-											<span class="resp"> 則留言</span> -->
-											<a href="#disqus_thread">查看留言</a>
-										</a>
-										<script id="dsq-count-scr" src="//ntcctmcr.disqus.com/count.js"></script>
 									</span>
 								<?php endif; ?>
 
