@@ -97,7 +97,7 @@ for (var i = 0; i < yijianduofanbianxi.length; ++i) {
   for (var j = 0; j < characters[1].length; ++j) {
     yijianduofanbianxi_notes[characters[1][j]] = {};
     for (var k = 0; k < characters[0].length; ++k) {
-      yijianduofanbianxi_notes[characters[1][j]][characters[0][k]] = ['https://www.zh-tw.top/一簡多繁辨析/' + yijianduofanbianxi[i], yijianduofanbianxi[i]];
+      yijianduofanbianxi_notes[characters[1][j]][characters[0][k]] = ['/一簡多繁辨析/' + yijianduofanbianxi[i], yijianduofanbianxi[i]];
     }
   }
 }

@@ -68,7 +68,7 @@ result.sort((a, b) => a.localeCompare(b, 'zh-Hant-TW'));
 var main_string = '';
 for (var i = 0; i < result.length; ++i) {
   var title_tag = result[i].substring('一簡多繁辨析之'.length);
-  main_string += '<tr><td>' + title_tag + '</td><td>' + '<a href="https://www.zh-tw.top/一簡多繁辨析/' + result[i] + '" target="_blank">點擊打開</a>' + '</td><td>' + '<input type="checkbox" id="yijianduofanbianxi_' + title_tag + '" onclick="checkbox_onclick(' + "'" + title_tag + "'" + ')"' + (records_array.includes(title_tag) ? ' checked' : '') + '>' + '</td></tr>';
+  main_string += '<tr><td>' + title_tag + '</td><td>' + '<a href="/一簡多繁辨析/' + result[i] + '" target="_blank">點擊打開</a>' + '</td><td>' + '<input type="checkbox" id="yijianduofanbianxi_' + title_tag + '" onclick="checkbox_onclick(' + "'" + title_tag + "'" + ')"' + (records_array.includes(title_tag) ? ' checked' : '') + '>' + '</td></tr>';
 }
 var main = document.getElementById('main_一簡多繁辨析_table');
 main.innerHTML = main_string;
