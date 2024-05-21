@@ -5,6 +5,7 @@ from email.mime.text import MIMEText
 from PIL import Image
 from tabulate import tabulate
 from PinyinZhuyinConverter.Converter import Converter
+import functools
 def insert_picture(text,imgs,id):
     joint_text=''.join(text)
     if joint_text.count('||')!=len(imgs) or joint_text.count('|')!=len(imgs)*2:
@@ -42,11 +43,22 @@ def convert_all_pinyin(text):
     for i in range(len(all_pinyin)):
         text=text.replace('[[[['+str(i)+']]]]',all_pinyin[i]+'['+converter_dictionary[all_pinyin[i]]+']')
     return text
+def compare_pinyin(a,b):
+    if len(a)<len(b):
+        return -1
+    elif len(a)>len(b):
+        return 1
+    elif a<b:
+        return -1
+    elif a>b:
+        return 1
+    else:
+        return 0
 def write_converter_log(filename):
     global converter_dictionary
     with open(filename,mode='w',encoding='utf-8') as csv_file:
         csv_writer=csv.writer(csv_file)
-        converter_log=reversed(sorted(list(converter_dictionary.keys()),key=len))
+        converter_log=reversed(sorted(list(converter_dictionary.keys()),key=functools.cmp_to_key(compare_pinyin)))
         for log in converter_log:
             csv_writer.writerow([log,converter_dictionary[log]])
 def get_text(filename,id):
