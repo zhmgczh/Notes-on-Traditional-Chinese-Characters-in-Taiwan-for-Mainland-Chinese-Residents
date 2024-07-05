@@ -1,11 +1,26 @@
-import os,docx,pickle,csv,smtplib,hashlib,io,base64,json
+import os,docx,pickle,csv,smtplib,hashlib,io,base64,json,functools
 from urllib.parse import quote
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from PIL import Image
 from tabulate import tabulate
 from PinyinZhuyinConverter.Converter import Converter
-import functools
+from collections import deque
+def check_brackets(article:str):
+    stack=deque()
+    left=('（','「','〈','《')
+    right=('）','」','〉','》')
+    for character in article:
+        if character in left:
+            stack.append(character)
+        else:
+            try:
+                index=right.index(character)
+                if stack.pop()!=left[index]:
+                    print('Error: brackets are not compatible!')
+                    exit()
+            except:
+                pass
 def insert_picture(text,imgs,id):
     joint_text=''.join(text)
     if joint_text.count('||')!=len(imgs) or joint_text.count('|')!=len(imgs)*2:
@@ -270,8 +285,9 @@ def main(mode=0,email=False):
             corresponding_png=name.replace('.docx','_01.png')
             if corresponding_png not in file_names:
                 print('Error:',name,'does not have a corresponding png file!')
-                continue
+                exit()
             full_text,pure_text=get_text(name,id)
+            check_brackets(pure_text)
             pure_text='\n'.join(pure_text)
             article='<p>'
             for i in range(1,len(full_text)-1):
