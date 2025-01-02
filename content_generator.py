@@ -218,7 +218,7 @@ dictionary_links_html='''
         my_div.src = '';
         stroke_id = '';
     }
-</script><p></p>'''
+</script>'''
 dictionary_dict={'《國語辭典》（萌典）':'https://www.moedict.tw/#####',
                  '國字標準字體筆順學習網':'https://stroke-order.learningweb.moe.edu.tw/charactersQueryResult.do?words=#####',
                  '《國語辭典簡編本》':'https://dict.concised.moe.edu.tw/search.jsp?word=#####',
