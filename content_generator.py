@@ -226,9 +226,9 @@ dictionary_dict={'《國語辭典》（萌典）':'https://www.moedict.tw/#####'
                  '漢語多功能字庫（香港）':'https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=#####'}
 def load_dictionaries():
     global final_json,stroke_json
-    with open('Dictionaries/final_table_normalized_renewed.json') as final_table:
+    with open('Dictionaries/final_table_normalized_renewed2.json') as final_table:
         final_json_tmp=json.load(final_table)
-    with open('Dictionaries/stroke_table_normalized_renewed.json') as stroke_table:
+    with open('Dictionaries/stroke_table_normalized_renewed2.json') as stroke_table:
         stroke_json_tmp=json.load(stroke_table)
     for key in final_json_tmp:
         for sub_key in final_json_tmp[key]:
