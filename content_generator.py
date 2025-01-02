@@ -191,9 +191,9 @@ dictionary_links_html='''
         history.replaceState(null, null, url);
     }
     var stroke_id = '';
-    function load_stroke(key, sub_key) {
+    function load_stroke(key) {
         var my_div = document.getElementById('stroke_player');
-        var current_id = stroke[key][sub_key];
+        var current_id = key;
         if (current_id != stroke_id) {
             // var playerShare = new PlayerShare('https://stroke-order.learningweb.moe.edu.tw/', current_id, '0', 'zh_TW');
             // playerShare.load();
@@ -258,7 +258,7 @@ def get_dictionary_links(characters):
         if character in stroke_json and ''!=stroke_json[character]:
             strokes.append('<button onclick="load_stroke('+"'"+stroke_json[character]+"'"+');">開關</button>')
         else:
-            strokes.append('<a href="https://stroke-order.learningweb.moe.edu.tw/charactersQueryResult.do?words='+quote(character)+'" target="_blank">打開</a>')
+            strokes.append('<a href="https://stroke-order.learningweb.moe.edu.tw/searchW.jsp?ID2=1&WORD='+quote(character)+'" target="_blank">打開</a>')
     table.append(strokes)
     return '<p>文獻連結：</p>\n<div style="text-align:center;">\n'+tabulate(table,tablefmt='unsafehtml')+'</div>'+dictionary_links_html
 def main(mode=0,email=False):
