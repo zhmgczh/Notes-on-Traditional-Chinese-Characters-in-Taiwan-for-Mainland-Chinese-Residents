@@ -180,9 +180,10 @@ dictionary_links_html='''
 <tag id="stroke_pos"></tag>
 <center><button onclick="close_stroke()">關閉「筆順學習」</button></center>
 <center>
-  <div id="stroke_player" style="width:348px;height:470px;display:none;">載入中，請稍後...</div>
+  <!-- <div id="stroke_player" style="width:348px;height:470px;display:none;">載入中，請稍後...</div> -->
+  <iframe id="stroke_player" src="" frameborder=0 style="width:300px;height:520px;display:none;" allow="fullscreen"></iframe>
 </center>
-<script src="https://stroke-order.learningweb.moe.edu.tw/js/playerShare.js"></script>
+<!-- <script src="https://stroke-order.learningweb.moe.edu.tw/js/playerShare.js"></script> -->
 <script>
     function jumpTo(anchor_id) {
         var url = location.href;
@@ -190,25 +191,29 @@ dictionary_links_html='''
         history.replaceState(null, null, url);
     }
     var stroke_id = '';
-    function load_stroke(current_id) {
+    function load_stroke(key, sub_key) {
         var my_div = document.getElementById('stroke_player');
+        var current_id = stroke[key][sub_key];
         if (current_id != stroke_id) {
-            var playerShare = new PlayerShare('https://stroke-order.learningweb.moe.edu.tw/', current_id, '0', 'zh_TW');
-            playerShare.load();
+            // var playerShare = new PlayerShare('https://stroke-order.learningweb.moe.edu.tw/', current_id, '0', 'zh_TW');
+            // playerShare.load();
+            my_div.src = 'https://stroke-order.learningweb.moe.edu.tw/dictFrame.jsp?ID=' + current_id;
             my_div.style.removeProperty('display');
             stroke_id = current_id;
             jumpTo('stroke_pos');
         }
         else {
             my_div.style['display'] = 'none';
-            my_div.innerHTML = '';
+            // my_div.innerHTML = '';
+            my_div.src = '';
             stroke_id = '';
         }
     }
     function close_stroke() {
         var my_div = document.getElementById('stroke_player');
         my_div.style['display'] = 'none';
-        my_div.innerHTML = '';
+        // my_div.innerHTML = '';
+        my_div.src = '';
         stroke_id = '';
     }
 </script><p></p>'''

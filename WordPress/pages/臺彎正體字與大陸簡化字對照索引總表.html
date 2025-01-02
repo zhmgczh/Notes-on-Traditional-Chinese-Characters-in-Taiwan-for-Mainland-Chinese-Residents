@@ -49,9 +49,10 @@
 <p><tag id="stroke_pos"></tag></p><p></p>
 <center><button onclick="close_stroke()">關閉「筆順<!--筆順學習-->」</button></center>
 <center>
-  <div id="stroke_player" style="width:348px;height:470px;display:none;">載入中，請稍後...</div>
+  <!-- <div id="stroke_player" style="width:348px;height:470px;display:none;">載入中，請稍後...</div> -->
+  <iframe id="stroke_player" src="" frameborder=0 style="width:300px;height:520px;display:none;" allow="fullscreen"></iframe>
 </center>
-<script src="https://stroke-order.learningweb.moe.edu.tw/js/playerShare.js"></script>
+<!-- <script src="https://stroke-order.learningweb.moe.edu.tw/js/playerShare.js"></script> -->
 <script>
   var yijianduofanbianxi = {{CODE_yijianduofanbianxi}};
   {{CODEmain_function}}
