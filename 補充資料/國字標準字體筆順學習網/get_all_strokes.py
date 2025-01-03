@@ -1,6 +1,6 @@
-import json, requests, time, random, sys, os, pickle
+import requests, time, random, sys, os, pickle
 from urllib.parse import quote
-from collections import OrderedDict
+from urllib.parse import urljoin
 
 headers = {
     "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
@@ -21,7 +21,7 @@ headers = {
     "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
 }
 session = requests.Session()
-entries = {}
+entries = set()
 
 
 def load_entries():
@@ -43,107 +43,50 @@ def restart_session():
     session = requests.Session()
 
 
-def get_id_from_response(response: requests.Response):
-    id = ""
-    if 302 == response.status_code:
-        location = response.headers.get("Location")
-        id = location.split("?ID=")[1]
-    elif 200 == response.status_code:
-        html = response.text
-        if (
-            "<iframe src='https://stroke-order.learningweb.moe.edu.tw/dictFrame.jsp?ID="
-            in response.text
-        ):
-            id = html.split(
-                "<iframe src='https://stroke-order.learningweb.moe.edu.tw/dictFrame.jsp?ID="
-            )[1].split("' frameborder=0")[0]
-    return id
-
-
-def get_id(character, force_found=False):
-    global session, entries
-    url = "https://stroke-order.learningweb.moe.edu.tw/searchW.jsp?ID2=1&WORD=" + quote(
-        character
+def download_strokes(character, type):
+    global session
+    url = (
+        "https://stroke-order.learningweb.moe.edu.tw/stroke_card.jsp?WORD="
+        + quote(character)
+        + "&TYPE="
+        + type
     )
-    print(
-        "Getting ID of",
-        character,
-        "from",
-        url,
-        "( force_found =",
-        force_found,
-        end=" ) : ",
-    )
-    sys.stdout.flush()
+    output_file = "./" + type + "s/" + character + "." + type + ".zip"
     successful = False
+    print("Downloading " + character + " of type " + type + " from " + url, end=": ")
     while not successful:
         try:
-            response = session.get(url, headers=headers)
-            id = get_id_from_response(response)
-            successful = True
-            if force_found and "" == id:
-                successful = False
+            response = session.get(url, stream=True)
+            if 200 == response.status_code:
+                with open(output_file, "wb") as file:
+                    for chunk in response.iter_content(chunk_size=1024):
+                        if chunk:
+                            file.write(chunk)
+                print(f"stored at {output_file}.")
+                successful = True
+            elif 302 == response.status_code:
+                url = urljoin(url, response.headers.get("Location"))
+            else:
                 restart_session()
         except:
             restart_session()
-    if "" != id:
-        entries[character] = id
-        write_entries()
-    print(id)
-    sys.stdout.flush()
-    return id
 
 
 def main():
     global entries
     load_entries()
-    with open("final_table_normalized_renewed.json") as final_table:
-        final_json = json.load(final_table)
-    with open("stroke_table_normalized_renewed.json") as stroke_table:
-        stroke_json = json.load(stroke_table)
-    for key in stroke_json:
-        for sub_key in stroke_json[key]:
-            if sub_key in entries:
-                stroke_json[key][sub_key] = entries[sub_key]
-            else:
-                stroke_json[key][sub_key] = get_id(
-                    sub_key, "" != stroke_json[key][sub_key]
-                )
-    final = OrderedDict(
-        sorted(
-            final_json.items(),
-            reverse=True,
-            key=lambda t: len(final_json[t[0]].items()),
-        )
-    )
-    stroke = OrderedDict(
-        sorted(
-            stroke_json.items(),
-            reverse=True,
-            key=lambda t: len(final_json[t[0]].items()),
-        )
-    )
-    for key in final.keys():
-        final[key] = OrderedDict(
-            sorted(
-                final[key].items(),
-                reverse=True,
-                key=lambda t: (0 if "" == final[key][t[0]] else 1)
-                + (0 if "" == stroke[key][t[0]] else 1),
-            )
-        )
-        stroke[key] = OrderedDict(
-            sorted(
-                stroke[key].items(),
-                reverse=True,
-                key=lambda t: (0 if "" == final[key][t[0]] else 1)
-                + (0 if "" == stroke[key][t[0]] else 1),
-            )
-        )
-    with open("final_table_normalized_renewed2.json", "w", encoding="utf-8") as f:
-        json.dump(final, f)
-    with open("stroke_table_normalized_renewed2.json", "w", encoding="utf-8") as f:
-        json.dump(stroke, f)
+    directory = "./6063png/"
+    all_files = os.listdir(directory)
+    files_only = [f for f in all_files if os.path.isfile(os.path.join(directory, f))]
+    for file in files_only:
+        if file.endswith(".png"):
+            character = file[: -len(".png")]
+            if character not in entries:
+                download_strokes(character, "pdf")
+                download_strokes(character, "png")
+                download_strokes(character, "svg")
+                entries.add(character)
+                write_entries()
 
 
 if "__main__" == __name__:
