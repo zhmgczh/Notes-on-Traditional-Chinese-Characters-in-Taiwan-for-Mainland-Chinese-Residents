@@ -1,0 +1,45 @@
+﻿{
+  "name": "教育部《異體字字典》2023",
+  "short_name": "異體字字典",
+  "description": "提供中文異體字查詢.",
+  "scope": "/variants",
+  "id": "/variants/index.jsp",
+  "start_url": "index.jsp",
+  "theme_color": "#bc1928",
+  "background_color": "#d8c5ac",
+  "lang": "zh-Hant-TW",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "dir": "ltr",
+  "serviceworker": "./sw.js",
+  "icons": [
+    {
+      "src": "favicon_128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "density": "2.0",
+	  "purpose": "any"
+    },
+    {
+      "src": "favicon_144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "density": "3.0",
+	  "purpose": "any"
+    },
+    {
+      "src": "favicon_192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "density": "4.0",
+	  "purpose": "maskable"
+    },
+    {
+      "src": "favicon_512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "density": "10.0",
+	  "purpose": "any"
+    }
+  ]
+}

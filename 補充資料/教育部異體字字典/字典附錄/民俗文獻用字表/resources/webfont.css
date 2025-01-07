@@ -1,0 +1,1346 @@
+@charset "UTF-8";
+
+@font-face { font-family:'標楷體2'; src:local('標楷體'); unicode-range: U+2E80-9FFF, U+F900-FAFF, U+FE30-FE4F; }
+@font-face { font-family:'標楷體2'; src:local('Times New Roman'); unicode-range: U+00-024F; }
+
+@font-face { font-family:"標楷體2"; src:url("variants-dict-symbols.woff");
+ unicode-range: U+2474-247a,U+3105-3129,U+3220-3229,U+02C7-02CV,U+02D9; }
+
+
+/*
+for(var u=0x3400; u<0x9fff; u+=128)
+	console.log('@font-face { font-family:"標楷體2"; src:url("ttf/u'+u.toString(16)+'.woff"); unicode-range: U+'+u.toString(16)+'-'+((u+127).toString(16))+'; }')
+
+*/
+
+
+
+/* 0 plane */
+
+
+@font-face { font-family:"標楷體2"; src:url("ttf/u4e00.woff"); unicode-range: U+4e02, U+4e04-4e07, U+4e0c, U+4e0e-4e0f, U+4e12-4e13, U+4e15, U+4e17, U+4e1a-4e1e, U+4e20-4e25, U+4e27-4e2a, U+4e2c, U+4e2e-4e31, U+4e33-4e37, U+4e3a, U+4e3c-4e42, U+4e44, U+4e46-4e47, U+4e49-4e4a, U+4e4c, U+4e50-4e51, U+4e54-4e55, U+4e57, U+4e5a-4e5c, U+4e60-4e72, U+4e74-4e7d, U+4e7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u4e80.woff"); unicode-range: U+4e80-4e81, U+4e83-4e85, U+4e87, U+4e89-4e8a, U+4e8d, U+4e8f-4e90, U+4e93, U+4e96-4e98, U+4e9a, U+4e9c-4e9d, U+4e9f-4ea0, U+4ea3, U+4ea7, U+4ea9-4eaa, U+4eaf-4eb9, U+4ebb-4ebf, U+4ec2-4ec6, U+4ec8-4ec9, U+4ecc, U+4ece-4ed3, U+4eda-4ee2, U+4ee6-4eef, U+4ef1, U+4ef3-4ef5, U+4ef7-4efa, U+4efc, U+4efe; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u4f00.woff"); unicode-range: U+4f00, U+4f02-4f08, U+4f0b-4f0c, U+4f0e, U+4f12-4f18, U+4f1a-4f2e, U+4f31-4f33, U+4f35, U+4f37, U+4f39, U+4f3b, U+4f3e-4f42, U+4f44-4f45, U+4f49-4f4c, U+4f52-4f53, U+4f56-4f58, U+4f5a, U+4f5d-4f5f, U+4f61-4f62, U+4f64-4f68, U+4f6a-4f6b, U+4f6d-4f72, U+4f74, U+4f76-4f7e; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u4f80.woff"); unicode-range: U+4f80-4f82, U+4f84-4f85, U+4f87, U+4f89-4f8a, U+4f8c, U+4f8e, U+4f90-4f9a, U+4f9c, U+4f9e-4fad, U+4fb0-4fb4, U+4fb8-4fbe, U+4fc0-4fc1, U+4fc5-4fc9, U+4fcb-4fce, U+4fd2-4fd6, U+4fd9, U+4fdb-4fdc, U+4fdf, U+4fe2-4fed, U+4ff0, U+4ff2-4ff9, U+4ffb-4fff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u5000.woff"); unicode-range: U+5000-5005, U+5007-5008, U+500a, U+500c, U+500e-5010, U+5013-5015, U+5017, U+501b-501e, U+5020, U+5022, U+5024-5025, U+5027-5028, U+502c-503b, U+503d-5046, U+5048, U+504a-504b, U+504d, U+5050-5054, U+5056-5059, U+505b, U+505d-5064, U+5066-5073, U+5078-507c, U+507e-507f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u5080.woff"); unicode-range: U+5081-5084, U+5086-508c, U+508e-5090, U+5092-5097, U+509a-50a1, U+50a3-50ab, U+50ae-50b1, U+50b4, U+50b6, U+50b8-50ba, U+50bc-50bd, U+50bf-50c4, U+50c6-50ce, U+50d0, U+50d2-50d4, U+50d6-50d9, U+50db-50e4, U+50e6, U+50e8-50f0, U+50f2-50f4, U+50f6-50f8, U+50fa, U+50fc-50ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u5100.woff"); unicode-range: U+5101-5103, U+5105-5108, U+510a-5111, U+5113-5117, U+5119-511e, U+5120, U+5122-5129, U+512b-5131, U+5133-5136, U+5138-513b, U+513d-513f, U+5142, U+514a, U+514e-5151, U+5153, U+5155-515b, U+515d-5161, U+5163-5164, U+5166, U+516a, U+516f-5170, U+5172-5174, U+5179-517b, U+517d-517f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u5180.woff"); unicode-range: U+5181-5188, U+518b-518c, U+518e-5191, U+5193-5194, U+5196, U+5198-519f, U+51a1-51a3, U+51a6-51ab, U+51ad-51af, U+51b1-51b5, U+51b8-51bc, U+51be-51c5, U+51c7-51ca, U+51ce-51db, U+51de-51df, U+51e2-51ef, U+51f2, U+51f4-51f5, U+51f7, U+51fb-51fc, U+51fe-51ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u5200.woff"); unicode-range: U+5201-5202, U+5204-5205, U+5208-5209, U+520b-5210, U+5213-5216, U+5218-521c, U+521e-5223, U+5226-5228, U+522b-522d, U+522f, U+5231-5235, U+5239, U+523c-5240, U+5242, U+5244-5246, U+5248-5249, U+524f-5253, U+5255, U+5257-525a, U+525c, U+525e-5268, U+526b-526e, U+5270-5271, U+5273-5274, U+5276-527f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u5280.woff"); unicode-range: U+5281-5282, U+5284-5286, U+528a-528c, U+528e-5290, U+5292-529a, U+529c-529e, U+52a1-52a2, U+52a4-52a8, U+52ac-52c0, U+52c2, U+52c4-52c6, U+52c8, U+52ca-52d1, U+52d3-52d4, U+52d6-52d7, U+52da, U+52dc, U+52e0-52e1, U+52e3, U+52e5-52f4, U+52f6-52f7, U+52f9-52fa, U+52fc-52fd; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u5300.woff"); unicode-range: U+5300-5304, U+5307, U+5309-5315, U+5318, U+531a-531f, U+5321-5322, U+5324-5329, U+532b-532e, U+5330, U+5332-5338, U+533a-533d, U+5342, U+5344-5346, U+534b-5350, U+5355-5356, U+5358-5359, U+535b, U+535d-535f, U+5362-5365, U+5367-536e, U+5372, U+5374, U+5376, U+5379-537a, U+537c-537e; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u5380.woff"); unicode-range: U+5380-5383, U+5385-5399, U+539b-539c, U+539e, U+53a0-53ac, U+53ae-53b1, U+53b3-53ba, U+53bc-53c2, U+53c4-53c7, U+53cc, U+53ce-53d3, U+53d5, U+53d8-53da, U+53dc-53de, U+53e0-53e1, U+53e7, U+53f4-53f7, U+53f9-53ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u5400.woff"); unicode-range: U+5400, U+5402, U+5405-5407, U+540b, U+5413-541a, U+541c, U+5421-5425, U+5428, U+542a, U+542c, U+542e-5430, U+5432, U+5434, U+5437, U+543a, U+543d, U+543f, U+5441, U+5443-5445, U+5447, U+5449, U+544b-544d, U+544f-5461, U+5463-5467, U+5469-5470, U+5472, U+5474, U+5476-547a, U+547e-547f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u5480.woff"); unicode-range: U+5481-5485, U+5487-548b, U+548d, U+548f, U+5491, U+5493-5494, U+5497-5499, U+549b-54a5, U+54a8-54a9, U+54ad-54ae, U+54b0, U+54b2, U+54b4-54b7, U+54b9-54ba, U+54bc, U+54be-54bf, U+54c2-54c3, U+54c5-54c6, U+54ca-54cd, U+54cf-54dd, U+54df-54e0, U+54e2-54e4, U+54e7, U+54eb-54ec, U+54ef-54f1, U+54f3-54f9, U+54fb, U+54fd-54ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u5500.woff"); unicode-range: U+5500-5508, U+550a-550f, U+5511-5513, U+5515-5526, U+5528-552b, U+552d, U+5530, U+5532-5537, U+5539-553d, U+553f-5542, U+5545, U+5547-5549, U+554b-554e, U+5550-5554, U+5556-555b, U+555d, U+5560, U+5562, U+5565, U+5567-5569, U+556b-557a, U+557d, U+557f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u5580.woff"); unicode-range: U+5581, U+5585-5586, U+5588, U+558c-5593, U+5595-5597, U+5599, U+559b, U+559e, U+55a0-55a6, U+55a8-55a9, U+55ab, U+55ad, U+55af-55b1, U+55b4, U+55b6-55ba, U+55bc-55c4, U+55c7-55cd, U+55cf-55d2, U+55d4-55d9, U+55db, U+55dd-55e0, U+55e2-55e3, U+55e5, U+55e7-55ee, U+55f0-55fc, U+55fe-55ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u5600.woff"); unicode-range: U+5600-5605, U+5607, U+560a-560c, U+560f-5613, U+5615, U+5618-561a, U+561c-561e, U+5620-5628, U+562a-562d, U+5631, U+5633, U+5635, U+5637-5638, U+563a, U+563c-563e, U+5640-564d, U+564f-5652, U+5654-5656, U+5658-5661, U+5663-5667, U+566b, U+566d-5673, U+5675-5677, U+567a-567f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u5680.woff"); unicode-range: U+5681-5684, U+5686, U+5688-568e, U+5691-5694, U+5696-56a4, U+56a6-56a7, U+56a9-56ad, U+56af-56b3, U+56b5-56b6, U+56b8-56bb, U+56bd-56c0, U+56c3-56c8, U+56cb, U+56cd-56d0, U+56d2-56d9, U+56dc, U+56df, U+56e1-56e9, U+56eb-56ef, U+56f1-56f9, U+56fb-56ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u5700.woff"); unicode-range: U+5700-5702, U+5704-5707, U+5709-570a, U+570c, U+570e-5711, U+5714-5715, U+5717, U+5719-571e, U+5720-5727, U+5729-572c, U+572e-572f, U+5731-5732, U+5734-573d, U+573f, U+5741-5746, U+5748-5749, U+574b-574c, U+574f, U+5752-5760, U+5762-5763, U+5765, U+5767-5769, U+576b-577f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u5780.woff"); unicode-range: U+5780-5781, U+5784-578a, U+578c-57a1, U+57a4-57ad, U+57af-57c1, U+57c4-57ca, U+57cc-57cd, U+57cf-57d3, U+57d6-57de, U+57e1-57f6, U+57f8, U+57fb-57ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u5800.woff"); unicode-range: U+5800-5801, U+5803-5804, U+5807-5809, U+580b-5820, U+5822-5823, U+5825-5829, U+582b-582e, U+5830, U+5832-5833, U+5836-5849, U+584b, U+584d-5850, U+5852-5853, U+5855-5856, U+5859-585d, U+585f-5861, U+5863-586a, U+586c-5874, U+5876-587f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u5880.woff"); unicode-range: U+5880-5882, U+5884, U+5886-5889, U+588b-5892, U+5894-589b, U+589d, U+58a0-58a7, U+58aa-58ad, U+58af-58b2, U+58b4-58bd, U+58bf-58c0, U+58c2-58c6, U+58c8-58d0, U+58d2, U+58d4-58d7, U+58d9-58dd, U+58e0-58e3, U+58e5-58e8, U+58ea, U+58ed-58ee, U+58f0-58f9, U+58fb-58fc, U+58fe-58ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u5900.woff"); unicode-range: U+5900-590e, U+5910-5914, U+5917-5919, U+591b, U+591d-591f, U+5921, U+5923-5924, U+5926, U+5928, U+592c, U+592f-5930, U+5932-5936, U+5939-593d, U+593f-5943, U+5945-5946, U+594a-594d, U+5950, U+5952-5953, U+5956, U+5958-5959, U+595b-595f, U+5961, U+5963-5966, U+5968-5969, U+596b-596d, U+596f-5972, U+5975, U+5977, U+597a-597c, U+597e-597f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u5980.woff"); unicode-range: U+5980-5981, U+5985-5991, U+5994-5995, U+5997-5998, U+599a-599c, U+599f-59a4, U+59a6-59a7, U+59a9-59ad, U+59af-59b2, U+59b4-59b8, U+59ba, U+59bc-59bd, U+59bf-59c5, U+59c7-59c9, U+59cc, U+59ce-59cf, U+59d5-59d9, U+59db, U+59dd-59e4, U+59e6-59e7, U+59e9, U+59eb, U+59ed-59fa, U+59fc-59fe; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u5a00.woff"); unicode-range: U+5a00, U+5a02, U+5a04-5a10, U+5a12, U+5a14-5a17, U+5a19-5a1a, U+5a1d-5a1e, U+5a20-5a24, U+5a26-5a35, U+5a37-5a3b, U+5a3d-5a45, U+5a47-5a48, U+5a4a-5a59, U+5a5b-5a65, U+5a67-5a69, U+5a6b-5a76, U+5a78-5a7e; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u5a80.woff"); unicode-range: U+5a80-5a91, U+5a93-5a99, U+5a9b-5ab1, U+5ab4-5abc, U+5abe-5ac0, U+5ac3-5ac8, U+5aca-5acb, U+5acd-5ad5, U+5ad7-5ae5, U+5ae7-5ae8, U+5aea-5af4, U+5af6-5afa, U+5afc-5aff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u5b00.woff"); unicode-range: U+5b00-5b08, U+5b0a-5b0b, U+5b0d-5b23, U+5b25-5b29, U+5b2b-5b2f, U+5b31-5b37, U+5b39-5b4f, U+5b51-5b53, U+5b56, U+5b59-5b5b, U+5b5e, U+5b60-5b61, U+5b65-5b68, U+5b6a, U+5b6c-5b6f, U+5b71-5b74, U+5b76-5b77, U+5b79, U+5b7b-5b7c, U+5b7e-5b7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u5b80.woff"); unicode-range: U+5b80-5b82, U+5b84, U+5b86, U+5b8a, U+5b8d-5b8e, U+5b90-5b94, U+5b96, U+5b9d-5ba1, U+5ba5, U+5ba7-5bad, U+5baf, U+5bb1-5bb2, U+5bb7-5bb8, U+5bba-5bbe, U+5bc0-5bc1, U+5bc3, U+5bc5, U+5bc8-5bcb, U+5bcd-5bcf, U+5bd1, U+5bd4-5bdd, U+5be0, U+5be3-5be4, U+5bea, U+5bed, U+5bef, U+5bf1-5bf4, U+5bf7, U+5bf9, U+5bfb-5bff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u5c00.woff"); unicode-range: U+5c00, U+5c02-5c03, U+5c05-5c06, U+5c0c, U+5c10, U+5c12-5c15, U+5c17-5c19, U+5c1b-5c23, U+5c25-5c2b, U+5c2d-5c30, U+5c32-5c36, U+5c38-5c39, U+5c3b, U+5c3d, U+5c42-5c44, U+5c47, U+5c49-5c4a, U+5c4c, U+5c52-5c54, U+5c56-5c5b, U+5c5d-5c5f, U+5c61, U+5c63, U+5c66-5c6b, U+5c6d-5c6e, U+5c70, U+5c72-5c78, U+5c7a-5c7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u5c80.woff"); unicode-range: U+5c80-5c8b, U+5c8d-5c93, U+5c95-5ca0, U+5ca2-5ca8, U+5caa-5cb0, U+5cb2, U+5cb4-5cb7, U+5cb9-5cc6, U+5cc8-5cd8, U+5cda-5ce7, U+5ce9-5cec, U+5cee-5cef, U+5cf1-5cf5, U+5cf7-5cfa, U+5cfc, U+5cfe-5cff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u5d00.woff"); unicode-range: U+5d00-5d06, U+5d08-5d0d, U+5d0f-5d10, U+5d12-5d13, U+5d15, U+5d18, U+5d1a, U+5d1c-5d28, U+5d2a-5d4b, U+5d4d-5d4f, U+5d51-5d7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u5d80.woff"); unicode-range: U+5d80-5d83, U+5d85-5d86, U+5d88-5db9, U+5dbb, U+5dbe-5dcc, U+5dce-5dd1, U+5dd3, U+5dd5, U+5dd7-5ddc, U+5ddf-5de0, U+5de3-5de4, U+5de9-5dea, U+5dec-5ded, U+5def-5df0, U+5df3, U+5df5-5df6, U+5df8-5dfd, U+5dff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u5e00.woff"); unicode-range: U+5e00-5e01, U+5e04-5e05, U+5e07-5e0b, U+5e0d-5e14, U+5e17-5e19, U+5e1b-5e1c, U+5e1e-5e24, U+5e26-5e2a, U+5e2c, U+5e2e-5e32, U+5e34-5e35, U+5e39-5e3c, U+5e3e-5e44, U+5e46-5e54, U+5e56-5e5e, U+5e60-5e61, U+5e64-5e6a, U+5e6c-5e71, U+5e75-5e77, U+5e7a, U+5e7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u5e80.woff"); unicode-range: U+5e80-5e86, U+5e88-5e89, U+5e8b-5e8e, U+5e90-5e94, U+5e96, U+5e98-5e99, U+5e9b, U+5e9d-5ea5, U+5ea8-5eaa, U+5eac, U+5eae-5eb4, U+5eb9-5ec0, U+5ec3-5ec7, U+5ecb-5ed2, U+5ed4-5ed5, U+5ed7-5ed9, U+5edb-5edc, U+5ede, U+5ee1, U+5ee4-5eeb, U+5eed-5ef2, U+5ef4-5ef5, U+5ef8-5ef9, U+5efb-5efe; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u5f00.woff"); unicode-range: U+5f00-5f03, U+5f05-5f09, U+5f0b-5f0e, U+5f10-5f12, U+5f16, U+5f19-5f1a, U+5f1c-5f1e, U+5f20-5f25, U+5f28-5f2c, U+5f2e-5f30, U+5f32-5f34, U+5f36, U+5f38-5f47, U+5f49-5f4b, U+5f4d, U+5f4f-5f56, U+5f58, U+5f5a-5f61, U+5f63-5f64, U+5f66-5f68, U+5f6b, U+5f6e-5f6f, U+5f72-5f76, U+5f78, U+5f7a-5f7b, U+5f7d-5f7e; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u5f80.woff"); unicode-range: U+5f82-5f84, U+5f86-5f87, U+5f8d-5f8f, U+5f93-5f96, U+5f9a-5f9b, U+5f9d, U+5f9f-5fa0, U+5fa2-5fa7, U+5fab, U+5fad, U+5faf-5fb4, U+5fb6, U+5fb8, U+5fba-5fbc, U+5fbe-5fc2, U+5fc4, U+5fc6-5fcb, U+5fce-5fd5, U+5fda-5fdf, U+5fe2-5fea, U+5fec-5ff0, U+5ff2-5ff4, U+5ff6-5ffc, U+5ffe; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u6000.woff"); unicode-range: U+6000-600d, U+600f-6011, U+6013, U+6017-601c, U+601e-601f, U+6022-6024, U+6026, U+6029, U+602b-602e, U+6030-6042, U+6044-6045, U+6047-604c, U+604e-604f, U+6051-6054, U+6056-6058, U+605a-6061, U+6066-6067, U+606a-606b, U+606e, U+6071-607e; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u6080.woff"); unicode-range: U+6080-6083, U+6086-6088, U+608a-608c, U+608e-6093, U+6095, U+6097-6099, U+609b-609e, U+60a1-60a2, U+60a4-60a7, U+60a9-60b1, U+60b3, U+60b7, U+60b9-60ba, U+60be-60c4, U+60c6-60ca, U+60cc-60d0, U+60d2-60d4, U+60d6-60d7, U+60d9, U+60db, U+60dd-60de, U+60e2-60e5, U+60e7-60ef, U+60f2, U+60f5, U+60f7-60f8, U+60fb-60ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u6100.woff"); unicode-range: U+6100, U+6102-6107, U+610a-610e, U+6110-6114, U+6116-6119, U+611d-611e, U+6120-6122, U+6124-6126, U+6128-6133, U+6135-6143, U+6145-6147, U+6149-614a, U+614d, U+614f-6154, U+6156-6157, U+6159, U+615b-615e, U+6160-6161, U+6164-6166, U+6169-616a, U+616c-616d, U+616f, U+6171-6175, U+6178-617d, U+617f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u6180.woff"); unicode-range: U+6180-6181, U+6183-6189, U+618b-618d, U+618f, U+6192-6193, U+6195-61a3, U+61a5-61a6, U+61aa, U+61ad-61b1, U+61b3-61b5, U+61b7-61bd, U+61bf-61c1, U+61c3-61c6, U+61cb-61e5, U+61e7-61f1, U+61f3-61f4, U+61f9-61fb, U+61fd; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u6200.woff"); unicode-range: U+6201-6207, U+6209-620c, U+620e-620f, U+6213-6214, U+6217-6219, U+621c-6229, U+622b-622d, U+622f, U+6231, U+6235, U+6237-623d, U+6242-6246, U+6248, U+624a, U+624c, U+624f-6251, U+6255-6257, U+6259-625a, U+625c-6262, U+6264-626c, U+6270-6272, U+6274-6275, U+6277-6278, U+627a-627b, U+627d; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u6280.woff"); unicode-range: U+6281-6283, U+6285-6288, U+628b-6290, U+6294, U+6299-62a7, U+62a9-62aa, U+62ad-62b0, U+62b2-62b4, U+62b6-62b8, U+62ba-62bb, U+62be, U+62c0-62c1, U+62c3, U+62c5, U+62ca, U+62cf, U+62d1, U+62d5, U+62d7, U+62dd-62eb, U+62f0, U+62f2, U+62f5-62f6, U+62f8-62fb, U+62fd; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u6300.woff"); unicode-range: U+6300, U+6302-6306, U+6308, U+630a-6310, U+6312-6315, U+6317-6327, U+6329, U+632c-632e, U+6330-6339, U+633b-633c, U+633f-6345, U+6347-6348, U+634a-634e, U+6351-6354, U+6356-6366, U+636a-6370, U+6373-6376, U+6378-6379, U+637b-637f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u6380.woff"); unicode-range: U+6381-6382, U+6384-6387, U+638a-638b, U+638d-638e, U+6390-6391, U+6393-6397, U+639a, U+639c-639f, U+63a3-63a4, U+63a6, U+63ab, U+63ad-63bf, U+63c1-63c5, U+63c7-63c8, U+63ca-63cc, U+63ce, U+63d1, U+63d3-63d5, U+63d7-63d9, U+63dc-63e0, U+63e2, U+63e4-63e9, U+63eb-63ec, U+63ef-63f3, U+63f5-63ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u6400.woff"); unicode-range: U+6400-640c, U+640e, U+6410-6412, U+6414-6415, U+6418-641b, U+641d, U+641f-6424, U+6426, U+6428-642b, U+642e-6435, U+6437-644a, U+644c-6451, U+6453, U+6455-6457, U+6459-645e, U+6460-6466, U+6468, U+646a-646e, U+6470-6477, U+647c-647f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u6480.woff"); unicode-range: U+6480-6486, U+6489-648f, U+6491, U+6494, U+6496-649d, U+649f-64a1, U+64a6-64a8, U+64aa, U+64ac, U+64af, U+64b1, U+64b3-64bb, U+64bd-64be, U+64c0, U+64c3-64c4, U+64c6, U+64c8-64c9, U+64cc, U+64cf-64d3, U+64d5-64d7, U+64d9, U+64db-64df, U+64e1-64e5, U+64e7-64eb, U+64ed-64ef, U+64f3, U+64f5-64f6, U+64f8-64f9, U+64fb-64fd, U+64ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u6500.woff"); unicode-range: U+6501-650e, U+6510-6513, U+6515-6517, U+6519-651b, U+651e-6522, U+6525-6529, U+652d-652e, U+6530-6535, U+6537, U+653a, U+653c-653d, U+6540-6544, U+6546-6547, U+6549-654e, U+6550, U+6552-6556, U+655a-655c, U+655f-6561, U+6564-6565, U+6567-656b, U+656d-6571, U+6573, U+6576, U+6579-657f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u6580.woff"); unicode-range: U+6580-6581, U+6584-6586, U+6588-658f, U+6592-6596, U+6598, U+659a, U+659d-659e, U+65a0-65a3, U+65a6, U+65a8-65ab, U+65ad-65ae, U+65b1-65b6, U+65b8, U+65ba-65bb, U+65be-65c0, U+65c2-65c4, U+65c6-65ca, U+65cc-65ce, U+65d0-65d6, U+65d8-65e1, U+65e3-65e4, U+65e7, U+65ea-65eb, U+65ee-65f0, U+65f2-65f9, U+65fb-65ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u6600.woff"); unicode-range: U+6600-6601, U+6603-6605, U+6608-660b, U+660d, U+6610-6612, U+6615-661e, U+6621-6624, U+6626, U+6629-662c, U+662e, U+6630-6641, U+6644-6648, U+664a-664b, U+664d-664e, U+6650-6651, U+6653-6659, U+665b-665c, U+665e-6663, U+6665, U+6667, U+6669-666d, U+6671-6673, U+6675, U+6677-6679, U+667b-667d, U+667f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u6680.woff"); unicode-range: U+6680-6686, U+668a-6690, U+6692-6695, U+6698-66a1, U+66a3-66aa, U+66ac-66ad, U+66af-66b3, U+66b5-66c5, U+66c8, U+66ca-66d8, U+66da-66db, U+66de-66df, U+66e1-66e5, U+66e7-66ef, U+66f1, U+66f5-66f7, U+66fa-66fb, U+66fd; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u6700.woff"); unicode-range: U+6701-6702, U+6704-6707, U+670a, U+670c, U+670e-6713, U+6715-6716, U+6718-671a, U+671c, U+671e, U+6720-6725, U+6729, U+672e-6730, U+6732-6734, U+6736-673c, U+673e-6745, U+6747-6748, U+674a-674d, U+6752-6755, U+6757-675b, U+675d, U+6760-676c, U+676e, U+6772-6774, U+6776-677d; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u6780.woff"); unicode-range: U+6780-6788, U+678a-678f, U+6791-6794, U+6796, U+6798-6799, U+679b, U+679e-67ae, U+67b0-67b3, U+67b5, U+67b9-67c3, U+67c5-67ce, U+67d2, U+67d5-67d9, U+67db-67e1, U+67e3-67e4, U+67e6-67ee, U+67f0, U+67f2, U+67f6-67fe; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u6800.woff"); unicode-range: U+6800-6812, U+6814-6816, U+6818-6820, U+6822-6828, U+682b-6837, U+683a-683b, U+683e-6841, U+6844, U+6847, U+6849-684b, U+684d-684f, U+6852, U+6855-6875, U+6877-687e; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u6880.woff"); unicode-range: U+6880, U+6882-6884, U+6886-6896, U+6898-689c, U+689e, U+68a0-68a1, U+68a3-68a6, U+68a9-68ac, U+68ae, U+68b1-68b2, U+68b4, U+68b6-68c3, U+68c5-68c8, U+68ca, U+68cc, U+68ce-68d1, U+68d3-68d4, U+68d6, U+68d9, U+68db-68de, U+68e1-68e6, U+68e8-68ed, U+68ef-68f1, U+68f3-68f4, U+68f6-68f9, U+68fb-68ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u6900.woff"); unicode-range: U+6900-6904, U+6906-690c, U+6910-6911, U+6913-692f, U+6931-693e, U+6940-6949, U+694b-6952, U+6955-6959, U+695b-695d, U+695f, U+6961-6962, U+6964-696c, U+696e-6974, U+6976, U+6978-697f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u6980.woff"); unicode-range: U+6980-6981, U+6983-6985, U+6987-6993, U+6996-699b, U+699d-69a7, U+69a9-69ad, U+69af-69b3, U+69b5-69ba, U+69bc-69ca, U+69ce-69cf, U+69d1-69d2, U+69d4-69f2, U+69f4-69fc, U+69fe-69ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u6a00.woff"); unicode-range: U+6a00, U+6a03-6a12, U+6a14-6a18, U+6a1a-6a1d, U+6a20, U+6a22, U+6a24-6a37, U+6a3b-6a43, U+6a45-6a4a, U+6a4c-6a57, U+6a5a-6a5e, U+6a60, U+6a63-6a6a, U+6a6c-6a7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u6a80.woff"); unicode-range: U+6a81-6a8f, U+6a91-6a93, U+6a95-6a9b, U+6a9d-6aa1, U+6aa3-6aab, U+6aad-6aae, U+6ab0-6ab2, U+6ab4-6ab7, U+6ab9-6aba, U+6abc-6ac2, U+6ac4-6ad9, U+6adb-6ae4, U+6ae6-6afa, U+6afc-6aff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u6b00.woff"); unicode-range: U+6b00-6b03, U+6b05-6b09, U+6b0b-6b15, U+6b17-6b1f, U+6b22, U+6b24-6b31, U+6b33-6b39, U+6b3b-6b3c, U+6b3f-6b46, U+6b48, U+6b4a-6b4b, U+6b4d, U+6b4f, U+6b51-6b60, U+6b68-6b69, U+6b6b-6b71, U+6b73-6b76, U+6b7a, U+6b7c-6b7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u6b80.woff"); unicode-range: U+6b80-6b82, U+6b84-6b85, U+6b87-6b88, U+6b8b-6b95, U+6b97, U+6b99-6bb4, U+6bb6, U+6bb8-6bb9, U+6bbb, U+6bbd-6bbe, U+6bc1-6bc4, U+6bc7-6bca, U+6bcc, U+6bce, U+6bd0-6bd1, U+6bd3, U+6bd5-6bda, U+6bdc-6bea, U+6bec-6bee, U+6bf0-6bfc, U+6bfe-6bff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u6c00.woff"); unicode-range: U+6c00-6c07, U+6c09-6c0e, U+6c10, U+6c12, U+6c14-6c1a, U+6c1c-6c22, U+6c24-6c26, U+6c28-6c2a, U+6c2c-6c2e, U+6c30-6c33, U+6c35-6c37, U+6c39-6c3d, U+6c3f, U+6c43-6c4f, U+6c51-6c56, U+6c58, U+6c5a-6c5c, U+6c5e, U+6c62-6c69, U+6c6b-6c6f, U+6c71, U+6c73, U+6c75, U+6c77-6c79, U+6c7b-6c7c, U+6c7e-6c7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u6c80.woff"); unicode-range: U+6c80, U+6c82, U+6c84-6c87, U+6c8a-6c8b, U+6c8d-6c8f, U+6c91, U+6c93-6c95, U+6c97-6c98, U+6c9a, U+6c9c-6caa, U+6cac-6cad, U+6caf-6cb2, U+6cb4-6cb7, U+6cba, U+6cbd, U+6cc0, U+6cc2-6cc3, U+6cc5-6cc8, U+6ccb, U+6ccd-6cd2, U+6cd4, U+6cd6-6cda, U+6cdc-6ce0, U+6ce4, U+6ce6-6ce7, U+6ce9-6cee, U+6cf1-6cf2, U+6cf4-6cff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u6d00.woff"); unicode-range: U+6d00-6d0a, U+6d0c-6d16, U+6d18-6d1a, U+6d1c-6d1d, U+6d1f-6d24, U+6d26-6d28, U+6d2b-6d31, U+6d33-6d35, U+6d37-6d3a, U+6d3c, U+6d3f-6d40, U+6d42-6d58, U+6d5a-6d65, U+6d67-6d68, U+6d6b-6d6d, U+6d6f-6d73, U+6d75-6d76, U+6d79-6d7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u6d80.woff"); unicode-range: U+6d80-6d81, U+6d83-6d84, U+6d86-6d87, U+6d8a-6d8d, U+6d8f-6d92, U+6d96-6dae, U+6db0-6db1, U+6db3-6db4, U+6db6-6db7, U+6db9-6dbb, U+6dbd-6dc4, U+6dc8-6dca, U+6dcd-6dd0, U+6dd3-6dd7, U+6ddb-6de0, U+6de2-6de3, U+6de5-6de7, U+6de9, U+6dec-6ded, U+6def-6df0, U+6df2, U+6df4, U+6df6, U+6df8, U+6dfc-6dff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u6e00.woff"); unicode-range: U+6e00-6e04, U+6e06-6e1a, U+6e1c, U+6e1e-6e1f, U+6e22, U+6e24-6e25, U+6e27-6e2b, U+6e2e, U+6e30-6e31, U+6e33, U+6e35-6e37, U+6e39, U+6e3b-6e3d, U+6e3f-6e42, U+6e45-6e49, U+6e4b-6e4c, U+6e4e-6e55, U+6e57, U+6e59-6e5a, U+6e5c-6e66, U+6e68-6e6e, U+6e70-6e7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u6e80.woff"); unicode-range: U+6e80-6e88, U+6e8a-6e8f, U+6e91-6e95, U+6e97-6e9b, U+6e9e-6ea1, U+6ea3-6ea9, U+6eac-6eae, U+6eb0-6eb5, U+6eb7-6eb9, U+6ebb, U+6ebd-6ec3, U+6ec6-6eca, U+6ecd-6ed0, U+6ed2-6ed3, U+6ed5-6eeb, U+6eed-6eee, U+6ef0-6ef1, U+6ef3, U+6ef5-6ef6, U+6ef9-6efd; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u6f00.woff"); unicode-range: U+6f00, U+6f03-6f05, U+6f07-6f08, U+6f0a-6f0e, U+6f10-6f12, U+6f15-6f1f, U+6f21, U+6f24-6f28, U+6f2d-6f30, U+6f33-6f37, U+6f39-6f3d, U+6f40, U+6f42-6f50, U+6f52-6f53, U+6f55-6f57, U+6f59-6f5a, U+6f5c-6f61, U+6f63, U+6f65, U+6f67-6f6c, U+6f6f, U+6f71-6f79, U+6f7b-6f7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u6f80.woff"); unicode-range: U+6f81-6f83, U+6f85, U+6f87, U+6f89-6f8d, U+6f8f-6f96, U+6f98-6fa0, U+6fa2-6fa3, U+6fa5-6fb0, U+6fb2, U+6fb4-6fbf, U+6fc4-6fd4, U+6fd6-6fd7, U+6fd9-6fda, U+6fdc-6fde, U+6fe0, U+6fe2-6fe3, U+6fe5-6fea, U+6fec-6fee, U+6ff0, U+6ff2-6ff9, U+6ffb-6ffd, U+6fff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u7000.woff"); unicode-range: U+7000-7005, U+7007-7008, U+700a-700e, U+7010, U+7012-7014, U+7016-7019, U+701c, U+701e, U+7020-702f, U+7031-703d, U+703f-704b, U+704d-7050, U+7052-7057, U+7059-7062, U+7064-706a, U+706c-706f, U+7071-7075, U+7077-707b, U+707e-707f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u7080.woff"); unicode-range: U+7080-7089, U+708b-708d, U+708f-7091, U+7093-7094, U+7096-7098, U+709a-70aa, U+70b0-70b2, U+70b4-70b7, U+70b9, U+70bb-70c7, U+70c9-70ce, U+70d0-70d7, U+70da-70e3, U+70e5-70ee, U+70f0-70f6, U+70f8, U+70fa-70fc, U+70fe-70ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u7100.woff"); unicode-range: U+7100-7108, U+710b-7119, U+711b, U+711d-7120, U+7122-7125, U+7127-712f, U+7131-7135, U+7137-7148, U+714a-714b, U+714d, U+714f-7158, U+715a-715d, U+715f-7163, U+7168, U+716a-716d, U+716f-717c, U+717e-717f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u7180.woff"); unicode-range: U+7180-7183, U+7185-7189, U+718b-7193, U+7195-7198, U+719a-719e, U+71a0-71ab, U+71ad-71b0, U+71b2-71bd, U+71bf-71c2, U+71c5-71c7, U+71ca-71d1, U+71d3-71d4, U+71d6-71d8, U+71da-71de, U+71e1-71e4, U+71e7-71ec, U+71ee-71ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u7200.woff"); unicode-range: U+7200-7205, U+7207-720c, U+720e-720f, U+7211-721a, U+721c-7229, U+722b, U+722e-7234, U+7237, U+723b-723c, U+723f-7245, U+7249-724b, U+724d-7258, U+725a, U+725c-725e, U+7263-7266, U+7268, U+726a-7271, U+7273-7278, U+727a-727c, U+727e-727f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u7280.woff"); unicode-range: U+7282-7283, U+7285-72a6, U+72a8-72ab, U+72ad-72ae, U+72b0-72bf, U+72c1, U+72c3, U+72c5-72cf, U+72d1, U+72d3-72d6, U+72d8-72df, U+72e2-72f7, U+72fa-72fb, U+72fe-72ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u7300.woff"); unicode-range: U+7300-731a, U+731e-7328, U+732a-7333, U+7335, U+7337-733e, U+7340-7343, U+7346-734d, U+734f-7367, U+7369-7371, U+7373-7374, U+7376-7377, U+7379-737a, U+737d-737f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u7380.woff"); unicode-range: U+7380-7383, U+7385-7386, U+7388, U+738a, U+738c-73a8, U+73aa, U+73ac-73b1, U+73b3-73ba, U+73bc-73c9, U+73cb-73cc, U+73ce-73df, U+73e1-73ec, U+73ee-73fd, U+73ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u7400.woff"); unicode-range: U+7400-7402, U+7404, U+7407-7408, U+740a-7421, U+7423-7425, U+7427-7429, U+742b-7432, U+7437-7454, U+7456-7459, U+745d, U+7460-7462, U+7465-7468, U+746b-746e, U+7471-747f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u7480.woff"); unicode-range: U+7481-7482, U+7484-74a6, U+74a9-74af, U+74b1-74be, U+74c0-74c9, U+74cb-74ce, U+74d0-74db, U+74dd-74e1, U+74e4-74e5, U+74e7-74f5, U+74f8-74ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u7500.woff"); unicode-range: U+7500-7503, U+7505-7514, U+7516-7517, U+7519, U+751b, U+751d-751e, U+7520-7521, U+7523-7525, U+7527, U+752a, U+752c-752f, U+7534-7536, U+7539, U+753b-754b, U+754d-754e, U+7550-7553, U+7555-7558, U+755a-755b, U+755e-7561, U+7563-7564, U+7567-7569, U+756c-756f, U+7571-7575, U+7577, U+7579-757f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u7580.woff"); unicode-range: U+7580-7585, U+7588-7589, U+758b-758e, U+7590, U+7592-7598, U+759b-759c, U+759e-75a3, U+75a5-75aa, U+75ac-75b1, U+75b3-75b4, U+75b6-75b8, U+75ba-75bb, U+75bd, U+75bf-75c4, U+75c6, U+75c8-75c9, U+75cb-75d4, U+75d6-75d7, U+75da, U+75dc-75df, U+75e1, U+75e3-75f1, U+75f3, U+75f5-75f9, U+75fb-75ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u7600.woff"); unicode-range: U+7600-760a, U+760c, U+760e-7612, U+7614-761e, U+7622-7623, U+7625, U+7628-7641, U+7643-764b, U+764d-7651, U+7653-7655, U+7657-765e, U+7660-7661, U+7663-7664, U+7666-766d, U+766f-7670, U+7672-767a, U+767f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u7680.woff"); unicode-range: U+7680-7681, U+7683, U+7685, U+7688-768d, U+768f-7692, U+7694-76ad, U+76af-76b9, U+76bb-76be, U+76c0-76c2, U+76c4-76c5, U+76c7, U+76c9, U+76cb-76cd, U+76cf-76d1, U+76d3-76da, U+76dd, U+76e0, U+76e2, U+76e6, U+76e8-76e9, U+76eb-76ed, U+76f0-76f1, U+76f3, U+76f5-76f7, U+76f9-76fb, U+76fd, U+76ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u7700.woff"); unicode-range: U+7700, U+7702-7707, U+770a, U+770c-771e, U+7721-7727, U+772a-7735, U+7739, U+773b, U+773d, U+773f-774e, U+7750-775a, U+775d, U+775f-7760, U+7762, U+7764-7765, U+7767-7769, U+776c-7778, U+777a-777e; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u7780.woff"); unicode-range: U+7780-7783, U+7785-7786, U+7788-778b, U+778d, U+778f-779d, U+779f-77a4, U+77a6, U+77a8-77a9, U+77ab, U+77ae-77af, U+77b1-77b2, U+77b4-77ba, U+77bd-77c6, U+77c8-77d6, U+77d8-77d9, U+77dd-77e1, U+77e4, U+77e6-77e8, U+77ea-77ec, U+77f0-77f2, U+77f4-77fc, U+77fe-77ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u7800.woff"); unicode-range: U+7800-7801, U+7803-780b, U+780e-7813, U+7815-7831, U+7833, U+7835-7837, U+7839-785c, U+785e-786a, U+786d-786e, U+7870-787f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u7880.woff"); unicode-range: U+7880-788b, U+788d, U+788f-7890, U+7892-7896, U+7898-789e, U+78a0-78a6, U+78a8, U+78aa-78af, U+78b1-78b2, U+78b4-78b9, U+78bb, U+78bd-78c0, U+78c2-78c4, U+78c6-78c9, U+78cc-78d9, U+78db-78e7, U+78e9-78ee, U+78f0-78f6, U+78f8-78f9, U+78fb-78ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u7900.woff"); unicode-range: U+7900, U+7902-790d, U+790f-7918, U+791a-7925, U+7927-792a, U+792c-7939, U+793b-793d, U+793f, U+7941-7946, U+794a-794f, U+7951-7954, U+7957-795a, U+795c, U+7961-7964, U+7966-7967, U+7969-796c, U+796e-797e; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u7980.woff"); unicode-range: U+7980, U+7982-798c, U+798e, U+7990-79a5, U+79a8-79a9, U+79ab-79ad, U+79af-79b0, U+79b2-79b8, U+79ba-79bc, U+79c2-79c8, U+79ca, U+79cc-79d0, U+79d3-79d7, U+79d9-79de, U+79e0-79e3, U+79e5, U+79e8, U+79ea-79fa, U+79fc-79ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u7a00.woff"); unicode-range: U+7a01-7a04, U+7a06-7a0a, U+7a0c, U+7a0e-7a19, U+7a1b, U+7a1d-7a1f, U+7a21-7a2d, U+7a2f-7a30, U+7a32-7a3a, U+7a3e, U+7a41-7a45, U+7a47-7a4b, U+7a4f-7a56, U+7a58-7a61, U+7a63-7a68, U+7a6a, U+7a6c-7a73, U+7a75, U+7a77-7a78, U+7a7b-7a7e; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u7a80.woff"); unicode-range: U+7a80, U+7a82-7a83, U+7a85-7a87, U+7a89-7a91, U+7a93-7a94, U+7a96, U+7a99-7a9e, U+7aa0-7aa8, U+7aab-7aad, U+7ab0-7ab9, U+7abb-7ac3, U+7ac6, U+7ac8-7ac9, U+7acc-7ad8, U+7ada-7ade, U+7ae1-7ae4, U+7ae6-7aec, U+7aee, U+7af0-7af5, U+7af7-7af8, U+7afa-7afe; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u7b00.woff"); unicode-range: U+7b00-7b05, U+7b07-7b10, U+7b12-7b18, U+7b1a, U+7b1c-7b1f, U+7b21-7b25, U+7b27, U+7b29-7b2b, U+7b2d-7b45, U+7b47-7b48, U+7b4a, U+7b4c, U+7b4e-7b4f, U+7b51, U+7b53, U+7b55, U+7b57-7b74, U+7b76, U+7b78-7b7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u7b80.woff"); unicode-range: U+7b80-7b8a, U+7b8c-7b8e, U+7b90-7b94, U+7b96, U+7b98-7ba0, U+7ba2-7bac, U+7bae-7bb0, U+7bb2-7bbf, U+7bc1-7bc3, U+7bc5-7bc6, U+7bc8, U+7bca-7be3, U+7be5-7be8, U+7bea-7bf6, U+7bf8-7bff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u7c00.woff"); unicode-range: U+7c00-7c06, U+7c08-7c0c, U+7c0e-7c20, U+7c22-7c26, U+7c28-7c36, U+7c39-7c3c, U+7c40-7c42, U+7c44-7c4b, U+7c4e-7c4f, U+7c51-7c5e, U+7c61-7c63, U+7c65-7c6b, U+7c6d, U+7c6f-7c71, U+7c74-7c7c, U+7c7e-7c7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u7c80.woff"); unicode-range: U+7c80-7c88, U+7c8a-7c90, U+7c93-7c96, U+7c99-7c9e, U+7ca0-7ca4, U+7ca6-7cb0, U+7cb2-7cb4, U+7cb6-7cb8, U+7cba-7cbc, U+7cbf-7cc9, U+7ccb-7cd4, U+7cd8, U+7cda-7cdd, U+7ce0-7ce6, U+7ce8-7cee, U+7cf0-7cfa, U+7cfc-7cfd, U+7cff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u7d00.woff"); unicode-range: U+7d01, U+7d03, U+7d06, U+7d08-7d09, U+7d0c, U+7d0e-7d0f, U+7d11-7d12, U+7d15-7d16, U+7d18, U+7d1d-7d1f, U+7d23-7d2a, U+7d2c-7d2d, U+7d31-7d32, U+7d34-7d38, U+7d3a-7d41, U+7d45, U+7d47-7d4f, U+7d51-7d54, U+7d56-7d5d, U+7d5f-7d60, U+7d63-7d65, U+7d67, U+7d69-7d6d, U+7d6f-7d70, U+7d73-7d78, U+7d7a-7d7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u7d80.woff"); unicode-range: U+7d80, U+7d82-7d90, U+7d92, U+7d94-7d9b, U+7d9d-7d9f, U+7da1, U+7da3-7dac, U+7dae-7db0, U+7db3, U+7db5-7db9, U+7dbc, U+7dbe, U+7dc0-7dc9, U+7dcc-7dd1, U+7dd3-7dd7, U+7dd9, U+7ddb-7ddc, U+7ddf, U+7de1-7de2, U+7de4-7de7, U+7dea-7deb, U+7ded-7dee, U+7df0-7df1, U+7df3, U+7df5-7dfa, U+7dfc-7dff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u7e00.woff"); unicode-range: U+7e00-7e07, U+7e09-7e0f, U+7e11-7e1a, U+7e1c-7e22, U+7e24-7e2a, U+7e2c-7e2d, U+7e2f-7e30, U+7e32-7e36, U+7e38, U+7e3a-7e3c, U+7e3f-7e40, U+7e42, U+7e44-7e45, U+7e47-7e53, U+7e55-7e5d, U+7e5f-7e60, U+7e62-7e68, U+7e6c, U+7e6e-7e72, U+7e74-7e78, U+7e7a-7e7b, U+7e7e-7e7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u7e80.woff"); unicode-range: U+7e80-7e8b, U+7e8e, U+7e90-7e95, U+7e97-7e9b, U+7e9d-7eff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u7f00.woff"); unicode-range: U+7f00-7f37, U+7f39, U+7f3b-7f3c, U+7f3e-7f4b, U+7f4d-7f4f, U+7f51-7f53, U+7f56-7f68, U+7f6b-7f6d, U+7f6f, U+7f71, U+7f73-7f74, U+7f76, U+7f78, U+7f7a-7f7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u7f80.woff"); unicode-range: U+7f80-7f84, U+7f86-7f87, U+7f89, U+7f8b-7f8d, U+7f8f-7f93, U+7f95-7f99, U+7f9b-7f9d, U+7f9f-7fa3, U+7fa5-7fa7, U+7faa-7fb8, U+7fba-7fbc, U+7fbe, U+7fc0, U+7fc2-7fc4, U+7fc6-7fcb, U+7fcd-7fd1, U+7fd3, U+7fd5-7fdf, U+7fe2-7fe8, U+7fea-7fef, U+7ff1-7ff2, U+7ff4-7ff8, U+7ffa, U+7ffd-7fff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u8000.woff"); unicode-range: U+8002, U+8004, U+8007-800b, U+800e-800f, U+8011-8014, U+8016, U+8019-8032, U+8034-8035, U+8037-803c, U+803e, U+8040-8045, U+8047-8049, U+804b-8051, U+8053-8055, U+8057, U+8059, U+805b-805d, U+805f-806e, U+8071, U+8074-8076, U+8078-807c, U+807f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u8080.woff"); unicode-range: U+8080-8084, U+8088, U+808a, U+808d-8095, U+8097, U+8099, U+809c, U+809e-80a0, U+80a3-80a4, U+80a6-80a8, U+80ac-80ae, U+80b0-80b1, U+80b3, U+80b5-80b9, U+80bb-80c2, U+80c4-80cb, U+80cd, U+80cf-80d5, U+80d7-80d9, U+80db-80dd, U+80df-80e0, U+80e2-80ec, U+80ee-80ef, U+80f2, U+80f4-80f7, U+80f9, U+80fb-80fc, U+80fe-80ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u8100.woff"); unicode-range: U+8100-8101, U+8103-8104, U+8107, U+8109, U+810b-8115, U+8117-8122, U+8124-812a, U+812c-812e, U+8130-8138, U+813a-813d, U+813f-814a, U+814c-814d, U+814f, U+8152, U+8156-8164, U+8167-816a, U+816c-816f, U+8171-8172, U+8175-8177, U+817b-817e; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u8180.woff"); unicode-range: U+8181-8189, U+818b-818e, U+8190-8199, U+819e-819f, U+81a1-81a7, U+81aa-81b9, U+81bb-81bc, U+81be, U+81c1, U+81c3-81c8, U+81ca-81cc, U+81ce-81d7, U+81d9-81de, U+81e0-81e2, U+81e4, U+81e6-81e7, U+81e9, U+81eb-81ec, U+81ee-81f2, U+81f5-81f9, U+81fb, U+81fd-81ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u8200.woff"); unicode-range: U+8201-8204, U+8206, U+820b, U+820e-8211, U+8213, U+8215-821b, U+821d, U+8220-8229, U+822b, U+822d-8234, U+8237-8238, U+823b-8246, U+8248-824a, U+824c-8257, U+825a-8265, U+8267-826e, U+8270, U+8273-827d, U+827f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u8280.woff"); unicode-range: U+8280-828a, U+828c, U+828e-8291, U+8293-8298, U+829a-829c, U+829e-82a4, U+82a6-82ab, U+82ae-82b0, U+82b2, U+82b4-82b7, U+82ba, U+82bc, U+82be-82d0, U+82d2, U+82d5-82d6, U+82d8-82da, U+82dc-82dd, U+82e0-82e4, U+82e7-82f0, U+82f2-82ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u8300.woff"); unicode-range: U+8300, U+8306-8308, U+830a-8327, U+8329-832a, U+832c-8330, U+8333-8334, U+8337, U+8339-8348, U+834b-834f, U+8351, U+8353, U+8355-8376, U+8378-837f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u8380.woff"); unicode-range: U+8380-8388, U+838b-838d, U+838f-8392, U+8394-8395, U+8397-83aa, U+83ac-83bc, U+83be-83c0, U+83c2-83c6, U+83c8-83c9, U+83cb, U+83cd-83db, U+83dd-83de, U+83e1-83e8, U+83ea-83ee, U+83f0, U+83f3-83f7, U+83f9-83ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u8400.woff"); unicode-range: U+8400-8402, U+8405-8409, U+840b, U+840f-842b, U+842d-843c, U+843e-8448, U+844a-8456, U+8458-845a, U+845c-8460, U+8462, U+8464-8465, U+8467-846a, U+846d-8474, U+8476-847f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u8480.woff"); unicode-range: U+8480-8481, U+8483-848f, U+8491-8498, U+849a-849b, U+849d-84b1, U+84b3-84b7, U+84b9-84bb, U+84bd-84c3, U+84c5, U+84c7-84c8, U+84ca, U+84cc-84eb, U+84ed, U+84ef-84ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u8500.woff"); unicode-range: U+8500-8512, U+8515-8516, U+8518-8519, U+851b-8520, U+8522, U+8524, U+8526-852b, U+852e-853c, U+853e-8542, U+8544-8548, U+854b-8558, U+855a-8567, U+856b-856c, U+856e-857d, U+857f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u8580.woff"); unicode-range: U+8580-8583, U+8585-8586, U+8588-8590, U+8592-859a, U+859c-85a5, U+85a7-85a8, U+85ab-85ae, U+85b1-85c8, U+85ca-85cc, U+85ce, U+85d0-85d4, U+85d6-85dc, U+85de-85e3, U+85e6-85e8, U+85ea-85f6, U+85f8, U+85fc-85ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u8600.woff"); unicode-range: U+8600-8605, U+8608-8609, U+860c-862c, U+862e-863e, U+8640-864d, U+864f, U+8651-8653, U+8656-865a, U+865d, U+8660-8666, U+8668-8678, U+867a-867f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u8680.woff"); unicode-range: U+8680-8689, U+868b, U+868d-8692, U+8694-86a3, U+86a5-86a9, U+86ab-86ae, U+86b0-86bf, U+86c1-86c6, U+86c8-86ca, U+86cc-86d3, U+86d5-86d8, U+86da, U+86dc-86de, U+86e0-86e3, U+86e5-86fa, U+86fc-86fd, U+86ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u8700.woff"); unicode-range: U+8701, U+8703-870c, U+870e-8711, U+8714-8717, U+8719-871b, U+871d-8724, U+8726-8736, U+8738-873a, U+873c-873e, U+8740-874b, U+874d-8754, U+8756-8758, U+875a-875f, U+8761-8765, U+8767, U+8769-8773, U+8775, U+8777, U+8779-877f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u8780.woff"); unicode-range: U+8780-8781, U+8784-878c, U+878e-879d, U+879f-87a1, U+87a3-87ae, U+87b0-87b9, U+87bb-87bf, U+87c1-87ca, U+87cc-87d0, U+87d2-87df, U+87e1-87eb, U+87ed-87f1, U+87f3-87f8, U+87fa, U+87fc-87fd, U+87ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u8800.woff"); unicode-range: U+8800-8804, U+8806-880c, U+880e-8814, U+8816-881e, U+8820-8821, U+8823-8835, U+8837-883a, U+883c-883f, U+8841-884b, U+884e-8852, U+8854-8856, U+8858, U+885a, U+885c, U+885e-8860, U+8862, U+8864-8867, U+8869-886a, U+886c-886f, U+8871-8876, U+8878-887f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u8880.woff"); unicode-range: U+8880, U+8883-888a, U+888c, U+888e-8892, U+8894-8895, U+8897-889d, U+889f-88aa, U+88ac-88b0, U+88b2-88c0, U+88c3-88c9, U+88cb-88d3, U+88d6-88d8, U+88da-88db, U+88de-88e0, U+88e2-88f2, U+88f5-88f7, U+88fa-88fc, U+88fe-88ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u8900.woff"); unicode-range: U+8900-8901, U+8903-8906, U+8908-890f, U+8911, U+8913-8929, U+892b-8931, U+8933-8935, U+8937-893a, U+893c-8943, U+8945-8955, U+8957-895e, U+8960-8969, U+896b-896e, U+8970-8971, U+8973-897e; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u8980.woff"); unicode-range: U+8980, U+8982-8985, U+8987-898a, U+898c-898e, U+8990-8992, U+8994-8995, U+8997-89a9, U+89ab-89b6, U+89b8-89b9, U+89bb-89bc, U+89be-89d1, U+89d3-89e2, U+89e4-89f7, U+89f9-89ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u8a00.woff"); unicode-range: U+8a01, U+8a03-8a07, U+8a09, U+8a0b-8a0d, U+8a0f-8a12, U+8a14, U+8a16, U+8a19-8a1c, U+8a1e, U+8a20-8a22, U+8a24-8a29, U+8a2b-8a2c, U+8a2e-8a30, U+8a32-8a33, U+8a35-8a39, U+8a3c-8a4f, U+8a51-8a54, U+8a56-8a5a, U+8a5c-8a5d, U+8a5f, U+8a61, U+8a63-8a65, U+8a67-8a68, U+8a6a, U+8a6c, U+8a6f-8a70, U+8a74-8a78, U+8a7a-8a7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u8a80.woff"); unicode-range: U+8a80-8a86, U+8a88-8a8b, U+8a8e-8a92, U+8a94, U+8a96-8a97, U+8a99-8a9d, U+8a9f, U+8aa2-8aa3, U+8aa5, U+8aa7, U+8aa9, U+8aab-8aaf, U+8ab1, U+8ab3-8abb, U+8abd-8abe, U+8ac0-8ac3, U+8ac5-8ac6, U+8ac8-8aca, U+8acc-8ad1, U+8ad3-8ad5, U+8ad7-8adb, U+8add-8ae5, U+8ae8-8aea, U+8aec-8aed, U+8aef-8af0, U+8af2, U+8af4-8af6, U+8af9, U+8afb-8afd, U+8aff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u8b00.woff"); unicode-range: U+8b03-8b09, U+8b0b-8b0d, U+8b0f, U+8b11-8b18, U+8b1a, U+8b1c, U+8b1e-8b1f, U+8b21-8b2b, U+8b2d-8b38, U+8b3a-8b48, U+8b4a-8b4e, U+8b50-8b57, U+8b59, U+8b5b, U+8b5d-8b65, U+8b67-8b6b, U+8b6d-8b6e, U+8b71-8b73, U+8b75-8b76, U+8b78-8b7c, U+8b7e-8b7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u8b80.woff"); unicode-range: U+8b81-8b89, U+8b8b-8b92, U+8b94-8b99, U+8b9b-8bff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u8c00.woff"); unicode-range: U+8c00-8c36, U+8c38-8c40, U+8c42-8c45, U+8c47, U+8c49-8c4d, U+8c4f, U+8c51-8c53, U+8c55-8c59, U+8c5b-8c60, U+8c62-8c69, U+8c6d-8c78, U+8c7a-8c7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u8c80.woff"); unicode-range: U+8c80-8c81, U+8c83-8c8b, U+8c8d-8c92, U+8c94-8c9c, U+8c9f, U+8ca3-8ca6, U+8cad-8cae, U+8cb0-8cb3, U+8cb5, U+8cb9-8cba, U+8cbd-8cbe, U+8cc1, U+8cc5-8cc6, U+8cc9, U+8ccb-8cd2, U+8cd4-8cdb, U+8cdd, U+8cdf, U+8ce1, U+8ce5, U+8ce7-8ce9, U+8ceb-8cec, U+8cee-8cf3, U+8cf5-8cf9, U+8cfb, U+8cfe-8cff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u8d00.woff"); unicode-range: U+8d00-8d04, U+8d06-8d07, U+8d09, U+8d0b-8d0e, U+8d10-8d12, U+8d14-8d15, U+8d17-8d63, U+8d65, U+8d67-8d6a, U+8d6c, U+8d6e-8d6f, U+8d71-8d72, U+8d75-8d76, U+8d78-8d7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u8d80.woff"); unicode-range: U+8d80, U+8d82-8d84, U+8d86-8d89, U+8d8b-8d94, U+8d96-8d98, U+8d9a-8d9e, U+8da0-8da2, U+8da4-8da7, U+8da9-8db2, U+8db5-8dbd, U+8dbf-8dc5, U+8dc7-8dca, U+8dcd-8dd0, U+8dd2-8dd9, U+8ddb-8ddc, U+8dde, U+8de0, U+8de2-8de7, U+8de9, U+8deb-8dee, U+8df0-8df2, U+8df4-8df9, U+8dfb-8dff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u8e00.woff"); unicode-range: U+8e00-8e08, U+8e0a-8e0e, U+8e11-8e1d, U+8e1f-8e21, U+8e23-8e28, U+8e2a-8e30, U+8e32-8e33, U+8e36-8e43, U+8e45-8e47, U+8e49, U+8e4d-8e5e, U+8e60-8e62, U+8e65, U+8e67-8e71, U+8e73-8e79, U+8e7b-8e7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u8e80.woff"); unicode-range: U+8e80, U+8e82-8e86, U+8e88-8e89, U+8e8b-8e8c, U+8e8e-8ea0, U+8ea2-8eaa, U+8ead-8eb1, U+8eb3-8eb9, U+8ebb-8ebf, U+8ec1-8ec9, U+8ece-8ed1, U+8ed3-8ede, U+8ee0-8ef7, U+8ef9-8efa, U+8efc-8efd, U+8eff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u8f00.woff"); unicode-range: U+8f00-8f02, U+8f04-8f08, U+8f0a-8f11, U+8f13, U+8f16-8f1a, U+8f1c, U+8f1e, U+8f20-8f28, U+8f2b-8f2e, U+8f30-8f37, U+8f39-8f3a, U+8f3c-8f3d, U+8f40-8f43, U+8f45-8f48, U+8f4a-8f4c, U+8f4f-8f5e, U+8f60-8f7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u8f80.woff"); unicode-range: U+8f80-8f9a, U+8f9d-8f9e, U+8fa0-8fa2, U+8fa4-8fa5, U+8fa7, U+8fa9-8fac, U+8fb3-8fc1, U+8fc3, U+8fc6-8fcd, U+8fcf-8fd0, U+8fd2-8fd3, U+8fd5-8fe1, U+8fe3, U+8fe7-8fe9, U+8fec, U+8fee-8fef, U+8ff1-8ff3, U+8ff5-8ff6, U+8ff9, U+8ffb-8ffc, U+8ffe-8fff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u9000.woff"); unicode-range: U+9002, U+9004-9005, U+9007-900c, U+900e, U+9011-9013, U+9016, U+9018, U+901c, U+9021, U+9024-902d, U+902f-9030, U+9033-9037, U+9039-903b, U+903d, U+903f-9040, U+9043-9046, U+9048-9049, U+904c, U+9051-9052, U+9056-9058, U+905a-905b, U+905d, U+905f, U+9061-9062, U+9064-9067, U+906a-906c, U+906f-9071, U+9073-9074, U+9076, U+9079, U+907b, U+907e; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u9080.woff"); unicode-range: U+9082, U+9085-9089, U+908b-908e, U+9092-90a2, U+90a4-90a5, U+90a7-90a9, U+90ab-90b0, U+90b2-90b4, U+90b6-90b7, U+90b9-90c0, U+90c2-90c9, U+90cb-90cd, U+90cf-90dc, U+90de-90e0, U+90e2-90e7, U+90e9-90ec, U+90ee-90f4, U+90f6-90fc, U+90fe-90ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u9100.woff"); unicode-range: U+9100-9108, U+910a-9111, U+9113-9118, U+911a-9126, U+9128-912c, U+912e-912f, U+9131-914b, U+914e-9151, U+9153-9156, U+9158-9162, U+9164, U+9166-9169, U+916b, U+916d-9174, U+9176, U+9179-917f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u9180.woff"); unicode-range: U+9180-9182, U+9184-9186, U+9188, U+918a, U+918c-9191, U+9193-919b, U+919d, U+919f-91aa, U+91ad-91b9, U+91bb-91bf, U+91c1-91c6, U+91c8, U+91ca, U+91d2-91d6, U+91d9-91db, U+91de-91e2, U+91e4-91e5, U+91e7-91ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u9200.woff"); unicode-range: U+9200-920c, U+920e-9213, U+9216-921d, U+921f-9222, U+9224-9233, U+9235-9244, U+9246-9256, U+9258-925a, U+925c-9263, U+9265-927a, U+927c-927f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u9280.woff"); unicode-range: U+9281-9284, U+9286-9292, U+9294-9295, U+9297, U+9299-929b, U+929d-92ab, U+92ad-92b1, U+92b4-92b6, U+92b8-92c0, U+92c2-92d1, U+92d3-92e3, U+92e5-92e9, U+92eb-92f7, U+92f9-92fb, U+92fd-92ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u9300.woff"); unicode-range: U+9300-9303, U+9305-930f, U+9311-9317, U+9319-9320, U+9323-9325, U+9327-932a, U+932c-932d, U+9330-9335, U+9337-9349, U+934c, U+934e-935a, U+935c-9374, U+9376-937d, U+937f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u9380.woff"); unicode-range: U+9380-9395, U+9397-93ad, U+93af-93c7, U+93c9-93d6, U+93d9-93de, U+93e0, U+93e2-93fc, U+93fe-93ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u9400.woff"); unicode-range: U+9400-9417, U+9419-9431, U+9434, U+9436-9437, U+9439, U+943b-9443, U+9445-9450, U+9453-946f, U+9471, U+9473-947b, U+947e; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u9480.woff"); unicode-range: U+9480-94ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u9500.woff"); unicode-range: U+9500-9576, U+9578-957f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u9580.woff"); unicode-range: U+9581-9582, U+9584-9588, U+958a, U+958c-9590, U+9594-9597, U+9599-95a2, U+95a6-95a7, U+95aa-95b0, U+95b2-95b8, U+95ba-95c5, U+95c7-95c9, U+95cb, U+95cd-95cf, U+95d1-95d3, U+95d7-95db, U+95dd-95e0, U+95e3-95ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u9600.woff"); unicode-range: U+9600-961b, U+961d-9620, U+9622-9629, U+962b-962d, U+962f-9630, U+9633-963a, U+963c-963e, U+9641-9643, U+9645-964a, U+964e-964f, U+9651-965c, U+965e-9660, U+9665-9669, U+966b-966f, U+9671, U+9674, U+9679-967c, U+967e-967f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u9680.woff"); unicode-range: U+9680-9684, U+9687-9689, U+968c-968d, U+968f-9693, U+9696-9698, U+969a, U+969d-96a6, U+96a9, U+96ab-96b0, U+96b2-96b3, U+96b5-96b7, U+96b9-96ba, U+96bd-96bf, U+96c2-96c3, U+96c8, U+96ca, U+96ce-96d4, U+96d7-96d8, U+96da, U+96dd, U+96df-96e1, U+96e4-96e7, U+96e9, U+96eb-96f1, U+96f3-96f5, U+96f8-96fa, U+96fc-96ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u9700.woff"); unicode-range: U+9701-9703, U+9705-9706, U+9708, U+970a-970c, U+9710-9712, U+9714-9715, U+9717-971b, U+971d, U+971f-9726, U+9728-9731, U+9733-9737, U+973a-973d, U+973f-9741, U+9743-9747, U+9749-9751, U+9753-9755, U+9757-975b, U+975d, U+975f, U+9763-9767, U+976a-9773, U+9775, U+9777-977f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u9780.woff"); unicode-range: U+9780-978a, U+978c, U+978e, U+9790-979f, U+97a1-97ac, U+97ae-97ca, U+97cd-97d2, U+97d4-97ec, U+97ee-97f2, U+97f4-97f5, U+97f7-97fa, U+97fc-97fe; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u9800.woff"); unicode-range: U+9800, U+9804, U+9807, U+9809-980b, U+980d-980f, U+9814-9816, U+9819-9820, U+9822-9823, U+9825-982c, U+982e-982f, U+9831-9837, U+983a, U+983c-9845, U+9847-984b, U+9850-9857, U+9859-985a, U+985c-985d, U+985f-9866, U+9868-986a, U+986c-986e, U+9870, U+9872-987f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u9880.woff"); unicode-range: U+9880-98a7, U+98a9-98b0, U+98b2, U+98b4-98bb, U+98bd-98c3, U+98c5, U+98c7-98da, U+98dc-98de, U+98e0-98e1, U+98e3-98e9, U+98eb-98ee, U+98f0-98f1, U+98f3-98fb, U+98ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u9900.woff"); unicode-range: U+9900-9902, U+9904, U+9906-9909, U+990b, U+990d-990f, U+9911, U+9914-9917, U+9919, U+991b-9920, U+9922-9927, U+9929-9934, U+9936-9944, U+9946-994a, U+994d-9950, U+9953-9956, U+9958-995b, U+995d-997f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u9980.woff"); unicode-range: U+9980-9995, U+9997-9998, U+999a-99a7, U+99a9-99ab, U+99af-99b2, U+99b5-99c0, U+99c2-99cf, U+99d1-99d4, U+99d6-99da, U+99dc, U+99de-99ec, U+99ee-99f0, U+99f2-99fe; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u9a00.woff"); unicode-range: U+9a00, U+9a02-9a0d, U+9a0f-9a18, U+9a1a-9a2a, U+9a2c-9a2f, U+9a31-9a36, U+9a38-9a3f, U+9a41-9a44, U+9a46-9a54, U+9a56, U+9a58-9a59, U+9a5c-9a5e, U+9a60-9a61, U+9a63-9a69, U+9a6b-9a7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u9a80.woff"); unicode-range: U+9a80-9aa7, U+9aa9-9aae, U+9ab0-9ab7, U+9ab9-9abb, U+9abd-9ad1, U+9ad5-9ad7, U+9ad9-9ae5, U+9ae7-9aed, U+9aef-9afa, U+9afc-9aff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u9b00.woff"); unicode-range: U+9b00-9b05, U+9b07-9b0c, U+9b0e-9b19, U+9b1b-9b21, U+9b23-9b24, U+9b26, U+9b28-9b30, U+9b32-9b3b, U+9b3d-9b40, U+9b43, U+9b46-9b4e, U+9b50-9b53, U+9b55-9b57, U+9b59, U+9b5b-9b6e, U+9b70-9b7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u9b80.woff"); unicode-range: U+9b80-9b90, U+9b92-9bac, U+9baf-9bc8, U+9bcb-9bda, U+9bdc-9be7, U+9be9-9bff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u9c00.woff"); unicode-range: U+9c00-9c0c, U+9c0e-9c2c, U+9c2e-9c31, U+9c33-9c56, U+9c58-9c76, U+9c78-9c7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u9c80.woff"); unicode-range: U+9c80-9ce4, U+9ce6-9cf2, U+9cf5-9cff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u9d00.woff"); unicode-range: U+9d00-9d08, U+9d0a-9d1a, U+9d1c-9d22, U+9d24-9d25, U+9d27, U+9d29-9d3a, U+9d3c-9d3e, U+9d40-9d50, U+9d52-9d5c, U+9d5e-9d60, U+9d62-9d6b, U+9d6d-9d71, U+9d73-9d7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u9d80.woff"); unicode-range: U+9d80-9dae, U+9db0-9db3, U+9db5-9dd2, U+9dd4-9dd6, U+9dd8-9de4, U+9de6-9df8, U+9dfb-9dff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u9e00.woff"); unicode-range: U+9e00-9e19, U+9e1b-9e78, U+9e7a-9e7b, U+9e7e; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u9e80.woff"); unicode-range: U+9e80-9e92, U+9e94-9e96, U+9e98-9e9e, U+9ea0-9ea4, U+9ea6-9eb4, U+9eb6-9eba, U+9ebd-9ec2, U+9ec4-9ecc, U+9ed0, U+9ed2-9ed7, U+9ed9-9eda, U+9edc, U+9edf-9ee7, U+9ee9-9eee, U+9ef0-9ef3, U+9ef5-9eff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u9f00.woff"); unicode-range: U+9f00-9f0d, U+9f0f-9f12, U+9f14-9f1f, U+9f21-9f3a, U+9f3c-9f3d, U+9f3f-9f49, U+9f4c-9f51, U+9f53-9f60, U+9f62-9f65, U+9f67-9f7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u9f80.woff"); unicode-range: U+9f80-9f8c, U+9f8e-9f8f, U+9f91-9f9b, U+9f9d-9fff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u3400.woff"); unicode-range: U+3400-347f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u3480.woff"); unicode-range: U+3480-34ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u3500.woff"); unicode-range: U+3500-357f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u3580.woff"); unicode-range: U+3580-35ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u3600.woff"); unicode-range: U+3600-367f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u3680.woff"); unicode-range: U+3680-36ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u3700.woff"); unicode-range: U+3700-377f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u3780.woff"); unicode-range: U+3780-37ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u3800.woff"); unicode-range: U+3800-387f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u3880.woff"); unicode-range: U+3880-38ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u3900.woff"); unicode-range: U+3900-397f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u3980.woff"); unicode-range: U+3980-39ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u3a00.woff"); unicode-range: U+3a00-3a7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u3a80.woff"); unicode-range: U+3a80-3aff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u3b00.woff"); unicode-range: U+3b00-3b7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u3b80.woff"); unicode-range: U+3b80-3bff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u3c00.woff"); unicode-range: U+3c00-3c7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u3c80.woff"); unicode-range: U+3c80-3cff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u3d00.woff"); unicode-range: U+3d00-3d7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u3d80.woff"); unicode-range: U+3d80-3dff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u3e00.woff"); unicode-range: U+3e00-3e7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u3e80.woff"); unicode-range: U+3e80-3eff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u3f00.woff"); unicode-range: U+3f00-3f7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u3f80.woff"); unicode-range: U+3f80-3fff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u4000.woff"); unicode-range: U+4000-407f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u4080.woff"); unicode-range: U+4080-40ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u4100.woff"); unicode-range: U+4100-417f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u4180.woff"); unicode-range: U+4180-41ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u4200.woff"); unicode-range: U+4200-427f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u4280.woff"); unicode-range: U+4280-42ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u4300.woff"); unicode-range: U+4300-437f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u4380.woff"); unicode-range: U+4380-43ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u4400.woff"); unicode-range: U+4400-447f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u4480.woff"); unicode-range: U+4480-44ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u4500.woff"); unicode-range: U+4500-457f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u4580.woff"); unicode-range: U+4580-45ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u4600.woff"); unicode-range: U+4600-467f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u4680.woff"); unicode-range: U+4680-46ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u4700.woff"); unicode-range: U+4700-477f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u4780.woff"); unicode-range: U+4780-47ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u4800.woff"); unicode-range: U+4800-487f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u4880.woff"); unicode-range: U+4880-48ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u4900.woff"); unicode-range: U+4900-497f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u4980.woff"); unicode-range: U+4980-49ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u4a00.woff"); unicode-range: U+4a00-4a7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u4a80.woff"); unicode-range: U+4a80-4aff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u4b00.woff"); unicode-range: U+4b00-4b7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u4b80.woff"); unicode-range: U+4b80-4bff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u4c00.woff"); unicode-range: U+4c00-4c7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u4c80.woff"); unicode-range: U+4c80-4cff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u4d00.woff"); unicode-range: U+4d00-4d7f; }
+
+
+/* EUDC */
+@font-face { font-family:"標楷體2"; src:url("ttf/ue000.woff"); unicode-range: U+e000-e07f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ue080.woff"); unicode-range: U+e080-e0ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ue100.woff"); unicode-range: U+e100-e17f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ue180.woff"); unicode-range: U+e180-e1ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ue200.woff"); unicode-range: U+e200-e27f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ue280.woff"); unicode-range: U+e280-e2ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ue300.woff"); unicode-range: U+e300-e37f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ue380.woff"); unicode-range: U+e380-e3ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ue400.woff"); unicode-range: U+e400-e47f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ue480.woff"); unicode-range: U+e480-e4ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ue500.woff"); unicode-range: U+e500-e57f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ue580.woff"); unicode-range: U+e580-e5ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ue600.woff"); unicode-range: U+e600-e67f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ue680.woff"); unicode-range: U+e680-e6ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ue700.woff"); unicode-range: U+e700-e77f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ue780.woff"); unicode-range: U+e780-e7ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ue800.woff"); unicode-range: U+e800-e87f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ue880.woff"); unicode-range: U+e880-e8ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ue900.woff"); unicode-range: U+e900-e97f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ue980.woff"); unicode-range: U+e980-e9ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uea00.woff"); unicode-range: U+ea00-ea7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uea80.woff"); unicode-range: U+ea80-eaff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ueb00.woff"); unicode-range: U+eb00-eb7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ueb80.woff"); unicode-range: U+eb80-ebff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uec00.woff"); unicode-range: U+ec00-ec7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uec80.woff"); unicode-range: U+ec80-ecff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ued00.woff"); unicode-range: U+ed00-ed7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ued80.woff"); unicode-range: U+ed80-edff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uee00.woff"); unicode-range: U+ee00-ee7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uee80.woff"); unicode-range: U+ee80-eeff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uef00.woff"); unicode-range: U+ef00-ef7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uef80.woff"); unicode-range: U+ef80-efff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf000.woff"); unicode-range: U+f000-f07f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf080.woff"); unicode-range: U+f080-f0ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf100.woff"); unicode-range: U+f100-f17f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf180.woff"); unicode-range: U+f180-f1ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf200.woff"); unicode-range: U+f200-f27f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf280.woff"); unicode-range: U+f280-f2ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf300.woff"); unicode-range: U+f300-f37f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf380.woff"); unicode-range: U+f380-f3ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf400.woff"); unicode-range: U+f400-f47f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf480.woff"); unicode-range: U+f480-f4ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf500.woff"); unicode-range: U+f500-f57f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf580.woff"); unicode-range: U+f580-f5ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf600.woff"); unicode-range: U+f600-f67f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf680.woff"); unicode-range: U+f680-f6ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf700.woff"); unicode-range: U+f700-f77f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf780.woff"); unicode-range: U+f780-f7ff; }
+
+
+
+
+/* often */
+
+@font-face { font-family:"標楷體2"; src:url("ttf/often0.woff"); unicode-range: U+4e00, U+4e09-4e0b, U+4e0d, U+4e14, U+4e16, U+4e2d, U+4e3b, U+4e4b, U+4e4e, U+4e5f, U+4e86, U+4e8b-4e8c, U+4e9b, U+4e9e, U+4ea4, U+4eba, U+4ec0, U+4eca, U+4ed6, U+4ee3, U+4ee5, U+4ef6, U+4efb, U+4f01, U+4f46, U+4f4d, U+4f4f, U+4f55, U+4f5c, U+4f60, U+4f7f, U+4f86, U+4fbf, U+4fdd, U+4fe1, U+500b, U+5011, U+5019, U+505a, U+5099, U+50b3, U+50cf, U+50f9, U+5143, U+5148-5149, U+5152, U+5165, U+5167, U+5168, U+5169, U+516c, U+5171, U+5176, U+518d, U+51fa, U+5206-5207, U+5225, U+5229, U+5230, U+5236, U+524d, U+5275, U+529b, U+529f-52a0, U+52a9, U+52d5, U+52d9, U+5305, U+5316, U+5317, U+5340, U+5341, U+534a, U+5357, U+537b, U+539f, U+53bb, U+53c3, U+53c8, U+53ca-53cb, U+53cd, U+53d6-53d7, U+53e3, U+53e4, U+53ea-53eb, U+53ef, U+53f2, U+53f8, U+5403-5404, U+5408, U+540c-540d, U+5411, U+544a, U+5462, U+547d, U+548c, U+54c1, U+54e1, U+5546, U+554f, U+559c, U+55ae, U+5668, U+56db, U+56de, U+56e0, U+570b, U+5712, U+5718, U+571f, U+5728, U+5730, U+578b, U+57ce, U+57fa, U+5831, U+5834, U+5883, U+58eb, U+5916, U+591a, U+591c, U+5927, U+5929-592b, U+5931, U+5973, U+5979, U+597d, U+5982, U+59cb, U+5abd, U+5b50, U+5b57, U+5b69, U+5b78, U+5b83, U+5b89, U+5b8c, U+5b9a, U+5ba2, U+5bb6, U+5bb9, U+5be6, U+5beb, U+5c08, U+5c0d, U+5c0e, U+5c0f, U+5c11, U+5c31, U+5c55, U+5c71, U+5de5, U+5df1-5df2, U+5e02-5e03, U+5e2b, U+5e36, U+5e38, U+5e73, U+5e74, U+5e7e, U+5e9c, U+5ea6, U+5ee3, U+5efa, U+5f0f, U+5f15, U+5f35, U+5f37, U+5f62, U+5f71, U+5f80, U+5f88, U+5f8c, U+5f97, U+5f9e, U+5fb7, U+5fc3, U+5fc5, U+5feb, U+5ff5, U+600e, U+601d, U+6027, U+60c5, U+60f3, U+610f, U+611b, U+611f, U+614b, U+61c9, U+6210, U+6211, U+6216, U+6230, U+623f-6240, U+624b, U+624d, U+6253, U+6280, U+628a, U+6295, U+6301, U+6307, U+6392, U+63a5, U+63a8, U+63d0, U+6536, U+6539, U+653e, U+653f, U+6545, U+6559, U+6574, U+6578, U+6587, U+65af, U+65b0, U+65b7, U+65b9, U+65bc, U+65e5, U+65e9, U+660e, U+6613, U+661f, U+662f, U+6642, U+666f, U+66f4, U+66f8, U+6700, U+6703, U+6708, U+6709, U+670b, U+670d, U+671b, U+671f, U+672a, U+672c, U+6771, U+6797, U+679c, U+6821, U+6839, U+683c, U+689d, U+696d, U+6a02, U+6a19, U+6a23, U+6a39, U+6a5f, U+6b0a, U+6b21, U+6b61, U+6b63, U+6b64, U+6b65, U+6b7b, U+6bcd, U+6bcf, U+6bd4, U+6c11, U+6c23, U+6c34, U+6c42, U+6c7a, U+6c92, U+6cb3, U+6cbb, U+6cd5, U+6d3b, U+6d41, U+6d77, U+6d88, U+6df1, U+6e05, U+6e96, U+6eff, U+6f14, U+6fdf, U+7063, U+706b, U+70ba, U+7121, U+7136, U+7167, U+71b1, U+71df, U+722d, U+7236, U+7238, U+7247, U+7269, U+7279, U+738b, U+73fe, U+7403, U+7406, U+74b0, U+751f, U+7522, U+7528, U+7531, U+7537, U+754c, U+756b, U+7576, U+75c5, U+767c, U+767d, U+7684, U+76ee, U+76f4, U+76f8, U+770b, U+771f, U+773c, U+773e, U+77e5, U+77f3, U+7814, U+793a, U+793e, U+795e, U+79d1, U+7a0b, U+7a2e, U+7a76, U+7a7a, U+7acb, U+7ae5, U+7b11, U+7b2c, U+7b49, U+7b97, U+7ba1, U+7bc0, U+7cbe, U+7cfb, U+7d00, U+7d05, U+7d30, U+7d42, U+7d50, U+7d66, U+7d71, U+7d93, U+7dda, U+7e23, U+7e3d, U+7f8e, U+7fa9, U+8001, U+8003, U+8005, U+800c, U+806f, U+8072, U+807d, U+80b2, U+80fd, U+8166, U+81ea, U+81f3, U+81fa, U+8207, U+8208, U+8209, U+8272, U+82b1, U+82e6, U+82f1, U+83ef, U+843d, U+8457, U+85dd, U+8655, U+884c, U+8853, U+8868, U+88e1, U+897f, U+8981, U+898b, U+8996, U+89aa, U+89ba, U+89d2, U+89e3, U+89c0, U+8a00, U+8a08, U+8a18, U+8a2d, U+8a31, U+8a71-8a72, U+8a8d, U+8a9e, U+8aaa, U+8abf, U+8ad6, U+8b58, U+8b70, U+8b80, U+8b8a, U+8c61, U+8cbb, U+8cc7, U+8cea, U+8cfd, U+8d70, U+8d77, U+8db3, U+8def, U+8eab, U+8eca, U+8ecd, U+8f15, U+8f49, U+8fa6, U+8fd1, U+9019-901a, U+901f-9020, U+9023, U+9032, U+904a-904b, U+904e, U+9053-9054, U+9060, U+9078, U+9084, U+908a, U+90a3, U+90e8, U+90fd, U+91ab, U+91cd, U+91cf, U+91d1, U+9577, U+9580, U+958b, U+9593, U+95dc, U+9662, U+9664, U+9678, U+967d, U+969b, U+96c6, U+96d6, U+96e2, U+96e3, U+96e8, U+96fb, U+9752, U+975e, U+9762, U+97f3, U+97ff, U+982d, U+984c, U+985e, U+98a8, U+98db, U+98df, U+990a, U+9999, U+99ac, U+9ad4, U+9ad8, U+9ebc, U+9ec3, U+9ede, U+9ee8; }
+
+@font-face { font-family:"標楷體2"; src:url("ttf/often1.woff"); unicode-range: U+4e03, U+4e5d, U+516b, U+4e45, U+5343, U+4e94, U+4ecb, U+4ecd, U+516d, U+5347-5348, U+5c24, U+5df4, U+6236, U+652f, U+6728, U+6b62, U+6bdb, U+7259, U+725b, U+4ee4, U+5145, U+5361, U+53e5-53e6, U+53f3, U+5976, U+5c3c, U+5de6, U+5de8, U+5e7c, U+6c38, U+7389, U+7530, U+76ae, U+4f11, U+51b0, U+5217, U+5370-5371, U+5b58, U+5b88, U+5dde, U+5fd9, U+66f2, U+6c5f, U+767e, U+7af9, U+8033, U+8089, U+8840, U+8863, U+4f2f, U+4f3c, U+4f4e, U+514b, U+514d, U+51b7, U+5373, U+5426-5427, U+5438, U+56f0, U+5750, U+5b8b, U+5c40, U+5e0c, U+5f1f, U+5fd7-5fd8, U+627e, U+6297, U+674e, U+6750-6751, U+6c7d, U+6c89, U+6c99, U+7260, U+79c1, U+826f, U+91cc, U+9632, U+4e26, U+4eab-4eac, U+4f8b, U+4f9b, U+4f9d, U+5177-5178, U+521d, U+523b, U+5354, U+5468, U+5473, U+547c, U+5761, U+5947, U+59b9, U+59d0, U+59d4, U+5b63, U+5b98, U+5b9c, U+5c45, U+5cb8, U+5e78, U+5e95, U+5e97, U+5ffd, U+6015, U+602a, U+627f, U+62b1, U+62c9, U+62cd, U+62db, U+677f, U+6cb9, U+6cc1, U+6ce2, U+6ce8, U+72c0, U+73a9, U+80a1, U+80af, U+8fce, U+963f, U+9644, U+4eae, U+4fc2, U+5247, U+5a01, U+5ba3-5ba4, U+5c4b, U+5e1d, U+5f85, U+5f8b, U+6025, U+65bd, U+6625, U+67d3, U+67e5, U+6bb5, U+6bd2, U+6d0b, U+6d17, U+6d1e, U+6d32, U+6d3e, U+751a, U+7687, U+7701, U+79cb, U+7a7f, U+7a81, U+7d04, U+80cc, U+81f4, U+82e5, U+8ca0, U+964d, U+9650, U+9769, U+9996, U+4fee, U+5012, U+502b, U+503c, U+525b, U+54e5, U+590f, U+5a18, U+5bae, U+5bb3, U+5c04, U+5cf6, U+5dee, U+5ea7, U+5ead, U+6050, U+606f, U+62ff, U+6548, U+6599, U+65c1, U+65c5, U+6848, U+6d6a, U+70c8, U+73ed, U+7559, U+75c7, U+76ca, U+7834, U+7ad9, U+7d0d, U+7d19-7d1b, U+7d20, U+7f3a, U+822c, U+8336, U+8349, U+8a0a, U+8a0e, U+8a13, U+8a17, U+8ca1, U+8ff7, U+8ffd, U+9000-9001, U+914d, U+9152, U+9663, U+96bb, U+9aa8, U+4e7e, U+5047, U+505c, U+5065, U+552e, U+5531, U+554a, U+57f7, U+5802, U+5805, U+5920, U+5a46, U+5a5a, U+5a66, U+5bc6, U+5c07, U+5eb7, U+5f69, U+6389, U+63a1-63a2, U+63a7, U+6551, U+6557, U+65cf, U+665a, U+6bba, U+6de1, U+7387, U+7562, U+7565, U+7570, U+76db, U+7968, U+79fb, U+7adf, U+7d44, U+7fd2, U+8239, U+88ab, U+898f, U+8a2a, U+8ca8, U+8cac, U+900f-9010, U+91ce, U+9670, U+9673, U+96ea, U+9802, U+9b5a, U+9ce5, U+9ebb, U+52dd-52de, U+535a, U+5584, U+570d, U+5bcc, U+5bd2, U+5c0b, U+5fa9, U+60b2, U+60e1, U+638c, U+63db, U+63ee, U+6563, U+666e, U+667a, U+66fe, U+671d, U+68d2, U+690d, U+6b3e, U+6e1b, U+6e2c, U+6e2f, U+6e38, U+6e56, U+724c, U+75db, U+767b, U+77ed, U+7a05, U+7a97, U+7b46, U+7b54, U+7b56, U+7d55, U+83dc, U+8857, U+8a34, U+8a55, U+8cb4, U+8cb7, U+8d85, U+8d8a, U+8dd1, U+9109, U+9686, U+968a, U+968e, U+96c4, U+96f2, U+9806, U+9808, U+98ef, U+9ed1, U+4e82, U+50b7, U+50c5, U+52e2, U+55ce, U+5713, U+584a, U+5fae, U+6416, U+6975, U+6b72, U+6e90, U+6eab, U+7159, U+775b, U+7f6e, U+7fa4, U+8173, U+842c, U+8449, U+865f, U+88dc-88dd, U+8a66, U+8a69, U+8ddf, U+8df3, U+8f03, U+8fb2, U+9047, U+9810, U+9f13, U+5283, U+5716, U+5922, U+5bdf, U+5e55, U+6162, U+69cb, U+6b4c, U+6f38, U+723e, U+7591, U+76e1, U+7761, U+798f, U+7a31, U+7aef, U+7da0, U+7dad, U+7dca, U+805e, U+821e, U+88fd, U+8d95, U+9280, U+969c, U+9700, U+9818, U+5287, U+5634, U+589e, U+5c64, U+5ee0, U+5f48, U+5fb5, U+6176, U+6a13, U+6a21, U+6b50, U+6f6e, U+719f, U+734e, U+76e4, U+78ba, U+7bc4, U+7de8, U+7df4, U+885b, U+8ab0, U+8ab2, U+8ac7, U+8acb, U+8cde, U+8ce3, U+8da3, U+8f2a, U+9069, U+92b7, U+64c1, U+64c7, U+64cd, U+64d4, U+64da, U+6a4b, U+6b77, U+6fc0, U+71c8, U+7368, U+7a4d, U+907a, U+9304, U+9322, U+932f, U+96a8, U+96aa, U+975c, U+9910, U+9928, U+9ed8, U+9f8d, U+512a, U+58d3, U+5e6b, U+6232, U+64ca, U+64ce, U+6aa2, U+7372, U+7642, U+81c9, U+81e8, U+8b1b, U+8b1d, U+8cfc, U+907f, U+6b78, U+79ae, U+7c21, U+7e54, U+7ffb, U+8077, U+820a, U+85cf, U+87f2, U+8c50, U+96d9, U+96dc, U+96de, U+984d, U+9b06, U+58de, U+61f7, U+7919, U+7f85, U+85e5, U+8b49, U+93e1, U+9858, U+9e97, U+56b4, U+5bf6, U+7af6, U+7e7c, U+8b66, U+9418, U+5c6c, U+7e8c, U+862d, U+8b77, U+9435, U+9732, U+9867, U+986f, U+9a57, U+9a5a, U+8b93, U+9748; }
+
+@font-face { font-family:"標楷體2"; src:url("ttf/often2.woff"); unicode-range: U+4e01, U+5200, U+4e08, U+4ea1, U+51e1, U+5e72, U+4e39, U+4e92, U+4ec1, U+5b54, U+5c3a, U+5e7b, U+4e4f, U+4ed4, U+4ed8-4ed9, U+5144, U+51ac, U+520a, U+5360, U+592e, U+5de7, U+65e6, U+672b, U+72af, U+74dc, U+74e6, U+7518, U+7532-7533, U+4ea6, U+4ef0, U+4efd, U+4f0a, U+5409, U+5410, U+5b87, U+5c16, U+6258, U+6735, U+6c57, U+6c59, U+6c60, U+7070, U+7c73, U+7f8a, U+808c, U+4f30, U+4f34, U+4f38, U+4f5b, U+5175, U+5224, U+52aa, U+542b, U+5433, U+5439, U+5440, U+5448, U+573e, U+5747, U+58ef, U+5999, U+5c3e, U+5de1, U+5e8a, U+5e8f, U+5f04, U+5f77, U+5fcd, U+626d, U+6279, U+6293, U+6298, U+653b, U+675c, U+675f, U+72c2, U+79c0, U+809d, U+8c37, U+8c46, U+8c9d, U+8f9b, U+4e73, U+4f73, U+5237, U+523a, U+53d4, U+56fa, U+5766, U+5783, U+5954, U+59bb, U+59d1, U+5b64, U+5b97, U+5b99, U+5c1a, U+5ca9, U+5ef6, U+5f7c, U+5f7f, U+5fe0, U+62b5, U+62bd, U+62d4, U+660f, U+677e, U+6790, U+679d, U+6b23, U+6b66, U+6cbf, U+6ce1, U+6ce5, U+708e, U+722c, U+7248, U+72d7, U+80a5, U+864e, U+8fd4, U+963b, U+4fc3, U+4fd7, U+5192, U+51a0, U+52c7, U+539a, U+54c0, U+54c8, U+594f, U+5c01, U+5e7d, U+6028, U+62dc, U+62ec, U+6309, U+6311, U+65e2, U+6620, U+6628, U+67b6, U+67d0, U+67d4, U+6cc9, U+6d1b, U+6d25, U+73bb, U+73cd, U+8010, U+8036, U+80ce, U+80de, U+80e1, U+82d7, U+8302, U+8a02, U+8feb, U+8ff0, U+90ce, U+4e58, U+54ea, U+54ed, U+54f2, U+5957, U+5b6b, U+5cf0, U+5cfd, U+5e2d, U+5eab, U+5f31, U+5f90-5f92, U+6069, U+6084-6085, U+609f, U+632f, U+6717, U+6838, U+6843, U+684c, U+6b8a, U+6cf0, U+6d6e, U+70cf, U+73e0, U+75be, U+7720, U+7955-7956, U+795d, U+7c89, U+7d14, U+7d22, U+80f8, U+8108, U+822a, U+8352, U+8ff4, U+9003, U+91dd, U+9583, U+9b25, U+9b3c, U+5049, U+504f, U+5076-5077, U+526a, U+526f, U+552f, U+555f, U+5566, U+5708, U+57df, U+57f9, U+5806, U+5bc2, U+5bc4, U+60a0, U+60a3, U+60a8, U+60dc, U+6388, U+639b, U+654f, U+659c, U+65cb, U+6668, U+6881, U+6885, U+68c4, U+6beb, U+6db2, U+6dbc, U+6dda, U+6de8, U+6df7, U+727d, U+74f6, U+7965, U+7ae0, U+7b26, U+7c97, U+7d2f, U+7d39, U+812b, U+8377, U+838a, U+83ab, U+86cb, U+888b, U+8ca7, U+8caa, U+8edf, U+9014, U+9589, U+9676-9677, U+9ea5, U+5091, U+51f1, U+558a, U+559d, U+55aa, U+5a92, U+5c0a, U+5e45, U+60e0, U+60f1, U+63cf, U+63d2, U+63da, U+63e1, U+63ed, U+6562, U+6676, U+6691, U+66ff, U+68ee, U+6905, U+6b98, U+6e21, U+6ecb, U+7126, U+7434, U+756a, U+786c, U+7a00, U+7d72, U+8212, U+840a, U+865b, U+88c1-88c2, U+8a3a, U+8a5e, U+8cbc, U+8cbf, U+8ddd, U+9031, U+90f5, U+9592, U+96c5, U+9805, U+98f2, U+50b5, U+50be, U+532f, U+5851, U+5854, U+585e, U+5967, U+5e79, U+6108, U+6148, U+640d, U+642c-642d, U+6436, U+656c, U+6696-6697, U+694a, U+695a, U+6982, U+6e9d, U+6eaa, U+6ec5, U+6ed1, U+7169, U+723a, U+745e, U+7981, U+7a1a, U+7f6a, U+7f72, U+8056, U+8463, U+8aa0, U+8de1, U+8f09, U+904d, U+9694, U+96f6-96f7, U+9813, U+98fe, U+5606, U+5875, U+58fd, U+596a, U+5be7, U+5e63, U+6163, U+6478, U+65d7, U+69ae, U+6ef4, U+6efe, U+6f02, U+6f22, U+6f2b, U+6f32, U+76e3, U+7db2, U+7dd2, U+805a, U+8150, U+8499, U+84bc, U+84cb, U+8a8c, U+8aa4, U+8c6a, U+8c8c, U+8cd3, U+8f14, U+9178, U+9f3b, U+9f4a, U+5100, U+5289, U+5674, U+58a8, U+5be9, U+5bec, U+5ee2, U+6167, U+616e, U+6182, U+6469, U+649e, U+64ad, U+6575, U+66b4, U+6f54, U+6f5b, U+6f64, U+7483, U+7a3f, U+7aae, U+7bb1, U+7bc7, U+7cca, U+7de3, U+7de9, U+819a, U+84ee, U+885d, U+8907, U+8a95, U+8c6c, U+8e0f, U+8f1d, U+906d, U+912d, U+9130, U+95b1, U+9707, U+9760, U+978b, U+9918, U+99d5, U+99db, U+9aee, U+9b27, U+9b6f, U+9f52, U+5118, U+58c1, U+596e, U+61b6, U+66c9, U+6a6b, U+6fb3, U+6fc3, U+71d2, U+7bc9, U+7cd6, U+878d, U+8861, U+8afe, U+8b02, U+8c93, U+8cf4, U+8f2f, U+8f38, U+9072, U+9192, U+92fc, U+983b, U+52f5, U+61c2, U+6234, U+64e0, U+6a94, U+7246, U+7e2e, U+7e31, U+7e3e, U+7e41, U+8070, U+81bd, U+8584, U+95c6, U+96b1, U+9bae, U+64f4, U+64fa, U+7e5e, U+85cd, U+8986, U+93ae, U+984f, U+7206, U+7a69, U+7e6a, U+8f4e, U+8fad, U+61f8, U+737b, U+7c4d, U+8607, U+89f8, U+91cb, U+98c4, U+9f61, U+651d, U+89bd, U+9a45, U+9b54, U+5f4e, U+81df, U+6200; }
+
+@font-face { font-family:"標楷體2"; src:url("ttf/often3.woff"); unicode-range: U+4e43, U+5915, U+5bf8, U+5ddd, U+4e88, U+4e95, U+624e, U+6597, U+65a4, U+6b20, U+6c0f, U+518a, U+5306, U+53ec, U+53ee, U+5b55, U+6c41, U+4e1f, U+4f0f, U+5211, U+540a, U+540e, U+5b85, U+5bfa, U+6263, U+6731, U+7fbd, U+81e3, U+820c, U+827e, U+4e32, U+4f48, U+4f59, U+52ab, U+541b, U+541e-541f, U+5435, U+543e, U+5446, U+5740, U+5751, U+593e, U+599e, U+59a8, U+5b5d, U+5b8f, U+5c3f, U+5ef7, U+6212, U+626e, U+6276, U+6291, U+6c6a, U+6c96, U+707d, U+7262, U+7f55, U+809a, U+8d64, U+8fc5, U+90a6, U+4f69, U+4f75, U+4f8d, U+5154, U+5238, U+5351, U+5377, U+5496, U+5948-5949, U+59ae, U+59c6, U+59ca, U+59d3, U+5b5f, U+5c48, U+62ac, U+62d2-62d3, U+62d6, U+65fa, U+6602, U+660c, U+676f, U+6c1b, U+6cf3, U+7092, U+7267, U+73ab, U+80a2, U+80a9, U+80ba, U+81e5, U+820d, U+82b3, U+82bd, U+91c7, U+4fb5, U+4fc4, U+52c1, U+52c3, U+52c9, U+5782, U+5951, U+59e8, U+59fb, U+59ff, U+5a03, U+5c4f, U+5df7, U+6012, U+6046, U+6062, U+6068, U+62fc, U+62fe, U+6316, U+67af, U+67cf, U+67ef, U+67f1, U+67f3, U+6d2a, U+70ae, U+70b8, U+75ab, U+7686, U+76c6, U+76c8, U+7709, U+80c3, U+80d6, U+8c9e, U+8ecc, U+8fea, U+90ca, U+964c, U+4fef, U+4ff1, U+500d, U+501f, U+517c, U+51c6, U+51cd, U+5510, U+57c3, U+57cb, U+5bb4, U+633a, U+6349, U+6350, U+6355, U+6652, U+67f4, U+6842, U+6c27, U+6d74, U+6d89, U+75b2, U+75bc, U+79d8, U+79df, U+79e6, U+7d0b, U+7d10, U+7fc1, U+7fc5, U+8015, U+8017, U+8102, U+832b, U+8870, U+8c48, U+8ca2, U+91d8, U+5074, U+52d2, U+5561, U+5bbf, U+5d07, U+5e33, U+6089, U+6368, U+6377, U+6383, U+6398, U+63a9-63aa, U+6558, U+66fc, U+687f, U+68af, U+6b32, U+6daf, U+6dcb, U+6dd1, U+6dfa-6dfb, U+731b-731c, U+751c, U+758f, U+75d5, U+76d2, U+796d, U+7c92, U+804a, U+8396, U+888d, U+8896, U+8ca9, U+8cab, U+901d, U+9022, U+91e3, U+966a, U+9675, U+96c0, U+9e7f, U+5098, U+5269, U+5272, U+55bb, U+5821, U+582a, U+5bd3, U+5e3d, U+5ec2, U+5eca, U+5faa, U+60b6, U+60d1, U+6109, U+63f4, U+6566, U+6591, U+6674, U+68c9, U+68cb, U+68f5, U+6b96, U+6bbc, U+6e34, U+6e3e, U+6e67, U+6e6f, U+7334, U+7336, U+7433, U+76dc, U+7a0d, U+7b4b, U+7b52, U+7d2b, U+7d61, U+8085, U+8139, U+8154, U+83ca, U+83cc, U+83f2, U+83f8, U+8404, U+86d9, U+8cb8, U+8cc0, U+8dcc, U+50ac, U+50b2, U+52e4, U+5857, U+5ec9, U+6101, U+614c, U+614e, U+641c, U+6bbf-6bc0, U+6e9c, U+6ebc, U+715e, U+7345, U+76df, U+7763, U+77ee, U+788e, U+7891, U+7897, U+78b0, U+7f69, U+8170, U+8178-8179, U+8247, U+8461, U+8482, U+8702, U+88d5, U+8a62, U+8a73, U+8de8, U+8eb2, U+903c, U+9055, U+916c, U+9234, U+9812, U+98fd, U+99b3, U+9f20, U+53ad, U+5609, U+5617, U+5893, U+5925, U+5bde, U+5fb9, U+6158, U+622a, U+6458, U+6572, U+66a2, U+699c, U+69cd, U+6f01, U+6f06, U+6f0f, U+6f20, U+7344, U+760b, U+78a7, U+798d, U+7aa9, U+7d9c, U+7dbf, U+7f70, U+7fe0, U+817f-8180, U+84b8, U+84c4, U+871c, U+8a98, U+8d6b, U+8d99, U+9059, U+905e, U+9285, U+95a3, U+9817, U+9905, U+9b42, U+9cf3-9cf4, U+53b2, U+5eda, U+5edf, U+6155, U+6170, U+617e, U+6190, U+61a4, U+6490, U+6492, U+64ab, U+64b2, U+66ab, U+6bc5, U+6f51, U+7626, U+78bc, U+7a3b, U+7a40, U+7bad, U+7dfb, U+7f75, U+7f77, U+819c, U+81a0, U+8774, U+8776, U+8af8, U+8ce2, U+8eba, U+8f1b, U+8f29, U+9077, U+9127, U+9189, U+92d2, U+92ea, U+9913, U+99d0, U+9ece, U+51dd, U+5291, U+566a, U+58c7, U+6191, U+61b2, U+64bf, U+66c6, U+6a38, U+6fa4, U+71c3, U+71d5, U+78da, U+78e8, U+7cd5, U+81a8, U+8932, U+8b00, U+8fa8, U+9326, U+9336, U+96d5, U+970d, U+9838, U+9d28, U+5132, U+5687, U+5b30, U+5dba, U+64e6, U+64ec, U+764c, U+76ea, U+77ad, U+7e2b, U+81c2, U+8271, U+85aa, U+8667, U+8cfa, U+8da8, U+8e48, U+9080-9081, U+934b, U+9375, U+95ca, U+97d3, U+9846, U+9d3b, U+9ecf, U+53e2, U+64fe, U+7375, U+790e, U+85a9, U+85c9, U+8e5f, U+8e64, U+9396, U+9a0e, U+9d5d, U+5bf5, U+6500, U+7378, U+7c3d, U+7e69, U+81d8, U+87f9, U+87fb, U+8d08, U+8d0a, U+9727, U+97fb, U+52f8, U+7210, U+7926, U+7c43, U+7c4c, U+8000, U+8b6f, U+8d0f, U+99a8, U+9a30, U+9eb5, U+61fc, U+6afb, U+704c, U+721b, U+7e8f, U+8b7d, U+8e8d, U+8faf, U+9738, U+56ca, U+6524, U+7051, U+758a, U+7c60, U+8972, U+9451, U+9df9, U+8b9a; }
+
+@font-face { font-family:"標楷體2"; src:url("ttf/often4.woff"); unicode-range: U+535c, U+4e38, U+53c9, U+5dfe, U+4ec7, U+5141, U+52fe, U+5339, U+66f0, U+72ac, U+4e18, U+4ed5, U+4ed7, U+51f8, U+53e8, U+5974, U+5f17, U+65a5, U+7384, U+77db, U+7a74, U+4ef2, U+4eff, U+4f0d, U+4f10, U+4f19, U+5146, U+52a3, U+5320, U+5937, U+673d, U+6c5d, U+6c61, U+821f, U+4f54, U+5375, U+5431, U+543b, U+5442, U+574a, U+5993, U+599d, U+59a5, U+5c41, U+5f79, U+5fcc, U+626f, U+6284, U+6296, U+6749, U+7261, U+77e3, U+8292, U+8fb0, U+90aa, U+4e56, U+5353, U+5475, U+59b3, U+5c46, U+5cb3, U+5e15, U+5f26, U+5f81, U+6016, U+62ab, U+62b9, U+62bc, U+62c6, U+62cb, U+62da, U+6606-6607, U+6614, U+676d, U+6795, U+679a, U+6b67, U+6cb8, U+6cbe, U+6cca, U+6cdb, U+6ce3, U+72d0, U+76f2, U+7cfe, U+80aa, U+8299, U+829d, U+82ac-82ad, U+4ead, U+4faf, U+4fb6, U+4fca, U+4fe0, U+524a, U+524e, U+54aa, U+54ac, U+54b1, U+54b3, U+5c4d, U+5e25, U+604d, U+6070, U+6241, U+62f1, U+662d, U+6d29, U+7272, U+72e0, U+73b2, U+73ca, U+754f, U+76fc, U+76fe, U+7802, U+7948, U+7f38, U+8303, U+8305, U+8650, U+8679, U+884d, U+886b, U+8d74, U+9801, U+5006, U+5009, U+5018, U+501a, U+5021, U+5026, U+51cc, U+525d, U+532a, U+54e6, U+54e9, U+5509, U+5a1b-5a1c, U+5bb0, U+5bb5, U+6065, U+606d, U+6094, U+6247, U+62f3, U+6328, U+632b, U+633d, U+634f, U+6643, U+6649, U+6817, U+682a, U+6851, U+68b3, U+6bb7, U+6d69, U+70e4, U+7239, U+72f9, U+72fc, U+75b9, U+7a84, U+7d17, U+7d21, U+8105-8106, U+810a, U+81ed, U+8332, U+868a, U+8fb1, U+9006, U+9661, U+507d, U+5319, U+5538, U+555e, U+5835, U+5d16-5d17, U+5d29, U+5de2, U+5eb8, U+60df, U+621a, U+6367, U+6372, U+6380, U+6399, U+65ac, U+66f9, U+6876, U+68a8, U+68ad, U+68b0, U+6db5, U+6dd2, U+6dd8, U+6dea, U+7109, U+723d, U+74f7, U+7b1b, U+7b28, U+7d2e, U+7f9e, U+8116, U+8123, U+8389, U+838e, U+8393, U+86c7, U+8a1d, U+8a23, U+8c5a, U+9017, U+901b, U+90ed, U+9803, U+508d, U+50a2, U+5583, U+5587, U+5589, U+5598, U+559a, U+55a7, U+55ac, U+5824, U+58fa, U+5ec1, U+60f6, U+6168, U+655e, U+6670, U+68da, U+68f2, U+6b3a, U+6b3d, U+6bef, U+6e26, U+6e4a, U+711a, U+716e, U+7280, U+7329, U+7526, U+7d68, U+7fd4, U+813e, U+814e, U+83e9, U+840e, U+8a3b, U+8cb6, U+8d81, U+8ef8, U+8f9c, U+96c1, U+50bb, U+52df, U+5862, U+586b, U+5ac1, U+5acc, U+5ec8, U+60f9, U+611a, U+6127, U+640f, U+641e, U+6688, U+6953, U+695e, U+6b47, U+6ea2, U+6eb6, U+6ed4, U+714c, U+7164, U+745c, U+745f, U+75f4, U+775c, U+7779, U+788c, U+7d81, U+7fa8, U+8058, U+816b, U+817a, U+8205, U+845b, U+846c, U+88d9, U+8a87, U+8cca, U+8dea, U+925b, U+9811, U+98fc, U+9f0e, U+50d1, U+50da, U+50e7, U+561b, U+588a, U+5ae9, U+5be1, U+5f0a, U+5f70, U+6b49, U+718a, U+746a, U+7470, U+7504, U+7627, U+789f, U+78a9, U+78b3, U+78c1, U+7b8f, U+7db1, U+8725, U+8755, U+88f8, U+8a93, U+8aa6, U+8fa3, U+905c, U+9063, U+9177, U+9298, U+96cc, U+98b1, U+9903, U+50f5, U+528d, U+5629, U+563b, U+589c, U+58b3, U+5b0c, U+64a5, U+64b0, U+66ae, U+6f3f, U+6f6d, U+6f70, U+6f84, U+6f8e, U+76ba, U+819d, U+84ec, U+8514, U+8521, U+8523, U+852c-852d, U+8766, U+8abc, U+8ad2, U+8ce0, U+8ce6, U+8ced, U+8e10, U+8e22, U+8e29, U+906e, U+92b3, U+99dd, U+9b44-9b45, U+9d09, U+5112, U+5679, U+58be, U+61be, U+64bc, U+64cb, U+6a58, U+6fa1, U+71d9, U+7aba, U+7be9, U+8559, U+8569, U+856d, U+879e, U+87a2, U+8ae7, U+8af7, U+9075, U+9830, U+99f1, U+9f9c, U+511f, U+5dbc, U+5f4c, U+61c7, U+6fd5, U+6fe4, U+6feb, U+6ff1, U+71e5-71e6, U+71ed, U+77a7, U+77aa, U+77ac, U+79aa, U+7bf7, U+7cde-7cdf, U+7ffc, U+8073, U+857e, U+85a6, U+85af, U+87ba, U+8b0e, U+8b19, U+8b20, U+919c, U+934a, U+937e, U+96b8, U+971c, U+971e, U+9935, U+56ae, U+58d8, U+6ab3, U+6ac3, U+7011, U+7ce7, U+7e61, U+87ec, U+8b39, U+8ec0, U+91ac, U+95d6, U+96db, U+97ad, U+9d51, U+61f2, U+61f6, U+74e3, U+7586, U+79b1, U+7a6b, U+7e6b, U+7e73, U+85e4, U+85e9, U+8b5c, U+8e72, U+985b, U+9a19, U+9b0d, U+9be8, U+56b7, U+56bc, U+8606, U+860b, U+8b6c, U+8fae, U+994b, U+9a37, U+651c, U+6b04, U+72a7, U+881f, U+8f5f, U+95e2, U+9db4, U+7058, U+766e, U+896f, U+986b, U+9a55, U+9ad2, U+9b1a, U+7e96, U+863f, U+9ad3, U+7f50, U+8836, U+91c0, U+9a5f, U+9e7d, U+77da, U+9a62, U+947c; }
+
+@font-face { font-family:"標楷體2"; src:url("ttf/often5.woff"); unicode-range: U+25cb, U+4e2b, U+4e5e, U+4e8e, U+5f13, U+4e11, U+4e91, U+51f6, U+52fb, U+52ff, U+5384, U+5c6f, U+6208, U+6b79, U+6bcb, U+722a, U+4e4d, U+51f9, U+53ed, U+56da, U+6254, U+672d, U+6c40, U+5147, U+5212, U+5308, U+540f, U+5733, U+5983-5984, U+5e06, U+65e8, U+65ec, U+66f3, U+6c50, U+4f36, U+4f3a, U+522a, U+5323, U+543c, U+574e, U+5996, U+5deb, U+6289, U+65f1, U+6746, U+6756, U+675e, U+6c70, U+6c72, U+6c83, U+6c90, U+6c9b, U+7076, U+707c, U+72c4, U+752b, U+7538, U+7682, U+79bf, U+8096, U+8098, U+8fc4, U+4f83, U+4f8f, U+51fd, U+522e, U+5352, U+5378, U+5480, U+5490, U+5492, U+5495, U+5764, U+576a, U+59cd, U+5b9b, U+5ca1, U+6021, U+602f, U+62c2, U+62cc, U+62d8-62d9, U+6770, U+6789, U+6cab, U+6cae, U+6cbc, U+6ccc, U+7099, U+77fd, U+7940, U+79c9, U+80ab, U+82b9, U+90b1, U+9640, U+53db, U+54af, U+54c4, U+54c7, U+54ce, U+59dc, U+5cc7, U+5f8a, U+62ed, U+62ef, U+6627, U+67b8, U+67f5, U+6b6a, U+6d36, U+6d3d, U+70ad, U+780c-780d, U+7947, U+79d2, U+7aff, U+800d, U+82d4, U+82db, U+8304, U+8fe6, U+964b, U+5016, U+5029, U+51a4-51a5, U+5254, U+5256, U+537f, U+54e8, U+54ee, U+54fa, U+54fc, U+57d4, U+5c51, U+5ced, U+5cfb, U+608d, U+632a, U+6813, U+6829, U+683d, U+6846, U+6850, U+6d66, U+6d78, U+6d95, U+70d8, U+7409, U+7554, U+755c, U+7728, U+77e9, U+79e7, U+79e9, U+8018, U+803d, U+80f0, U+80f3, U+8335, U+834a, U+8654, U+8877, U+8881, U+8c79, U+8eac, U+8ed2, U+90dd, U+98e2, U+5075, U+515c, U+5195, U+51f0, U+5544, U+5564, U+5962, U+5a36, U+5a49, U+5c60, U+5d0e, U+5d19, U+5f98, U+5fa1, U+60b5, U+60d5, U+638f, U+63a0, U+665d, U+6897, U+68a2, U+68a7, U+68b5, U+6dc7, U+6deb, U+6dee, U+6df5, U+6df9, U+70fd, U+7736-7737, U+773a, U+7d33, U+8046, U+86c0, U+8993, U+8dbe, U+900d, U+5085, U+557c, U+5580, U+55b2-55b3, U+5960, U+5a9a, U+5d4c, U+5f6d, U+60f0, U+63c0, U+63c9, U+68cd, U+68d5, U+68d8, U+68df, U+68e7, U+690e, U+6e3a, U+6e89, U+7130, U+7426, U+7a98, U+7b4d, U+7d6e, U+8155, U+821c, U+83c1, U+840c-840d, U+86db, U+88b1, U+8a60, U+9038, U+9214-9215, U+96c7, U+97cc, U+50ad, U+55c5, U+55d3, U+55dc, U+55ef, U+584c, U+5858, U+5ab3, U+5ac2, U+6417, U+6687, U+6930, U+6994, U+6eaf, U+6eba, U+6ec4, U+7149, U+714e, U+7165, U+7455, U+745a, U+7578, U+76de, U+79bd, U+7a1c, U+7b77, U+8086, U+8475, U+86fb, U+8700, U+88d4, U+8a6d-8a6e, U+8a79, U+8cc4, U+8cc8, U+9245, U+9264, U+9695, U+96cd, U+980c, U+50d5, U+51f3, U+55fd, U+5614, U+5616, U+5885, U+5b75, U+5be2, U+5be5, U+5c62, U+5d84, U+5ed3, U+5ed6, U+6454, U+645f, U+6467, U+647a, U+64a4, U+6995, U+69b4, U+69d0, U+6eef, U+6ef2, U+6f29, U+6f88, U+7184, U+7199, U+7463, U+760d, U+7784, U+7aed, U+7cb9, U+7da2, U+7db4, U+818f, U+8490, U+849c, U+84c9, U+8712, U+8718, U+873f, U+88f3, U+88f9, U+929c, U+9699, U+99c1, U+9b41, U+5104, U+5109, U+562e-562f, U+5632, U+563f, U+58ae, U+5afb, U+5c65, U+5e5f, U+5e62, U+6479, U+6488, U+6495, U+6577, U+69fd, U+6a01, U+6a1e, U+6b4e, U+6f86, U+71ac, U+7621, U+7624, U+7787, U+778e, U+7a3d, U+7aaf, U+7ddd-7dde, U+7de0, U+8513, U+851a, U+8525, U+853d, U+8778, U+8782, U+8910, U+8c4e, U+8cdc, U+8ce4, U+8d9f, U+9187, U+918b, U+92c1, U+6a61, U+6fc1, U+76e7, U+79a6, U+7a46, U+7a4e, U+7be4, U+7f79, U+7ff0, U+81a9, U+8259, U+8543, U+8549, U+8783, U+8aee, U+8af1, U+8c6b, U+8e44, U+8f3b, U+907c, U+92f8, U+932b, U+9839, U+9921, U+99ed, U+9b91, U+5680, U+5fbd, U+64f1, U+6583, U+6f80, U+6fdb, U+77ef, U+78ef, U+79a7, U+7c07, U+7cd9, U+7e43, U+8591, U+859b, U+87cb, U+87d1, U+8b0a, U+8f3f, U+935b, U+9d3f, U+9edb, U+9f4b, U+5b38, U+6726, U+6aaf, U+6ffe, U+7006, U+7009, U+74a7, U+7652, U+77bb, U+7ac4-7ac5, U+7ff9, U+8b2c, U+8e66, U+91d0, U+9b4f, U+9bc9, U+56a5, U+56a8, U+5eec, U+650f, U+66e0, U+6ae5, U+7015, U+701f, U+74ca, U+7c37, U+7c3e-7c3f, U+8805, U+8956, U+895f, U+9d61, U+9d6c, U+9f90, U+58e4, U+6514, U+6727, U+703e, U+7662, U+7e7d, U+8266, U+85fb, U+860a, U+8e81, U+93fd, U+9952, U+9e79, U+56c2, U+5dcd, U+7e8d, U+8822, U+896a, U+98c6, U+9eef, U+807e, U+652a, U+7aca, U+7c64, U+908f, U+56d1, U+652c, U+9dfa, U+883b, U+9470, U+9472, U+7e9c, U+947f, U+9e1a; }
+
+@font-face { font-family:"標楷體2"; src:url("ttf/often6.woff"); unicode-range: U+4e59, U+51e0, U+5140, U+5203, U+4e10, U+4ea2, U+516e, U+592d, U+5f14, U+4e19, U+53e9, U+53f0, U+5f18, U+6252, U+6c3e, U+7529, U+76bf, U+79be, U+5412, U+56dd, U+5978, U+5f1b, U+625b, U+65ed, U+725f, U+81fc, U+4ea8, U+4f47, U+4f50-4f51, U+514c, U+51b6, U+5420, U+5429, U+5436, U+5992, U+5b5c, U+5c2c, U+5c8c, U+5e87, U+5ff1, U+627c, U+6292, U+674f, U+6c81, U+6c88, U+6c8c, U+753a, U+76ef, U+828b, U+8fc2, U+962a, U+962e, U+9631, U+5366, U+5471, U+547b, U+5486, U+548e, U+549a, U+59be, U+5e16, U+5f27, U+6014, U+62c7, U+62d0, U+65a7, U+6cc4, U+708a, U+7095, U+759a, U+82a5, U+82b8, U+8ecb, U+90b5, U+90b8, U+4fae, U+4fcf-4fd1, U+54b8, U+54bd, U+54c9, U+57a2-57a3, U+5955, U+59da, U+5c4e, U+5cd9, U+5f65, U+6043, U+62f7, U+67c4, U+67ff, U+6b83, U+6b86, U+70ab, U+75a4, U+76c3, U+7fbf, U+80da, U+82d1, U+82df, U+8301, U+8db4, U+8fe2, U+8fe5, U+8fed, U+90c1, U+97cb, U+97ed, U+502a, U+51cb, U+539d, U+5514, U+5527, U+5703, U+57d5, U+59ec, U+5a1f, U+5a25, U+5ce8, U+6055, U+6063, U+609a, U+633e, U+664c, U+664f, U+6b89, U+6d59, U+72f8, U+755d, U+76ce, U+7729, U+7832, U+7950, U+795f-7960, U+79e4, U+7a88, U+7c91, U+7d0a, U+803f, U+80f1, U+8328, U+8338, U+8350, U+8693, U+86a4, U+8ffa, U+90e1, U+914c, U+504e, U+52d8, U+533f, U+555c, U+57e0, U+580a, U+5a6a, U+5bc7, U+5c5c, U+5d11, U+5d1b, U+5eb6, U+5f57, U+5f6c, U+5f99, U+60b8, U+60bc-60bd, U+60cb, U+60d8, U+60da, U+60e6, U+63ac, U+655d, U+6664, U+6666, U+6c2b, U+6dd9, U+70ef, U+70f7, U+70f9, U+7405, U+7566, U+786b, U+7a92, U+7a95, U+7b20, U+7c98, U+7d46, U+7f3d, U+7fcc, U+83bd, U+86af, U+8893, U+8d66, U+9015, U+901e, U+5080, U+52db, U+553e, U+5582, U+5594, U+582f, U+5a7f, U+5d50, U+5fa8, U+6115, U+63c6, U+63e3, U+6452, U+667e, U+68d7, U+68fa, U+6912, U+6e1d, U+6e20, U+6e58, U+6e5b, U+7422, U+742a, U+7435, U+75e2, U+785d, U+7b50, U+7c9f, U+7ca5, U+7d5e, U+814b, U+83c7, U+83f1, U+8403, U+8caf, U+8dcb, U+8efb, U+902e, U+9163, U+9165, U+920d, U+9685, U+968b, U+99ad-99ae, U+9ecd, U+55da, U+55e4, U+5ac9, U+5f59, U+5fac, U+6134, U+6144, U+6413, U+659f, U+6689, U+6954, U+6963, U+6977, U+6bfd, U+7166, U+733f, U+745b, U+746f, U+75fa, U+775e, U+7766, U+776a-776b, U+797f, U+7a9f, U+7cb5, U+7d79, U+8165, U+8466, U+846b, U+86fe, U+870d, U+8713, U+903e, U+9041-9042, U+904f-9050, U+916a, U+91c9, U+9756, U+9774, U+99b4, U+50f1, U+5162, U+5608, U+560d-560e, U+561f, U+5ae6, U+5be8, U+5d87, U+615a, U+6177, U+6487, U+69bb, U+69cc, U+6f13, U+6f2c, U+6f3e, U+717d, U+7194, U+7464, U+7b8b, U+7b95, U+7cbd, U+7dbb, U+7dbd, U+7fe1, U+8087, U+818a, U+84b2, U+84c6, U+873b, U+8902, U+8aa1, U+8aa8, U+8f12, U+9119, U+9293, U+95a9, U+9ae6, U+50fb, U+51dc, U+5288, U+5636, U+589f, U+58a9, U+5b09, U+5bee, U+5edd, U+61a7, U+61ab-61ac, U+646f, U+6493, U+64a2, U+64a9, U+64ae, U+6a1f, U+6f58, U+6f7a, U+6f97, U+7469, U+778c, U+78c5, U+7dec, U+7fe9, U+819b, U+8517, U+8912, U+8e1e, U+8f1f, U+9068, U+92b2, U+92e4, U+9709, U+978d, U+978f, U+9821, U+5180, U+5662, U+5669, U+61a8-61a9, U+61c8, U+61ca, U+64c5, U+6a62, U+6fb1, U+71be, U+74e2, U+779e, U+77a5, U+7a4c, U+7e10, U+7e1b, U+8258, U+856a, U+892a, U+8ae6, U+8e31, U+8e34-8e35, U+96a7, U+9713, U+9716, U+991a, U+9ab8, U+9abc, U+9afb, U+5121, U+568f-5690, U+5b24, U+5c37, U+5dbd, U+6582, U+66d9, U+6c08, U+7235, U+77b0, U+78f7, U+7901, U+7a57, U+7c0d, U+7e37, U+81bf-81c0, U+8587, U+87af, U+87c0, U+8944, U+8b10, U+8c41, U+8f3e, U+8f44, U+907d, U+919e, U+95cc, U+97a0, U+9a01, U+9edd, U+6233, U+64f2, U+6abb, U+6ffa, U+77bc, U+7a62, U+7c27, U+81cd, U+85b0, U+8e63, U+8f4d, U+95d0, U+95d4, U+58df, U+66dd, U+701a, U+720d, U+7587, U+7c38, U+7e79, U+7fb9, U+87fe, U+8b4f, U+8b5a, U+93c8, U+93d7, U+9761, U+9945, U+9d72, U+9e93, U+66e6, U+7030, U+74cf, U+7665, U+792b, U+85f9-85fa, U+95e1, U+9951, U+61fe, U+7c50, U+8b74, U+91ba, U+9432, U+943a, U+9739, U+9957, U+9a40, U+9daf, U+9f66, U+513c, U+5dd2, U+5dd4, U+7c5f, U+8d16, U+9444, U+9dd7, U+9c57, U+9e9f, U+9ef4, U+58e9, U+7671, U+77d7, U+9742, U+9b22, U+9e7c, U+6b16, U+7c6c, U+7c6e; }
+
+@font-face { font-family:"標楷體2"; src:url("ttf/often7.woff"); unicode-range: U+4e48, U+5197, U+58ec, U+5eff, U+5189, U+5349, U+536f, U+53f1, U+77e2, U+4e52-4e53, U+4e99, U+4ea5, U+4f09, U+5401, U+572d, U+5938, U+5c79, U+5fd6, U+620d, U+808b, U+9621, U+4f3d, U+4f43, U+4f63, U+541d, U+542d, U+544e, U+56ea, U+574d, U+5c94, U+5fe1, U+6273, U+6538, U+6c74, U+6c76, U+809b, U+828d, U+9091, U+4f6c, U+4f88, U+51bd, U+5241, U+5944, U+59d2, U+5b62, U+5b95, U+5cb1, U+5e1a, U+5e9a, U+5fff, U+6215, U+623e, U+62a8, U+62bf, U+62c4, U+62c8, U+62ce, U+6775, U+6c13, U+6cd3, U+6cef, U+72d2, U+7599, U+759d, U+7a79, U+7f54, U+80b4, U+961c, U+4fb7, U+4fd8, U+4fda, U+4fde, U+5243, U+524b-524c, U+54a6-54a7, U+54ab, U+54bb, U+54de, U+57ae, U+594e, U+59e5, U+59ea, U+5ba6, U+5f2d, U+5f89, U+6020, U+6064, U+606c, U+62ee, U+62f4, U+67b4, U+67b7, U+67d1, U+67da, U+67e2, U+70ac, U+70af, U+70b3, U+72e1, U+7708, U+77dc, U+7949, U+79b9, U+7c7d, U+7d02, U+7d07, U+82d3, U+82de, U+8309, U+8d73, U+8fe4, U+4ffa, U+5023, U+53df, U+57c2, U+595a, U+5a11, U+5a13, U+5c50, U+6059, U+6096, U+6346, U+6714, U+6845, U+6853-6854, U+6d82, U+6d85, U+6d93-6d94, U+70d9, U+72fd, U+7838, U+795b, U+7b06, U+7d13, U+7d1c, U+7f94, U+8006, U+80ed, U+80fa, U+8200, U+82bb, U+8331, U+8354, U+868c, U+86aa, U+8882, U+8a15, U+8ff8, U+91d7, U+91dc, U+965d, U+96bc, U+504c, U+5055, U+533e, U+552c, U+5543, U+5555, U+5563, U+556a, U+5a3c, U+5b70, U+5c09, U+5d14, U+5e37, U+5eb5, U+5f6a, U+5f9c, U+607f, U+60b4, U+60bb, U+621b, U+6369, U+6371, U+637a, U+659b, U+689f, U+6d8e, U+6db8, U+6dc5-6dc6, U+6dcc, U+6de4, U+6df3, U+710a, U+7281, U+731d, U+75b5, U+75ca, U+768e, U+7738, U+7b19, U+7d43, U+7f9a, U+812f, U+8235-8236, U+823a, U+889e, U+8a1f, U+9157, U+91e6, U+557b, U+557e, U+558b, U+559f, U+55b5, U+5a77, U+5bd0, U+60f4, U+60fa, U+611c, U+6123, U+6249, U+63cd, U+63d6, U+63ea, U+6590, U+68e0, U+690f, U+6c2f, U+6e23, U+6e2d, U+6e32, U+6e43-6e44, U+6e4d, U+711c, U+7284, U+7436, U+75d8-75d9, U+75e0, U+7693, U+774f, U+786f, U+7d62, U+8052, U+8151, U+8153, U+8174, U+83df-83e0, U+86d4, U+86df, U+86e4, U+8a50, U+8a5b, U+8c82, U+8dc6, U+8dda, U+921e, U+9223, U+9591, U+9672, U+98ea, U+55c6, U+55e1, U+55e6, U+5ab2, U+6425, U+6427, U+693f, U+6960, U+6986, U+75f2, U+7a20, U+7cb1, U+7d91, U+865c, U+865e, U+8859, U+88ca, U+8a6b, U+8cc2-8cc3, U+8dfa, U+8efe, U+8f9f, U+9112, U+9257, U+9598, U+96c9, U+96cb, U+9776, U+50e5, U+5280, U+5331, U+5ad6, U+615f, U+644b, U+647b, U+69a8, U+69d3, U+6ecc, U+6eec, U+6ef7-6ef8, U+6f09, U+6f23, U+6f2a, U+6f31, U+7613, U+777f, U+7aaa, U+7b75, U+7dba, U+7dcb, U+8214, U+824b, U+8737, U+88f4, U+8e09, U+9175, U+927b, U+9296, U+92ac, U+95a4-95a5, U+95a8, U+97f6, U+990c, U+9aaf, U+5630, U+5639, U+564e, U+5653, U+5657, U+5af5, U+616b, U+618e, U+6194, U+622e, U+64a3, U+69f3, U+6bc6, U+6f41, U+6f62, U+6f66, U+7480, U+761f-7620, U+78ca-78cb, U+7a3c, U+7dd8, U+7def, U+7df2, U+874c, U+8759, U+8760, U+8768, U+8ac4, U+8d6d, U+9183, U+9704, U+98b3, U+9912, U+566c, U+5678, U+5bf0, U+618a, U+64c2, U+66c7, U+6a3a, U+6a44, U+6a59, U+6fc2, U+71c4, U+71c9, U+76e5, U+7cd7, U+7e08, U+854a, U+8568, U+8adc, U+8aeb, U+8af3, U+8afa, U+8b01, U+9310, U+9321, U+932e, U+95b9, U+970e-970f, U+9824, U+9d1b, U+9d23, U+9d26, U+5685, U+58d1, U+5b2a, U+5b7a, U+61e6, U+64d8, U+64f0, U+6a80, U+6a90, U+6a9c, U+6fd8, U+6fe1, U+6fef, U+71e0, U+74a8, U+77b3, U+78fa, U+7e39, U+7e46, U+7ff3, U+81ba, U+8936, U+893b, U+8e4a-8e4c, U+9318, U+934d, U+99ff, U+9bad, U+9f3e, U+5695, U+64f7, U+66dc, U+6aac, U+6ab8, U+700f, U+74bf, U+7515, U+7656, U+87e0, U+8d05, U+9083, U+95d5, U+984e, U+9bca, U+61f5, U+6ada, U+701b, U+701d, U+765f, U+77c7, U+7e6d, U+85d5, U+85f7, U+880d, U+89b7, U+8e7a, U+8e87, U+93d8, U+93df, U+96b4, U+98bc, U+9bdb, U+5b7d, U+6518, U+737c, U+7ac7, U+7cef, U+7f4c, U+8815, U+994c, U+9a2b, U+9c0d, U+5137, U+56c1, U+8d13, U+8e8a, U+9433, U+9438, U+9c2d, U+56c9, U+61ff, U+9452, U+973e, U+9c32, U+9dd3, U+56cc, U+5dd6, U+6523, U+652b, U+9090, U+9768, U+995c, U+9a5b, U+9de5, U+7f88, U+9b58, U+8ea1, U+9c77; }
+
+
+
+
+
+
+
+
+
+
+
+
+/* 2 plane */
+@font-face { font-family:"標楷體2"; src:url("ttf/u20000.woff"); unicode-range: U+20000-2007f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u20080.woff"); unicode-range: U+20080-200ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u20100.woff"); unicode-range: U+20100-2017f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u20180.woff"); unicode-range: U+20180-201ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u20200.woff"); unicode-range: U+20200-2027f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u20280.woff"); unicode-range: U+20280-202ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u20300.woff"); unicode-range: U+20300-2037f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u20380.woff"); unicode-range: U+20380-203ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u20400.woff"); unicode-range: U+20400-2047f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u20480.woff"); unicode-range: U+20480-204ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u20500.woff"); unicode-range: U+20500-2057f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u20580.woff"); unicode-range: U+20580-205ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u20600.woff"); unicode-range: U+20600-2067f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u20680.woff"); unicode-range: U+20680-206ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u20700.woff"); unicode-range: U+20700-2077f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u20780.woff"); unicode-range: U+20780-207ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u20800.woff"); unicode-range: U+20800-2087f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u20880.woff"); unicode-range: U+20880-208ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u20900.woff"); unicode-range: U+20900-2097f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u20980.woff"); unicode-range: U+20980-209ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u20a00.woff"); unicode-range: U+20a00-20a7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u20a80.woff"); unicode-range: U+20a80-20aff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u20b00.woff"); unicode-range: U+20b00-20b7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u20b80.woff"); unicode-range: U+20b80-20bff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u20c00.woff"); unicode-range: U+20c00-20c7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u20c80.woff"); unicode-range: U+20c80-20cff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u20d00.woff"); unicode-range: U+20d00-20d7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u20d80.woff"); unicode-range: U+20d80-20dff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u20e00.woff"); unicode-range: U+20e00-20e7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u20e80.woff"); unicode-range: U+20e80-20eff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u20f00.woff"); unicode-range: U+20f00-20f7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u20f80.woff"); unicode-range: U+20f80-20fff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u21000.woff"); unicode-range: U+21000-2107f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u21080.woff"); unicode-range: U+21080-210ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u21100.woff"); unicode-range: U+21100-2117f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u21180.woff"); unicode-range: U+21180-211ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u21200.woff"); unicode-range: U+21200-2127f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u21280.woff"); unicode-range: U+21280-212ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u21300.woff"); unicode-range: U+21300-2137f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u21380.woff"); unicode-range: U+21380-213ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u21400.woff"); unicode-range: U+21400-2147f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u21480.woff"); unicode-range: U+21480-214ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u21500.woff"); unicode-range: U+21500-2157f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u21580.woff"); unicode-range: U+21580-215ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u21600.woff"); unicode-range: U+21600-2167f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u21680.woff"); unicode-range: U+21680-216ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u21700.woff"); unicode-range: U+21700-2177f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u21780.woff"); unicode-range: U+21780-217ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u21800.woff"); unicode-range: U+21800-2187f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u21880.woff"); unicode-range: U+21880-218ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u21900.woff"); unicode-range: U+21900-2197f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u21980.woff"); unicode-range: U+21980-219ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u21a00.woff"); unicode-range: U+21a00-21a7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u21a80.woff"); unicode-range: U+21a80-21aff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u21b00.woff"); unicode-range: U+21b00-21b7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u21b80.woff"); unicode-range: U+21b80-21bff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u21c00.woff"); unicode-range: U+21c00-21c7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u21c80.woff"); unicode-range: U+21c80-21cff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u21d00.woff"); unicode-range: U+21d00-21d7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u21d80.woff"); unicode-range: U+21d80-21dff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u21e00.woff"); unicode-range: U+21e00-21e7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u21e80.woff"); unicode-range: U+21e80-21eff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u21f00.woff"); unicode-range: U+21f00-21f7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u21f80.woff"); unicode-range: U+21f80-21fff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u22000.woff"); unicode-range: U+22000-2207f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u22080.woff"); unicode-range: U+22080-220ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u22100.woff"); unicode-range: U+22100-2217f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u22180.woff"); unicode-range: U+22180-221ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u22200.woff"); unicode-range: U+22200-2227f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u22280.woff"); unicode-range: U+22280-222ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u22300.woff"); unicode-range: U+22300-2237f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u22380.woff"); unicode-range: U+22380-223ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u22400.woff"); unicode-range: U+22400-2247f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u22480.woff"); unicode-range: U+22480-224ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u22500.woff"); unicode-range: U+22500-2257f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u22580.woff"); unicode-range: U+22580-225ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u22600.woff"); unicode-range: U+22600-2267f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u22680.woff"); unicode-range: U+22680-226ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u22700.woff"); unicode-range: U+22700-2277f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u22780.woff"); unicode-range: U+22780-227ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u22800.woff"); unicode-range: U+22800-2287f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u22880.woff"); unicode-range: U+22880-228ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u22900.woff"); unicode-range: U+22900-2297f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u22980.woff"); unicode-range: U+22980-229ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u22a00.woff"); unicode-range: U+22a00-22a7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u22a80.woff"); unicode-range: U+22a80-22aff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u22b00.woff"); unicode-range: U+22b00-22b7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u22b80.woff"); unicode-range: U+22b80-22bff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u22c00.woff"); unicode-range: U+22c00-22c7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u22c80.woff"); unicode-range: U+22c80-22cff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u22d00.woff"); unicode-range: U+22d00-22d7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u22d80.woff"); unicode-range: U+22d80-22dff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u22e00.woff"); unicode-range: U+22e00-22e7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u22e80.woff"); unicode-range: U+22e80-22eff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u22f00.woff"); unicode-range: U+22f00-22f7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u22f80.woff"); unicode-range: U+22f80-22fff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u23000.woff"); unicode-range: U+23000-2307f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u23080.woff"); unicode-range: U+23080-230ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u23100.woff"); unicode-range: U+23100-2317f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u23180.woff"); unicode-range: U+23180-231ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u23200.woff"); unicode-range: U+23200-2327f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u23280.woff"); unicode-range: U+23280-232ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u23300.woff"); unicode-range: U+23300-2337f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u23380.woff"); unicode-range: U+23380-233ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u23400.woff"); unicode-range: U+23400-2347f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u23480.woff"); unicode-range: U+23480-234ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u23500.woff"); unicode-range: U+23500-2357f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u23580.woff"); unicode-range: U+23580-235ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u23600.woff"); unicode-range: U+23600-2367f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u23680.woff"); unicode-range: U+23680-236ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u23700.woff"); unicode-range: U+23700-2377f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u23780.woff"); unicode-range: U+23780-237ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u23800.woff"); unicode-range: U+23800-2387f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u23880.woff"); unicode-range: U+23880-238ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u23900.woff"); unicode-range: U+23900-2397f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u23980.woff"); unicode-range: U+23980-239ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u23a00.woff"); unicode-range: U+23a00-23a7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u23a80.woff"); unicode-range: U+23a80-23aff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u23b00.woff"); unicode-range: U+23b00-23b7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u23b80.woff"); unicode-range: U+23b80-23bff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u23c00.woff"); unicode-range: U+23c00-23c7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u23c80.woff"); unicode-range: U+23c80-23cff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u23d00.woff"); unicode-range: U+23d00-23d7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u23d80.woff"); unicode-range: U+23d80-23dff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u23e00.woff"); unicode-range: U+23e00-23e7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u23e80.woff"); unicode-range: U+23e80-23eff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u23f00.woff"); unicode-range: U+23f00-23f7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u23f80.woff"); unicode-range: U+23f80-23fff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u24000.woff"); unicode-range: U+24000-2407f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u24080.woff"); unicode-range: U+24080-240ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u24100.woff"); unicode-range: U+24100-2417f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u24180.woff"); unicode-range: U+24180-241ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u24200.woff"); unicode-range: U+24200-2427f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u24280.woff"); unicode-range: U+24280-242ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u24300.woff"); unicode-range: U+24300-2437f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u24380.woff"); unicode-range: U+24380-243ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u24400.woff"); unicode-range: U+24400-2447f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u24480.woff"); unicode-range: U+24480-244ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u24500.woff"); unicode-range: U+24500-2457f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u24580.woff"); unicode-range: U+24580-245ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u24600.woff"); unicode-range: U+24600-2467f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u24680.woff"); unicode-range: U+24680-246ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u24700.woff"); unicode-range: U+24700-2477f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u24780.woff"); unicode-range: U+24780-247ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u24800.woff"); unicode-range: U+24800-2487f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u24880.woff"); unicode-range: U+24880-248ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u24900.woff"); unicode-range: U+24900-2497f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u24980.woff"); unicode-range: U+24980-249ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u24a00.woff"); unicode-range: U+24a00-24a7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u24a80.woff"); unicode-range: U+24a80-24aff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u24b00.woff"); unicode-range: U+24b00-24b7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u24b80.woff"); unicode-range: U+24b80-24bff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u24c00.woff"); unicode-range: U+24c00-24c7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u24c80.woff"); unicode-range: U+24c80-24cff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u24d00.woff"); unicode-range: U+24d00-24d7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u24d80.woff"); unicode-range: U+24d80-24dff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u24e00.woff"); unicode-range: U+24e00-24e7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u24e80.woff"); unicode-range: U+24e80-24eff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u24f00.woff"); unicode-range: U+24f00-24f7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u24f80.woff"); unicode-range: U+24f80-24fff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u25000.woff"); unicode-range: U+25000-2507f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u25080.woff"); unicode-range: U+25080-250ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u25100.woff"); unicode-range: U+25100-2517f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u25180.woff"); unicode-range: U+25180-251ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u25200.woff"); unicode-range: U+25200-2527f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u25280.woff"); unicode-range: U+25280-252ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u25300.woff"); unicode-range: U+25300-2537f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u25380.woff"); unicode-range: U+25380-253ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u25400.woff"); unicode-range: U+25400-2547f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u25480.woff"); unicode-range: U+25480-254ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u25500.woff"); unicode-range: U+25500-2557f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u25580.woff"); unicode-range: U+25580-255ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u25600.woff"); unicode-range: U+25600-2567f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u25680.woff"); unicode-range: U+25680-256ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u25700.woff"); unicode-range: U+25700-2577f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u25780.woff"); unicode-range: U+25780-257ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u25800.woff"); unicode-range: U+25800-2587f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u25880.woff"); unicode-range: U+25880-258ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u25900.woff"); unicode-range: U+25900-2597f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u25980.woff"); unicode-range: U+25980-259ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u25a00.woff"); unicode-range: U+25a00-25a7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u25a80.woff"); unicode-range: U+25a80-25aff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u25b00.woff"); unicode-range: U+25b00-25b7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u25b80.woff"); unicode-range: U+25b80-25bff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u25c00.woff"); unicode-range: U+25c00-25c7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u25c80.woff"); unicode-range: U+25c80-25cff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u25d00.woff"); unicode-range: U+25d00-25d7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u25d80.woff"); unicode-range: U+25d80-25dff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u25e00.woff"); unicode-range: U+25e00-25e7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u25e80.woff"); unicode-range: U+25e80-25eff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u25f00.woff"); unicode-range: U+25f00-25f7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u25f80.woff"); unicode-range: U+25f80-25fff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u26000.woff"); unicode-range: U+26000-2607f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u26080.woff"); unicode-range: U+26080-260ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u26100.woff"); unicode-range: U+26100-2617f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u26180.woff"); unicode-range: U+26180-261ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u26200.woff"); unicode-range: U+26200-2627f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u26280.woff"); unicode-range: U+26280-262ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u26300.woff"); unicode-range: U+26300-2637f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u26380.woff"); unicode-range: U+26380-263ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u26400.woff"); unicode-range: U+26400-2647f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u26480.woff"); unicode-range: U+26480-264ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u26500.woff"); unicode-range: U+26500-2657f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u26580.woff"); unicode-range: U+26580-265ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u26600.woff"); unicode-range: U+26600-2667f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u26680.woff"); unicode-range: U+26680-266ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u26700.woff"); unicode-range: U+26700-2677f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u26780.woff"); unicode-range: U+26780-267ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u26800.woff"); unicode-range: U+26800-2687f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u26880.woff"); unicode-range: U+26880-268ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u26900.woff"); unicode-range: U+26900-2697f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u26980.woff"); unicode-range: U+26980-269ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u26a00.woff"); unicode-range: U+26a00-26a7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u26a80.woff"); unicode-range: U+26a80-26aff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u26b00.woff"); unicode-range: U+26b00-26b7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u26b80.woff"); unicode-range: U+26b80-26bff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u26c00.woff"); unicode-range: U+26c00-26c7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u26c80.woff"); unicode-range: U+26c80-26cff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u26d00.woff"); unicode-range: U+26d00-26d7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u26d80.woff"); unicode-range: U+26d80-26dff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u26e00.woff"); unicode-range: U+26e00-26e7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u26e80.woff"); unicode-range: U+26e80-26eff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u26f00.woff"); unicode-range: U+26f00-26f7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u26f80.woff"); unicode-range: U+26f80-26fff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u27000.woff"); unicode-range: U+27000-2707f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u27080.woff"); unicode-range: U+27080-270ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u27100.woff"); unicode-range: U+27100-2717f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u27180.woff"); unicode-range: U+27180-271ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u27200.woff"); unicode-range: U+27200-2727f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u27280.woff"); unicode-range: U+27280-272ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u27300.woff"); unicode-range: U+27300-2737f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u27380.woff"); unicode-range: U+27380-273ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u27400.woff"); unicode-range: U+27400-2747f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u27480.woff"); unicode-range: U+27480-274ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u27500.woff"); unicode-range: U+27500-2757f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u27580.woff"); unicode-range: U+27580-275ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u27600.woff"); unicode-range: U+27600-2767f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u27680.woff"); unicode-range: U+27680-276ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u27700.woff"); unicode-range: U+27700-2777f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u27780.woff"); unicode-range: U+27780-277ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u27800.woff"); unicode-range: U+27800-2787f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u27880.woff"); unicode-range: U+27880-278ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u27900.woff"); unicode-range: U+27900-2797f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u27980.woff"); unicode-range: U+27980-279ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u27a00.woff"); unicode-range: U+27a00-27a7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u27a80.woff"); unicode-range: U+27a80-27aff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u27b00.woff"); unicode-range: U+27b00-27b7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u27b80.woff"); unicode-range: U+27b80-27bff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u27c00.woff"); unicode-range: U+27c00-27c7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u27c80.woff"); unicode-range: U+27c80-27cff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u27d00.woff"); unicode-range: U+27d00-27d7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u27d80.woff"); unicode-range: U+27d80-27dff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u27e00.woff"); unicode-range: U+27e00-27e7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u27e80.woff"); unicode-range: U+27e80-27eff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u27f00.woff"); unicode-range: U+27f00-27f7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u27f80.woff"); unicode-range: U+27f80-27fff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u28000.woff"); unicode-range: U+28000-2807f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u28080.woff"); unicode-range: U+28080-280ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u28100.woff"); unicode-range: U+28100-2817f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u28180.woff"); unicode-range: U+28180-281ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u28200.woff"); unicode-range: U+28200-2827f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u28280.woff"); unicode-range: U+28280-282ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u28300.woff"); unicode-range: U+28300-2837f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u28380.woff"); unicode-range: U+28380-283ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u28400.woff"); unicode-range: U+28400-2847f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u28480.woff"); unicode-range: U+28480-284ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u28500.woff"); unicode-range: U+28500-2857f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u28580.woff"); unicode-range: U+28580-285ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u28600.woff"); unicode-range: U+28600-2867f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u28680.woff"); unicode-range: U+28680-286ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u28700.woff"); unicode-range: U+28700-2877f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u28780.woff"); unicode-range: U+28780-287ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u28800.woff"); unicode-range: U+28800-2887f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u28880.woff"); unicode-range: U+28880-288ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u28900.woff"); unicode-range: U+28900-2897f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u28980.woff"); unicode-range: U+28980-289ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u28a00.woff"); unicode-range: U+28a00-28a7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u28a80.woff"); unicode-range: U+28a80-28aff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u28b00.woff"); unicode-range: U+28b00-28b7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u28b80.woff"); unicode-range: U+28b80-28bff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u28c00.woff"); unicode-range: U+28c00-28c7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u28c80.woff"); unicode-range: U+28c80-28cff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u28d00.woff"); unicode-range: U+28d00-28d7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u28d80.woff"); unicode-range: U+28d80-28dff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u28e00.woff"); unicode-range: U+28e00-28e7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u28e80.woff"); unicode-range: U+28e80-28eff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u28f00.woff"); unicode-range: U+28f00-28f7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u28f80.woff"); unicode-range: U+28f80-28fff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u29000.woff"); unicode-range: U+29000-2907f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u29080.woff"); unicode-range: U+29080-290ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u29100.woff"); unicode-range: U+29100-2917f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u29180.woff"); unicode-range: U+29180-291ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u29200.woff"); unicode-range: U+29200-2927f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u29280.woff"); unicode-range: U+29280-292ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u29300.woff"); unicode-range: U+29300-2937f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u29380.woff"); unicode-range: U+29380-293ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u29400.woff"); unicode-range: U+29400-2947f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u29480.woff"); unicode-range: U+29480-294ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u29500.woff"); unicode-range: U+29500-2957f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u29580.woff"); unicode-range: U+29580-295ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u29600.woff"); unicode-range: U+29600-2967f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u29680.woff"); unicode-range: U+29680-296ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u29700.woff"); unicode-range: U+29700-2977f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u29780.woff"); unicode-range: U+29780-297ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u29800.woff"); unicode-range: U+29800-2987f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u29880.woff"); unicode-range: U+29880-298ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u29900.woff"); unicode-range: U+29900-2997f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u29980.woff"); unicode-range: U+29980-299ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u29a00.woff"); unicode-range: U+29a00-29a7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u29a80.woff"); unicode-range: U+29a80-29aff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u29b00.woff"); unicode-range: U+29b00-29b7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u29b80.woff"); unicode-range: U+29b80-29bff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u29c00.woff"); unicode-range: U+29c00-29c7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u29c80.woff"); unicode-range: U+29c80-29cff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u29d00.woff"); unicode-range: U+29d00-29d7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u29d80.woff"); unicode-range: U+29d80-29dff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u29e00.woff"); unicode-range: U+29e00-29e7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u29e80.woff"); unicode-range: U+29e80-29eff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u29f00.woff"); unicode-range: U+29f00-29f7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u29f80.woff"); unicode-range: U+29f80-29fff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2a000.woff"); unicode-range: U+2a000-2a07f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2a080.woff"); unicode-range: U+2a080-2a0ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2a100.woff"); unicode-range: U+2a100-2a17f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2a180.woff"); unicode-range: U+2a180-2a1ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2a200.woff"); unicode-range: U+2a200-2a27f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2a280.woff"); unicode-range: U+2a280-2a2ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2a300.woff"); unicode-range: U+2a300-2a37f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2a380.woff"); unicode-range: U+2a380-2a3ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2a400.woff"); unicode-range: U+2a400-2a47f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2a480.woff"); unicode-range: U+2a480-2a4ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2a500.woff"); unicode-range: U+2a500-2a57f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2a580.woff"); unicode-range: U+2a580-2a5ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2a600.woff"); unicode-range: U+2a600-2a67f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2a680.woff"); unicode-range: U+2a680-2a6ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2a700.woff"); unicode-range: U+2a700-2a77f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2a780.woff"); unicode-range: U+2a780-2a7ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2a800.woff"); unicode-range: U+2a800-2a87f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2a880.woff"); unicode-range: U+2a880-2a8ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2a900.woff"); unicode-range: U+2a900-2a97f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2a980.woff"); unicode-range: U+2a980-2a9ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2aa00.woff"); unicode-range: U+2aa00-2aa7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2aa80.woff"); unicode-range: U+2aa80-2aaff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2ab00.woff"); unicode-range: U+2ab00-2ab7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2ab80.woff"); unicode-range: U+2ab80-2abff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2ac00.woff"); unicode-range: U+2ac00-2ac7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2ac80.woff"); unicode-range: U+2ac80-2acff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2ad00.woff"); unicode-range: U+2ad00-2ad7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2ad80.woff"); unicode-range: U+2ad80-2adff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2ae00.woff"); unicode-range: U+2ae00-2ae7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2ae80.woff"); unicode-range: U+2ae80-2aeff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2af00.woff"); unicode-range: U+2af00-2af7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2af80.woff"); unicode-range: U+2af80-2afff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2b000.woff"); unicode-range: U+2b000-2b07f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2b080.woff"); unicode-range: U+2b080-2b0ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2b100.woff"); unicode-range: U+2b100-2b17f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2b180.woff"); unicode-range: U+2b180-2b1ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2b200.woff"); unicode-range: U+2b200-2b27f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2b280.woff"); unicode-range: U+2b280-2b2ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2b300.woff"); unicode-range: U+2b300-2b37f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2b380.woff"); unicode-range: U+2b380-2b3ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2b400.woff"); unicode-range: U+2b400-2b47f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2b480.woff"); unicode-range: U+2b480-2b4ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2b500.woff"); unicode-range: U+2b500-2b57f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2b580.woff"); unicode-range: U+2b580-2b5ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2b600.woff"); unicode-range: U+2b600-2b67f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2b680.woff"); unicode-range: U+2b680-2b6ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2b700.woff"); unicode-range: U+2b700-2b77f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2b780.woff"); unicode-range: U+2b780-2b7ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2b800.woff"); unicode-range: U+2b800-2b87f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2b880.woff"); unicode-range: U+2b880-2b8ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2b900.woff"); unicode-range: U+2b900-2b97f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2b980.woff"); unicode-range: U+2b980-2b9ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2ba00.woff"); unicode-range: U+2ba00-2ba7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2ba80.woff"); unicode-range: U+2ba80-2baff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2bb00.woff"); unicode-range: U+2bb00-2bb7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2bb80.woff"); unicode-range: U+2bb80-2bbff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2bc00.woff"); unicode-range: U+2bc00-2bc7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2bc80.woff"); unicode-range: U+2bc80-2bcff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2bd00.woff"); unicode-range: U+2bd00-2bd7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2bd80.woff"); unicode-range: U+2bd80-2bdff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2be00.woff"); unicode-range: U+2be00-2be7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2be80.woff"); unicode-range: U+2be80-2beff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2bf00.woff"); unicode-range: U+2bf00-2bf7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2bf80.woff"); unicode-range: U+2bf80-2bfff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2c000.woff"); unicode-range: U+2c000-2c07f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2c080.woff"); unicode-range: U+2c080-2c0ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2c100.woff"); unicode-range: U+2c100-2c17f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2c180.woff"); unicode-range: U+2c180-2c1ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2c200.woff"); unicode-range: U+2c200-2c27f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2c280.woff"); unicode-range: U+2c280-2c2ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2c300.woff"); unicode-range: U+2c300-2c37f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2c380.woff"); unicode-range: U+2c380-2c3ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2c400.woff"); unicode-range: U+2c400-2c47f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2c480.woff"); unicode-range: U+2c480-2c4ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2c500.woff"); unicode-range: U+2c500-2c57f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2c580.woff"); unicode-range: U+2c580-2c5ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2c600.woff"); unicode-range: U+2c600-2c67f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2c680.woff"); unicode-range: U+2c680-2c6ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2c700.woff"); unicode-range: U+2c700-2c77f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2c780.woff"); unicode-range: U+2c780-2c7ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2c800.woff"); unicode-range: U+2c800-2c87f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2c880.woff"); unicode-range: U+2c880-2c8ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2c900.woff"); unicode-range: U+2c900-2c97f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2c980.woff"); unicode-range: U+2c980-2c9ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2ca00.woff"); unicode-range: U+2ca00-2ca7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2ca80.woff"); unicode-range: U+2ca80-2caff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2cb00.woff"); unicode-range: U+2cb00-2cb7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2cb80.woff"); unicode-range: U+2cb80-2cbff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2cc00.woff"); unicode-range: U+2cc00-2cc7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2cc80.woff"); unicode-range: U+2cc80-2ccff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2cd00.woff"); unicode-range: U+2cd00-2cd7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2cd80.woff"); unicode-range: U+2cd80-2cdff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2ce00.woff"); unicode-range: U+2ce00-2ce7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2ce80.woff"); unicode-range: U+2ce80-2ceff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2cf00.woff"); unicode-range: U+2cf00-2cf7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2cf80.woff"); unicode-range: U+2cf80-2cfff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2d000.woff"); unicode-range: U+2d000-2d07f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2d080.woff"); unicode-range: U+2d080-2d0ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2d100.woff"); unicode-range: U+2d100-2d17f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2d180.woff"); unicode-range: U+2d180-2d1ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2d200.woff"); unicode-range: U+2d200-2d27f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2d280.woff"); unicode-range: U+2d280-2d2ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2d300.woff"); unicode-range: U+2d300-2d37f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2d380.woff"); unicode-range: U+2d380-2d3ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2d400.woff"); unicode-range: U+2d400-2d47f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2d480.woff"); unicode-range: U+2d480-2d4ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2d500.woff"); unicode-range: U+2d500-2d57f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2d580.woff"); unicode-range: U+2d580-2d5ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2d600.woff"); unicode-range: U+2d600-2d67f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2d680.woff"); unicode-range: U+2d680-2d6ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2d700.woff"); unicode-range: U+2d700-2d77f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2d780.woff"); unicode-range: U+2d780-2d7ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2d800.woff"); unicode-range: U+2d800-2d87f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2d880.woff"); unicode-range: U+2d880-2d8ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2d900.woff"); unicode-range: U+2d900-2d97f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2d980.woff"); unicode-range: U+2d980-2d9ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2da00.woff"); unicode-range: U+2da00-2da7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2da80.woff"); unicode-range: U+2da80-2daff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2db00.woff"); unicode-range: U+2db00-2db7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2db80.woff"); unicode-range: U+2db80-2dbff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2dc00.woff"); unicode-range: U+2dc00-2dc7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2dc80.woff"); unicode-range: U+2dc80-2dcff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2dd00.woff"); unicode-range: U+2dd00-2dd7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2dd80.woff"); unicode-range: U+2dd80-2ddff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2de00.woff"); unicode-range: U+2de00-2de7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2de80.woff"); unicode-range: U+2de80-2deff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2df00.woff"); unicode-range: U+2df00-2df7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2df80.woff"); unicode-range: U+2df80-2dfff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2e000.woff"); unicode-range: U+2e000-2e07f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2e080.woff"); unicode-range: U+2e080-2e0ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2e100.woff"); unicode-range: U+2e100-2e17f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2e180.woff"); unicode-range: U+2e180-2e1ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2e200.woff"); unicode-range: U+2e200-2e27f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2e280.woff"); unicode-range: U+2e280-2e2ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2e300.woff"); unicode-range: U+2e300-2e37f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2e380.woff"); unicode-range: U+2e380-2e3ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2e400.woff"); unicode-range: U+2e400-2e47f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2e480.woff"); unicode-range: U+2e480-2e4ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2e500.woff"); unicode-range: U+2e500-2e57f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2e580.woff"); unicode-range: U+2e580-2e5ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2e600.woff"); unicode-range: U+2e600-2e67f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2e680.woff"); unicode-range: U+2e680-2e6ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2e700.woff"); unicode-range: U+2e700-2e77f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2e780.woff"); unicode-range: U+2e780-2e7ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2e800.woff"); unicode-range: U+2e800-2e87f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2e880.woff"); unicode-range: U+2e880-2e8ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2e900.woff"); unicode-range: U+2e900-2e97f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2e980.woff"); unicode-range: U+2e980-2e9ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2ea00.woff"); unicode-range: U+2ea00-2ea7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2ea80.woff"); unicode-range: U+2ea80-2eaff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2eb00.woff"); unicode-range: U+2eb00-2eb7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2eb80.woff"); unicode-range: U+2eb80-2ebff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2ec00.woff"); unicode-range: U+2ec00-2ec7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2ec80.woff"); unicode-range: U+2ec80-2ecff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2ed00.woff"); unicode-range: U+2ed00-2ed7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2ed80.woff"); unicode-range: U+2ed80-2edff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2ee00.woff"); unicode-range: U+2ee00-2ee7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2ee80.woff"); unicode-range: U+2ee80-2eeff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2ef00.woff"); unicode-range: U+2ef00-2ef7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2ef80.woff"); unicode-range: U+2ef80-2efff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2f000.woff"); unicode-range: U+2f000-2f07f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2f080.woff"); unicode-range: U+2f080-2f0ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2f100.woff"); unicode-range: U+2f100-2f17f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2f180.woff"); unicode-range: U+2f180-2f1ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2f200.woff"); unicode-range: U+2f200-2f27f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2f280.woff"); unicode-range: U+2f280-2f2ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2f300.woff"); unicode-range: U+2f300-2f37f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2f380.woff"); unicode-range: U+2f380-2f3ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2f400.woff"); unicode-range: U+2f400-2f47f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2f480.woff"); unicode-range: U+2f480-2f4ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2f500.woff"); unicode-range: U+2f500-2f57f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2f580.woff"); unicode-range: U+2f580-2f5ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2f600.woff"); unicode-range: U+2f600-2f67f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2f680.woff"); unicode-range: U+2f680-2f6ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2f700.woff"); unicode-range: U+2f700-2f77f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2f780.woff"); unicode-range: U+2f780-2f7ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2f800.woff"); unicode-range: U+2f800-2f87f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2f880.woff"); unicode-range: U+2f880-2f8ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2f900.woff"); unicode-range: U+2f900-2f97f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2f980.woff"); unicode-range: U+2f980-2f9ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2fa00.woff"); unicode-range: U+2fa00-2fa7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2fa80.woff"); unicode-range: U+2fa80-2faff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2fb00.woff"); unicode-range: U+2fb00-2fb7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2fb80.woff"); unicode-range: U+2fb80-2fbff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2fc00.woff"); unicode-range: U+2fc00-2fc7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2fc80.woff"); unicode-range: U+2fc80-2fcff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2fd00.woff"); unicode-range: U+2fd00-2fd7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2fd80.woff"); unicode-range: U+2fd80-2fdff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2fe00.woff"); unicode-range: U+2fe00-2fe7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2fe80.woff"); unicode-range: U+2fe80-2feff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2ff00.woff"); unicode-range: U+2ff00-2ff7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/u2ff80.woff"); unicode-range: U+2ff80-2ffff; }
+
+/* f plane */
+@font-face { font-family:"標楷體2"; src:url("ttf/uf0000.woff"); unicode-range: U+f0000-f007f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf0080.woff"); unicode-range: U+f0080-f00ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf0100.woff"); unicode-range: U+f0100-f017f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf0180.woff"); unicode-range: U+f0180-f01ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf0200.woff"); unicode-range: U+f0200-f027f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf0280.woff"); unicode-range: U+f0280-f02ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf0300.woff"); unicode-range: U+f0300-f037f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf0380.woff"); unicode-range: U+f0380-f03ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf0400.woff"); unicode-range: U+f0400-f047f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf0480.woff"); unicode-range: U+f0480-f04ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf0500.woff"); unicode-range: U+f0500-f057f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf0580.woff"); unicode-range: U+f0580-f05ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf0600.woff"); unicode-range: U+f0600-f067f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf0680.woff"); unicode-range: U+f0680-f06ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf0700.woff"); unicode-range: U+f0700-f077f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf0780.woff"); unicode-range: U+f0780-f07ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf0800.woff"); unicode-range: U+f0800-f087f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf0880.woff"); unicode-range: U+f0880-f08ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf0900.woff"); unicode-range: U+f0900-f097f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf0980.woff"); unicode-range: U+f0980-f09ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf0a00.woff"); unicode-range: U+f0a00-f0a7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf0a80.woff"); unicode-range: U+f0a80-f0aff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf0b00.woff"); unicode-range: U+f0b00-f0b7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf0b80.woff"); unicode-range: U+f0b80-f0bff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf0c00.woff"); unicode-range: U+f0c00-f0c7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf0c80.woff"); unicode-range: U+f0c80-f0cff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf0d00.woff"); unicode-range: U+f0d00-f0d7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf0d80.woff"); unicode-range: U+f0d80-f0dff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf0e00.woff"); unicode-range: U+f0e00-f0e7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf0e80.woff"); unicode-range: U+f0e80-f0eff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf0f00.woff"); unicode-range: U+f0f00-f0f7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf0f80.woff"); unicode-range: U+f0f80-f0fff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf1000.woff"); unicode-range: U+f1000-f107f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf1080.woff"); unicode-range: U+f1080-f10ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf1100.woff"); unicode-range: U+f1100-f117f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf1180.woff"); unicode-range: U+f1180-f11ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf1200.woff"); unicode-range: U+f1200-f127f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf1280.woff"); unicode-range: U+f1280-f12ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf1300.woff"); unicode-range: U+f1300-f137f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf1380.woff"); unicode-range: U+f1380-f13ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf1400.woff"); unicode-range: U+f1400-f147f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf1480.woff"); unicode-range: U+f1480-f14ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf1500.woff"); unicode-range: U+f1500-f157f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf1580.woff"); unicode-range: U+f1580-f15ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf1600.woff"); unicode-range: U+f1600-f167f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf1680.woff"); unicode-range: U+f1680-f16ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf1700.woff"); unicode-range: U+f1700-f177f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf1780.woff"); unicode-range: U+f1780-f17ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf1800.woff"); unicode-range: U+f1800-f187f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf1880.woff"); unicode-range: U+f1880-f18ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf1900.woff"); unicode-range: U+f1900-f197f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf1980.woff"); unicode-range: U+f1980-f19ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf1a00.woff"); unicode-range: U+f1a00-f1a7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf1a80.woff"); unicode-range: U+f1a80-f1aff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf1b00.woff"); unicode-range: U+f1b00-f1b7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf1b80.woff"); unicode-range: U+f1b80-f1bff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf1c00.woff"); unicode-range: U+f1c00-f1c7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf1c80.woff"); unicode-range: U+f1c80-f1cff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf1d00.woff"); unicode-range: U+f1d00-f1d7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf1d80.woff"); unicode-range: U+f1d80-f1dff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf1e00.woff"); unicode-range: U+f1e00-f1e7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf1e80.woff"); unicode-range: U+f1e80-f1eff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf1f00.woff"); unicode-range: U+f1f00-f1f7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf1f80.woff"); unicode-range: U+f1f80-f1fff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf2000.woff"); unicode-range: U+f2000-f207f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf2080.woff"); unicode-range: U+f2080-f20ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf2100.woff"); unicode-range: U+f2100-f217f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf2180.woff"); unicode-range: U+f2180-f21ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf2200.woff"); unicode-range: U+f2200-f227f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf2280.woff"); unicode-range: U+f2280-f22ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf2300.woff"); unicode-range: U+f2300-f237f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf2380.woff"); unicode-range: U+f2380-f23ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf2400.woff"); unicode-range: U+f2400-f247f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf2480.woff"); unicode-range: U+f2480-f24ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf2500.woff"); unicode-range: U+f2500-f257f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf2580.woff"); unicode-range: U+f2580-f25ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf2600.woff"); unicode-range: U+f2600-f267f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf2680.woff"); unicode-range: U+f2680-f26ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf2700.woff"); unicode-range: U+f2700-f277f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf2780.woff"); unicode-range: U+f2780-f27ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf2800.woff"); unicode-range: U+f2800-f287f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf2880.woff"); unicode-range: U+f2880-f28ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf2900.woff"); unicode-range: U+f2900-f297f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf2980.woff"); unicode-range: U+f2980-f29ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf2a00.woff"); unicode-range: U+f2a00-f2a7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf2a80.woff"); unicode-range: U+f2a80-f2aff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf2b00.woff"); unicode-range: U+f2b00-f2b7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf2b80.woff"); unicode-range: U+f2b80-f2bff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf2c00.woff"); unicode-range: U+f2c00-f2c7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf2c80.woff"); unicode-range: U+f2c80-f2cff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf2d00.woff"); unicode-range: U+f2d00-f2d7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf2d80.woff"); unicode-range: U+f2d80-f2dff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf2e00.woff"); unicode-range: U+f2e00-f2e7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf2e80.woff"); unicode-range: U+f2e80-f2eff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf2f00.woff"); unicode-range: U+f2f00-f2f7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf2f80.woff"); unicode-range: U+f2f80-f2fff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf3000.woff"); unicode-range: U+f3000-f307f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf3080.woff"); unicode-range: U+f3080-f30ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf3100.woff"); unicode-range: U+f3100-f317f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf3180.woff"); unicode-range: U+f3180-f31ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf3200.woff"); unicode-range: U+f3200-f327f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf3280.woff"); unicode-range: U+f3280-f32ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf3300.woff"); unicode-range: U+f3300-f337f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf3380.woff"); unicode-range: U+f3380-f33ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf3400.woff"); unicode-range: U+f3400-f347f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf3480.woff"); unicode-range: U+f3480-f34ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf3500.woff"); unicode-range: U+f3500-f357f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf3580.woff"); unicode-range: U+f3580-f35ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf3600.woff"); unicode-range: U+f3600-f367f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf3680.woff"); unicode-range: U+f3680-f36ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf3700.woff"); unicode-range: U+f3700-f377f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf3780.woff"); unicode-range: U+f3780-f37ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf3800.woff"); unicode-range: U+f3800-f387f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf3880.woff"); unicode-range: U+f3880-f38ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf3900.woff"); unicode-range: U+f3900-f397f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf3980.woff"); unicode-range: U+f3980-f39ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf3a00.woff"); unicode-range: U+f3a00-f3a7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf3a80.woff"); unicode-range: U+f3a80-f3aff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf3b00.woff"); unicode-range: U+f3b00-f3b7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf3b80.woff"); unicode-range: U+f3b80-f3bff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf3c00.woff"); unicode-range: U+f3c00-f3c7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf3c80.woff"); unicode-range: U+f3c80-f3cff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf3d00.woff"); unicode-range: U+f3d00-f3d7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf3d80.woff"); unicode-range: U+f3d80-f3dff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf3e00.woff"); unicode-range: U+f3e00-f3e7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf3e80.woff"); unicode-range: U+f3e80-f3eff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf3f00.woff"); unicode-range: U+f3f00-f3f7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf3f80.woff"); unicode-range: U+f3f80-f3fff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf4000.woff"); unicode-range: U+f4000-f407f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf4080.woff"); unicode-range: U+f4080-f40ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf4100.woff"); unicode-range: U+f4100-f417f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf4180.woff"); unicode-range: U+f4180-f41ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf4200.woff"); unicode-range: U+f4200-f427f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf4280.woff"); unicode-range: U+f4280-f42ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf4300.woff"); unicode-range: U+f4300-f437f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf4380.woff"); unicode-range: U+f4380-f43ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf4400.woff"); unicode-range: U+f4400-f447f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf4480.woff"); unicode-range: U+f4480-f44ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf4500.woff"); unicode-range: U+f4500-f457f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf4580.woff"); unicode-range: U+f4580-f45ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf4600.woff"); unicode-range: U+f4600-f467f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf4680.woff"); unicode-range: U+f4680-f46ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf4700.woff"); unicode-range: U+f4700-f477f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf4780.woff"); unicode-range: U+f4780-f47ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf4800.woff"); unicode-range: U+f4800-f487f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf4880.woff"); unicode-range: U+f4880-f48ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf4900.woff"); unicode-range: U+f4900-f497f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf4980.woff"); unicode-range: U+f4980-f49ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf4a00.woff"); unicode-range: U+f4a00-f4a7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf4a80.woff"); unicode-range: U+f4a80-f4aff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf4b00.woff"); unicode-range: U+f4b00-f4b7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf4b80.woff"); unicode-range: U+f4b80-f4bff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf4c00.woff"); unicode-range: U+f4c00-f4c7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf4c80.woff"); unicode-range: U+f4c80-f4cff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf4d00.woff"); unicode-range: U+f4d00-f4d7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf4d80.woff"); unicode-range: U+f4d80-f4dff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf4e00.woff"); unicode-range: U+f4e00-f4e7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf4e80.woff"); unicode-range: U+f4e80-f4eff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf4f00.woff"); unicode-range: U+f4f00-f4f7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf4f80.woff"); unicode-range: U+f4f80-f4fff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf5000.woff"); unicode-range: U+f5000-f507f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf5080.woff"); unicode-range: U+f5080-f50ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf5100.woff"); unicode-range: U+f5100-f517f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf5180.woff"); unicode-range: U+f5180-f51ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf5200.woff"); unicode-range: U+f5200-f527f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf5280.woff"); unicode-range: U+f5280-f52ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf5300.woff"); unicode-range: U+f5300-f537f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf5380.woff"); unicode-range: U+f5380-f53ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf5400.woff"); unicode-range: U+f5400-f547f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf5480.woff"); unicode-range: U+f5480-f54ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf5500.woff"); unicode-range: U+f5500-f557f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf5580.woff"); unicode-range: U+f5580-f55ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf5600.woff"); unicode-range: U+f5600-f567f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf5680.woff"); unicode-range: U+f5680-f56ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf5700.woff"); unicode-range: U+f5700-f577f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf5780.woff"); unicode-range: U+f5780-f57ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf5800.woff"); unicode-range: U+f5800-f587f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf5880.woff"); unicode-range: U+f5880-f58ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf5900.woff"); unicode-range: U+f5900-f597f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf5980.woff"); unicode-range: U+f5980-f59ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf5a00.woff"); unicode-range: U+f5a00-f5a7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf5a80.woff"); unicode-range: U+f5a80-f5aff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf5b00.woff"); unicode-range: U+f5b00-f5b7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf5b80.woff"); unicode-range: U+f5b80-f5bff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf5c00.woff"); unicode-range: U+f5c00-f5c7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf5c80.woff"); unicode-range: U+f5c80-f5cff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf5d00.woff"); unicode-range: U+f5d00-f5d7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf5d80.woff"); unicode-range: U+f5d80-f5dff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf5e00.woff"); unicode-range: U+f5e00-f5e7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf5e80.woff"); unicode-range: U+f5e80-f5eff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf5f00.woff"); unicode-range: U+f5f00-f5f7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf5f80.woff"); unicode-range: U+f5f80-f5fff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf6000.woff"); unicode-range: U+f6000-f607f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf6080.woff"); unicode-range: U+f6080-f60ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf6100.woff"); unicode-range: U+f6100-f617f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf6180.woff"); unicode-range: U+f6180-f61ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf6200.woff"); unicode-range: U+f6200-f627f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf6280.woff"); unicode-range: U+f6280-f62ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf6300.woff"); unicode-range: U+f6300-f637f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf6380.woff"); unicode-range: U+f6380-f63ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf6400.woff"); unicode-range: U+f6400-f647f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf6480.woff"); unicode-range: U+f6480-f64ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf6500.woff"); unicode-range: U+f6500-f657f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf6580.woff"); unicode-range: U+f6580-f65ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf6600.woff"); unicode-range: U+f6600-f667f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf6680.woff"); unicode-range: U+f6680-f66ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf6700.woff"); unicode-range: U+f6700-f677f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf6780.woff"); unicode-range: U+f6780-f67ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf6800.woff"); unicode-range: U+f6800-f687f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf6880.woff"); unicode-range: U+f6880-f68ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf6900.woff"); unicode-range: U+f6900-f697f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf6980.woff"); unicode-range: U+f6980-f69ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf6a00.woff"); unicode-range: U+f6a00-f6a7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf6a80.woff"); unicode-range: U+f6a80-f6aff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf6b00.woff"); unicode-range: U+f6b00-f6b7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf6b80.woff"); unicode-range: U+f6b80-f6bff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf6c00.woff"); unicode-range: U+f6c00-f6c7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf6c80.woff"); unicode-range: U+f6c80-f6cff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf6d00.woff"); unicode-range: U+f6d00-f6d7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf6d80.woff"); unicode-range: U+f6d80-f6dff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf6e00.woff"); unicode-range: U+f6e00-f6e7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf6e80.woff"); unicode-range: U+f6e80-f6eff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf6f00.woff"); unicode-range: U+f6f00-f6f7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf6f80.woff"); unicode-range: U+f6f80-f6fff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf7000.woff"); unicode-range: U+f7000-f707f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf7080.woff"); unicode-range: U+f7080-f70ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf7100.woff"); unicode-range: U+f7100-f717f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf7180.woff"); unicode-range: U+f7180-f71ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf7200.woff"); unicode-range: U+f7200-f727f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf7280.woff"); unicode-range: U+f7280-f72ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf7300.woff"); unicode-range: U+f7300-f737f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf7380.woff"); unicode-range: U+f7380-f73ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf7400.woff"); unicode-range: U+f7400-f747f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf7480.woff"); unicode-range: U+f7480-f74ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf7500.woff"); unicode-range: U+f7500-f757f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf7580.woff"); unicode-range: U+f7580-f75ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf7600.woff"); unicode-range: U+f7600-f767f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf7680.woff"); unicode-range: U+f7680-f76ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf7700.woff"); unicode-range: U+f7700-f777f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf7780.woff"); unicode-range: U+f7780-f77ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf7800.woff"); unicode-range: U+f7800-f787f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf7880.woff"); unicode-range: U+f7880-f78ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf7900.woff"); unicode-range: U+f7900-f797f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf7980.woff"); unicode-range: U+f7980-f79ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf7a00.woff"); unicode-range: U+f7a00-f7a7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf7a80.woff"); unicode-range: U+f7a80-f7aff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf7b00.woff"); unicode-range: U+f7b00-f7b7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf7b80.woff"); unicode-range: U+f7b80-f7bff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf7c00.woff"); unicode-range: U+f7c00-f7c7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf7c80.woff"); unicode-range: U+f7c80-f7cff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf7d00.woff"); unicode-range: U+f7d00-f7d7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf7d80.woff"); unicode-range: U+f7d80-f7dff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf7e00.woff"); unicode-range: U+f7e00-f7e7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf7e80.woff"); unicode-range: U+f7e80-f7eff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf7f00.woff"); unicode-range: U+f7f00-f7f7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf7f80.woff"); unicode-range: U+f7f80-f7fff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf8000.woff"); unicode-range: U+f8000-f807f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf8080.woff"); unicode-range: U+f8080-f80ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf8100.woff"); unicode-range: U+f8100-f817f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf8180.woff"); unicode-range: U+f8180-f81ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf8200.woff"); unicode-range: U+f8200-f827f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf8280.woff"); unicode-range: U+f8280-f82ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf8300.woff"); unicode-range: U+f8300-f837f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf8380.woff"); unicode-range: U+f8380-f83ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf8400.woff"); unicode-range: U+f8400-f847f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf8480.woff"); unicode-range: U+f8480-f84ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf8500.woff"); unicode-range: U+f8500-f857f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf8580.woff"); unicode-range: U+f8580-f85ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf8600.woff"); unicode-range: U+f8600-f867f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf8680.woff"); unicode-range: U+f8680-f86ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf8700.woff"); unicode-range: U+f8700-f877f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf8780.woff"); unicode-range: U+f8780-f87ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf8800.woff"); unicode-range: U+f8800-f887f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf8880.woff"); unicode-range: U+f8880-f88ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf8900.woff"); unicode-range: U+f8900-f897f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf8980.woff"); unicode-range: U+f8980-f89ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf8a00.woff"); unicode-range: U+f8a00-f8a7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf8a80.woff"); unicode-range: U+f8a80-f8aff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf8b00.woff"); unicode-range: U+f8b00-f8b7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf8b80.woff"); unicode-range: U+f8b80-f8bff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf8c00.woff"); unicode-range: U+f8c00-f8c7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf8c80.woff"); unicode-range: U+f8c80-f8cff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf8d00.woff"); unicode-range: U+f8d00-f8d7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf8d80.woff"); unicode-range: U+f8d80-f8dff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf8e00.woff"); unicode-range: U+f8e00-f8e7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf8e80.woff"); unicode-range: U+f8e80-f8eff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf8f00.woff"); unicode-range: U+f8f00-f8f7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf8f80.woff"); unicode-range: U+f8f80-f8fff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf9000.woff"); unicode-range: U+f9000-f907f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf9080.woff"); unicode-range: U+f9080-f90ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf9100.woff"); unicode-range: U+f9100-f917f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf9180.woff"); unicode-range: U+f9180-f91ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf9200.woff"); unicode-range: U+f9200-f927f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf9280.woff"); unicode-range: U+f9280-f92ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf9300.woff"); unicode-range: U+f9300-f937f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf9380.woff"); unicode-range: U+f9380-f93ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf9400.woff"); unicode-range: U+f9400-f947f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf9480.woff"); unicode-range: U+f9480-f94ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf9500.woff"); unicode-range: U+f9500-f957f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf9580.woff"); unicode-range: U+f9580-f95ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf9600.woff"); unicode-range: U+f9600-f967f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf9680.woff"); unicode-range: U+f9680-f96ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf9700.woff"); unicode-range: U+f9700-f977f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf9780.woff"); unicode-range: U+f9780-f97ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf9800.woff"); unicode-range: U+f9800-f987f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf9880.woff"); unicode-range: U+f9880-f98ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf9900.woff"); unicode-range: U+f9900-f997f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf9980.woff"); unicode-range: U+f9980-f99ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf9a00.woff"); unicode-range: U+f9a00-f9a7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf9a80.woff"); unicode-range: U+f9a80-f9aff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf9b00.woff"); unicode-range: U+f9b00-f9b7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf9b80.woff"); unicode-range: U+f9b80-f9bff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf9c00.woff"); unicode-range: U+f9c00-f9c7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf9c80.woff"); unicode-range: U+f9c80-f9cff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf9d00.woff"); unicode-range: U+f9d00-f9d7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf9d80.woff"); unicode-range: U+f9d80-f9dff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf9e00.woff"); unicode-range: U+f9e00-f9e7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf9e80.woff"); unicode-range: U+f9e80-f9eff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf9f00.woff"); unicode-range: U+f9f00-f9f7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uf9f80.woff"); unicode-range: U+f9f80-f9fff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufa000.woff"); unicode-range: U+fa000-fa07f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufa080.woff"); unicode-range: U+fa080-fa0ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufa100.woff"); unicode-range: U+fa100-fa17f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufa180.woff"); unicode-range: U+fa180-fa1ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufa200.woff"); unicode-range: U+fa200-fa27f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufa280.woff"); unicode-range: U+fa280-fa2ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufa300.woff"); unicode-range: U+fa300-fa37f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufa380.woff"); unicode-range: U+fa380-fa3ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufa400.woff"); unicode-range: U+fa400-fa47f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufa480.woff"); unicode-range: U+fa480-fa4ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufa500.woff"); unicode-range: U+fa500-fa57f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufa580.woff"); unicode-range: U+fa580-fa5ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufa600.woff"); unicode-range: U+fa600-fa67f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufa680.woff"); unicode-range: U+fa680-fa6ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufa700.woff"); unicode-range: U+fa700-fa77f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufa780.woff"); unicode-range: U+fa780-fa7ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufa800.woff"); unicode-range: U+fa800-fa87f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufa880.woff"); unicode-range: U+fa880-fa8ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufa900.woff"); unicode-range: U+fa900-fa97f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufa980.woff"); unicode-range: U+fa980-fa9ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufaa00.woff"); unicode-range: U+faa00-faa7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufaa80.woff"); unicode-range: U+faa80-faaff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufab00.woff"); unicode-range: U+fab00-fab7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufab80.woff"); unicode-range: U+fab80-fabff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufac00.woff"); unicode-range: U+fac00-fac7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufac80.woff"); unicode-range: U+fac80-facff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufad00.woff"); unicode-range: U+fad00-fad7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufad80.woff"); unicode-range: U+fad80-fadff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufae00.woff"); unicode-range: U+fae00-fae7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufae80.woff"); unicode-range: U+fae80-faeff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufaf00.woff"); unicode-range: U+faf00-faf7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufaf80.woff"); unicode-range: U+faf80-fafff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufb000.woff"); unicode-range: U+fb000-fb07f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufb080.woff"); unicode-range: U+fb080-fb0ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufb100.woff"); unicode-range: U+fb100-fb17f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufb180.woff"); unicode-range: U+fb180-fb1ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufb200.woff"); unicode-range: U+fb200-fb27f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufb280.woff"); unicode-range: U+fb280-fb2ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufb300.woff"); unicode-range: U+fb300-fb37f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufb380.woff"); unicode-range: U+fb380-fb3ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufb400.woff"); unicode-range: U+fb400-fb47f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufb480.woff"); unicode-range: U+fb480-fb4ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufb500.woff"); unicode-range: U+fb500-fb57f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufb580.woff"); unicode-range: U+fb580-fb5ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufb600.woff"); unicode-range: U+fb600-fb67f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufb680.woff"); unicode-range: U+fb680-fb6ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufb700.woff"); unicode-range: U+fb700-fb77f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufb780.woff"); unicode-range: U+fb780-fb7ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufb800.woff"); unicode-range: U+fb800-fb87f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufb880.woff"); unicode-range: U+fb880-fb8ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufb900.woff"); unicode-range: U+fb900-fb97f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufb980.woff"); unicode-range: U+fb980-fb9ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufba00.woff"); unicode-range: U+fba00-fba7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufba80.woff"); unicode-range: U+fba80-fbaff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufbb00.woff"); unicode-range: U+fbb00-fbb7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufbb80.woff"); unicode-range: U+fbb80-fbbff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufbc00.woff"); unicode-range: U+fbc00-fbc7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufbc80.woff"); unicode-range: U+fbc80-fbcff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufbd00.woff"); unicode-range: U+fbd00-fbd7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufbd80.woff"); unicode-range: U+fbd80-fbdff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufbe00.woff"); unicode-range: U+fbe00-fbe7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufbe80.woff"); unicode-range: U+fbe80-fbeff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufbf00.woff"); unicode-range: U+fbf00-fbf7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufbf80.woff"); unicode-range: U+fbf80-fbfff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufc000.woff"); unicode-range: U+fc000-fc07f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufc080.woff"); unicode-range: U+fc080-fc0ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufc100.woff"); unicode-range: U+fc100-fc17f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufc180.woff"); unicode-range: U+fc180-fc1ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufc200.woff"); unicode-range: U+fc200-fc27f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufc280.woff"); unicode-range: U+fc280-fc2ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufc300.woff"); unicode-range: U+fc300-fc37f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufc380.woff"); unicode-range: U+fc380-fc3ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufc400.woff"); unicode-range: U+fc400-fc47f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufc480.woff"); unicode-range: U+fc480-fc4ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufc500.woff"); unicode-range: U+fc500-fc57f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufc580.woff"); unicode-range: U+fc580-fc5ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufc600.woff"); unicode-range: U+fc600-fc67f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufc680.woff"); unicode-range: U+fc680-fc6ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufc700.woff"); unicode-range: U+fc700-fc77f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufc780.woff"); unicode-range: U+fc780-fc7ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufc800.woff"); unicode-range: U+fc800-fc87f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufc880.woff"); unicode-range: U+fc880-fc8ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufc900.woff"); unicode-range: U+fc900-fc97f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufc980.woff"); unicode-range: U+fc980-fc9ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufca00.woff"); unicode-range: U+fca00-fca7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufca80.woff"); unicode-range: U+fca80-fcaff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufcb00.woff"); unicode-range: U+fcb00-fcb7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufcb80.woff"); unicode-range: U+fcb80-fcbff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufcc00.woff"); unicode-range: U+fcc00-fcc7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufcc80.woff"); unicode-range: U+fcc80-fccff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufcd00.woff"); unicode-range: U+fcd00-fcd7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufcd80.woff"); unicode-range: U+fcd80-fcdff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufce00.woff"); unicode-range: U+fce00-fce7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufce80.woff"); unicode-range: U+fce80-fceff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufcf00.woff"); unicode-range: U+fcf00-fcf7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufcf80.woff"); unicode-range: U+fcf80-fcfff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufd000.woff"); unicode-range: U+fd000-fd07f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufd080.woff"); unicode-range: U+fd080-fd0ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufd100.woff"); unicode-range: U+fd100-fd17f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufd180.woff"); unicode-range: U+fd180-fd1ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufd200.woff"); unicode-range: U+fd200-fd27f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufd280.woff"); unicode-range: U+fd280-fd2ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufd300.woff"); unicode-range: U+fd300-fd37f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufd380.woff"); unicode-range: U+fd380-fd3ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufd400.woff"); unicode-range: U+fd400-fd47f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufd480.woff"); unicode-range: U+fd480-fd4ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufd500.woff"); unicode-range: U+fd500-fd57f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufd580.woff"); unicode-range: U+fd580-fd5ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufd600.woff"); unicode-range: U+fd600-fd67f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufd680.woff"); unicode-range: U+fd680-fd6ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufd700.woff"); unicode-range: U+fd700-fd77f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufd780.woff"); unicode-range: U+fd780-fd7ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufd800.woff"); unicode-range: U+fd800-fd87f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufd880.woff"); unicode-range: U+fd880-fd8ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufd900.woff"); unicode-range: U+fd900-fd97f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufd980.woff"); unicode-range: U+fd980-fd9ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufda00.woff"); unicode-range: U+fda00-fda7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufda80.woff"); unicode-range: U+fda80-fdaff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufdb00.woff"); unicode-range: U+fdb00-fdb7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufdb80.woff"); unicode-range: U+fdb80-fdbff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufdc00.woff"); unicode-range: U+fdc00-fdc7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufdc80.woff"); unicode-range: U+fdc80-fdcff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufdd00.woff"); unicode-range: U+fdd00-fdd7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufdd80.woff"); unicode-range: U+fdd80-fddff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufde00.woff"); unicode-range: U+fde00-fde7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufde80.woff"); unicode-range: U+fde80-fdeff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufdf00.woff"); unicode-range: U+fdf00-fdf7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufdf80.woff"); unicode-range: U+fdf80-fdfff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufe000.woff"); unicode-range: U+fe000-fe07f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufe080.woff"); unicode-range: U+fe080-fe0ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufe100.woff"); unicode-range: U+fe100-fe17f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufe180.woff"); unicode-range: U+fe180-fe1ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufe200.woff"); unicode-range: U+fe200-fe27f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufe280.woff"); unicode-range: U+fe280-fe2ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufe300.woff"); unicode-range: U+fe300-fe37f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufe380.woff"); unicode-range: U+fe380-fe3ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufe400.woff"); unicode-range: U+fe400-fe47f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufe480.woff"); unicode-range: U+fe480-fe4ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufe500.woff"); unicode-range: U+fe500-fe57f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufe580.woff"); unicode-range: U+fe580-fe5ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufe600.woff"); unicode-range: U+fe600-fe67f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufe680.woff"); unicode-range: U+fe680-fe6ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufe700.woff"); unicode-range: U+fe700-fe77f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufe780.woff"); unicode-range: U+fe780-fe7ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufe800.woff"); unicode-range: U+fe800-fe87f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufe880.woff"); unicode-range: U+fe880-fe8ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufe900.woff"); unicode-range: U+fe900-fe97f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufe980.woff"); unicode-range: U+fe980-fe9ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufea00.woff"); unicode-range: U+fea00-fea7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufea80.woff"); unicode-range: U+fea80-feaff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufeb00.woff"); unicode-range: U+feb00-feb7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufeb80.woff"); unicode-range: U+feb80-febff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufec00.woff"); unicode-range: U+fec00-fec7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufec80.woff"); unicode-range: U+fec80-fecff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufed00.woff"); unicode-range: U+fed00-fed7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufed80.woff"); unicode-range: U+fed80-fedff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufee00.woff"); unicode-range: U+fee00-fee7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufee80.woff"); unicode-range: U+fee80-feeff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufef00.woff"); unicode-range: U+fef00-fef7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufef80.woff"); unicode-range: U+fef80-fefff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uff000.woff"); unicode-range: U+ff000-ff07f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uff080.woff"); unicode-range: U+ff080-ff0ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uff100.woff"); unicode-range: U+ff100-ff17f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uff180.woff"); unicode-range: U+ff180-ff1ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uff200.woff"); unicode-range: U+ff200-ff27f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uff280.woff"); unicode-range: U+ff280-ff2ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uff300.woff"); unicode-range: U+ff300-ff37f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uff380.woff"); unicode-range: U+ff380-ff3ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uff400.woff"); unicode-range: U+ff400-ff47f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uff480.woff"); unicode-range: U+ff480-ff4ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uff500.woff"); unicode-range: U+ff500-ff57f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uff580.woff"); unicode-range: U+ff580-ff5ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uff600.woff"); unicode-range: U+ff600-ff67f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uff680.woff"); unicode-range: U+ff680-ff6ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uff700.woff"); unicode-range: U+ff700-ff77f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uff780.woff"); unicode-range: U+ff780-ff7ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uff800.woff"); unicode-range: U+ff800-ff87f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uff880.woff"); unicode-range: U+ff880-ff8ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uff900.woff"); unicode-range: U+ff900-ff97f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uff980.woff"); unicode-range: U+ff980-ff9ff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uffa00.woff"); unicode-range: U+ffa00-ffa7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uffa80.woff"); unicode-range: U+ffa80-ffaff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uffb00.woff"); unicode-range: U+ffb00-ffb7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uffb80.woff"); unicode-range: U+ffb80-ffbff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uffc00.woff"); unicode-range: U+ffc00-ffc7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uffc80.woff"); unicode-range: U+ffc80-ffcff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uffd00.woff"); unicode-range: U+ffd00-ffd7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uffd80.woff"); unicode-range: U+ffd80-ffdff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uffe00.woff"); unicode-range: U+ffe00-ffe7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/uffe80.woff"); unicode-range: U+ffe80-ffeff; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufff00.woff"); unicode-range: U+fff00-fff7f; }
+@font-face { font-family:"標楷體2"; src:url("ttf/ufff80.woff"); unicode-range: U+fff80-fffff; }

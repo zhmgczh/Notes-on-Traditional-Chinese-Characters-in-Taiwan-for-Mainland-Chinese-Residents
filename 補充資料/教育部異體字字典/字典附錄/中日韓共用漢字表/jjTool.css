@@ -1,0 +1,238 @@
+﻿@charset "UTF-8";
+
+/* safe font
+Arial (sans-serif)
+Verdana (sans-serif)
+Tahoma (sans-serif)
+Trebuchet MS (sans-serif)
+Times New Roman (serif)
+Georgia (serif)
+Garamond (serif)
+Courier New (monospace)
+Brush Script MT (cursive)
+
+https://fonts.googleapis.com/css?family=Noto%20Sans%20TC
+ */
+
+
+ * { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
+
+ idiv, .idiv { display:inline-block; }
+ 
+ vFlex, .vflex, [vflex] { display:flex; flex-direction: column; }
+
+ left, cen, .center, right { display:block; } 
+ left, .left, [left] { text-align:left; }
+ right, .right, [right] { text-align:right; }
+ cen, .cen, .center, [center] { text-align:center; }
+ nbr { white-space:nowrap; }
+
+ fRight, floatR { display:block; float:right; }
+ fLeft, floatL { display:block; float:left; }
+
+
+ requ, .requ { color:red; }
+ red, .red { color:red; }
+ blue, .blue { color:blue; }
+ gray, .gray { color:gray; }
+
+/* flex */
+ flex, .flex, [flex] { display:flex; !important; 
+	&[wrap], &.wrap { flex-wrap:wrap; }
+	&[grow]>*, &.grow>* { flex-grow:1; }
+	&>*[grow] { flex-grow:1; flex-grow:attr(grow); }
+	&[gap] { column-gap:attr(gap); }
+
+	&[align] { justify-content:attr(align); }
+	&[justify-content] { justify-content:attr(justify-content); }
+
+	&[valign] { align-items:attr(valign); }
+	&[align-items] { align-items:attr(align-items); }
+
+	&[walign] { align-content:attr(walign); }
+	&[align-content] { align-content:attr(align-content); }
+ }
+
+
+ label.radio, label.ckbLabel, label.ckb { white-space:nowrap; border:1px dashed #0000; }
+ label.radio:hover, label.radio:focus-within
+, label.ckbLabel:hover, label.ckbLabel:focus-within
+, label.ckb:hover, label.ckb:focus-within 
+ { border-color:#888; text-shadow:2px 2px 2px #0008; }
+
+
+ ul[type='+'], ul[type='close'] { list-style-type:disclosure-closed; }
+ ul[type='-'], ul[type='open'] { list-style-type:disclosure-open; }
+
+ ol[type='11'],  ol[type='0'] { list-style-type:decimal-leading-zero; }
+ ol[type='壹'] { list-style-type:trad-chinese-formal; }
+ ol[type='一'] { list-style-type:cjk-ideographic; }
+ ol[type='甲'] { list-style-type:cjk-heavenly-stem; }
+ ol[type='子'] { list-style-type:cjk-earthly-branch; }
+ ol[type='あ'] { list-style-type:hiragana; }
+ ol[type='い'] { list-style-type:hiragana-iroha; }
+ ol[type='ア'] { list-style-type:katakana; }
+ ol[type='イ'] { list-style-type:katakana-iroha; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* diolog static. Don't edit this. */
+.jjDialog { display:none; position:fixed; z-index:9999;
+ left:0; top:0; width:100%; height:100%; padding:2em;
+ font-size:1em; text-align:center; }
+.jjDialog>aside { display:flex; flex-direction:column; max-width:70%; max-height:90%;
+ margin:auto; background-color:#fff; }
+.jjDialog>aside>* { line-height:150%; text-align:left; }
+.jjDialog>aside>div { overflow:auto; min-height:5em; max-height:calc(90vh - 9em); background-color:#fff; padding:1em; overflow:auto; }
+.jjDialog>aside>div::-webkit-scrollbar-thumb  { background-color:#4c8; }
+.jjDialog>aside>footer>div { padding:0.5em; }
+
+
+/* diolog dyna */
+.jjDialog { background-color:rgba(128,128,128,0.5); } /* background for cover */
+.jjDialog>aside 
+{ 
+ background-color:#fff; /* background for diolog */
+ border:1px solid #ccc; border-radius:10px; box-shadow:3px 3px 5px rgba(0, 0, 0, 0.5);}
+.jjDialog>aside>div { background-color:#fff; padding:1em; }
+
+
+.jjDialog header { background-color:#4c8; padding:0.5em 1em; border-radius: 10px 10px 0 0; line-height:150%; font-weight:bold; }
+.jjDialog header>h3 { display:inline; margin:0; padding:0; }
+
+.jjDialog main { overflow:auto; }
+
+.jjDialog footer>div { padding:1em; }
+.jjDialog footer>div>input { border:1px solid #888; border-radius:0.3em; }
+.jjDialog footer>div>input[type=button] { min-width: 6em; height:2.5em; padding:0.2em; line-height:1; }
+.jjDialog footer>div>input[type=button]:nth-child(n+2) { margin-left:2em; }
+
+ input::placeholder { color:#faa; font-size:0.8em; }
+
+@media screen and (max-width: 600px)
+{
+	.jjDialog { padding:1em; }
+	.jjDialog footer>div>input[type=button] {  }
+	/* .jjDialog main { max-height:60vh; } */
+}
+
+.jjDialog main::-webkit-scrollbar { width:10px; }
+.jjDialog main::-webkit-scrollbar-thumb { width:10px; background-color:#ccc; border-radius:5px; }
+
+.jjDialog footer { text-align:center; background-color:#eee; border-radius:0 0 10px 10px; }
+.jjDialog footer>div { padding:0.5em; }
+
+
+.jjDialog2
+{
+	border-radius: 0.5em;
+	padding:0;
+	border:1px solid #888;
+	&::backdrop { background-color:#0004; }
+
+	header { background-color:#4c8; padding:0.5em 1em; line-height:150%; font-weight:bold; }
+	header>h3 { display:inline; margin:0; padding:0; }
+
+	&>div { overflow:auto; min-height:5em; max-height:calc(90vh - 9em); background-color:#fff; padding:1em; overflow:auto; }
+	&>div::-webkit-scrollbar { width:10px; background-color:#ccc; border-radius:5px; }
+	&>div::-webkit-scrollbar-thumb  { background-color:#4c8; }
+
+
+	& footer
+	{
+		background-color:#eee; text-align:center; 
+		&>div
+		{
+			padding:0.5em; 
+			input { border:1px solid #888; border-radius:0.3em; }
+			input[type=button] { min-width: 6em; height:2.5em; padding:0.2em; line-height:1; }
+			input[type=button]:nth-child(n+2) { margin-left:2em; }
+		}
+	}
+}
+
+
+
+/* 自訂checkbox */
+.skin input[type=checkbox] { position:relative; top:-0.9em; width:1em; height:0px; color:#B95E00; }
+.skin input[type=checkbox]::before {
+content:''; border:1px solid #fff; border-radius:3px;display: inline-block;
+ width:0.9em; height:0.9em; margin-top:0.2em; text-align:center; line-height:90%; }
+.skin input[type=checkbox]:checked::before { content:'✔'; background-color:#fff; }
+.skin input[type=checkbox]:hover::before { background-color:#bbb; }
+
+
+
+.radioLabel { padding:1px; }
+.radioLabel:hover
+{
+	border:dashed 1px #808080;
+	padding:0px;
+	border-radius: 5px;
+}
+.radioLabel:active, .radioLabel:checked, .radioLabel:focus
+{
+	background:#f0f0f0;
+}
+
+.vLab label { display:block; }
+
+
+ main { display:block; }
+
+ table { border-collapse:collapse; }
+ table caption { white-space:nowrap; }
+
+ details>summary { cursor:pointer; }
+
+ select .selected { }
+ select option[selected] {  background:#ffff80; color:red; }
+ optgroup[disabled] { disabled:none; }
+
+ select, input[type=text], input[type=number], input:not([type])
+ {	&:hover, &:focus { background-color:#fed; }
+ }
+
+ input:out-of-range { color:red; }
+
+ [data-url], [data-link], [data-href] { cursor:pointer; }
+ html[data-url] { cursor:initial; }
+
+/* onInput="this.previousElementSibling.value=this.value;" */
+
+
+ input[type=number] { padding-right:0; text-align:right; }
+
+ input[type=range] { color:#000; }
+ input[type=range]::before { content:attr(min); position:relative; top:-10px; }
+ input[type=range]::after { content:attr(max); position:relative; top:-10px; }
+
+
+ input[type=range]:before { position:relative; top:-10px; content:attr(min); }
+ input[type=range]:after { position:relative; top:-10px; content:attr(max); }
+
+ input[type=email] { background: no-repeat 99% center/1em #fff url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='1.3em' width='1.3em'><text x='0' y='1em' fill='blue' font-size='1em'>📧</text></svg>"); }
+
+ input[type=password] { background:no-repeat 99% center/1em #fff url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='1.3em' width='1.3em'><text x='0' y='1em' fill='blue' font-size='1em'>🔑</text></svg>"); }
+
+ input[type=file] { background-repeat:no-repeat; background-position:99%;
+ background-image: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='1.5em' width='1.5em'><text x='0' y='1.1em' fill='blue' font-size='1em'>📁</text></svg>"); }
+
+ input[type=text].date { width:9em; background-repeat:no-repeat; background-position:99%;
+ background-image: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='1.5em' width='1.5em'><text x='0' y='1.1em' fill='blue' font-size='1em'>📅</text></svg>");
+ }
+ input[type=date] { width:9em; }
+
