@@ -57,9 +57,10 @@ def write_entries():
 
 def restart_session():
     global session
+    session.close()
     time.sleep(random.random() * 3)
     session = requests.Session()
-    restart_driver()
+    # restart_driver()
 
 
 def restart_driver():
@@ -86,12 +87,12 @@ def save_file(url, folder, base_url):
             else:
                 print(f"Failed to fetch {url}")
                 restart_session()
-                driver.get(base_url)
+                # driver.get(base_url)
                 tried_times += 1
         except:
             print(f"Failed to fetch {url}")
             restart_session()
-            driver.get(base_url)
+            # driver.get(base_url)
             tried_times += 1
     if not successful:
         url_lookup_table[url] = url
@@ -179,6 +180,7 @@ def crawl(
     search_replace=[],
     show_all_links=False,
 ):
+    search_replace = sorted(search_replace, key=lambda x: len(x[0]), reverse=True)
     global entries
     if not os.path.exists(save_folder):
         os.makedirs(save_folder)

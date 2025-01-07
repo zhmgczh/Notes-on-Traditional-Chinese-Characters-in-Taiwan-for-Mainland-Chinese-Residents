@@ -139,6 +139,7 @@ def crawl(
     search_replace=[],
     show_all_links=False,
 ):
+    search_replace = sorted(search_replace, key=lambda x: len(x[0]), reverse=True)
     global entries
     load_entries()
     if not os.path.exists(save_folder):
