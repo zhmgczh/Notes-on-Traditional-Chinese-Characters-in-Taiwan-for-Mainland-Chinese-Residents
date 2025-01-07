@@ -216,6 +216,7 @@ def crawl(
             write_entries()
             all_links.extend(links)
             # to_crawl.extend([link for link in links if link not in entries])
+        time.sleep(random.random() * 10)
     return all_links
 
 
