@@ -23,7 +23,6 @@
 					All rights have been waived by the editors. The website is dedicated to the public domain.<br />
 					<a href="/copyright-and-disclaimer-%e7%89%88%e6%ac%8a%e5%92%8c%e5%85%8d%e8%b2%ac%e8%81%b2%e6%98%8e/">Copyright and Disclaimer (版權和免責聲明)</a>
 				</p>
-				<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6635771356466022" crossorigin="anonymous"></script>
 				
 			</div><!-- .section-inner -->
 			
