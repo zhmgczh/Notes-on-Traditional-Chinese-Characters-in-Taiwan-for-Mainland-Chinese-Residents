@@ -14,9 +14,9 @@ def main():
             tranditional_characters.extend(tranditional_simplified[0].split("、"))
             simplified_characters.extend(tranditional_simplified[1].split("、"))
     with open("tranditional_characters.txt", "w", encoding="utf-8") as output:
-        output.write(",".join(tranditional_characters))
+        output.write("|".join(tranditional_characters))
     with open("simplified_characters.txt", "w", encoding="utf-8") as output:
-        output.write(",".join(simplified_characters))
+        output.write("|".join(simplified_characters))
 
 
 if "__main__" == __name__:
