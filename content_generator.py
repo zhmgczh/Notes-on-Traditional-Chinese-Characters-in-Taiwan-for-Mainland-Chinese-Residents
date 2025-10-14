@@ -220,7 +220,7 @@ dictionary_links_html='''
     }
 </script>'''
 dictionary_dict={'《國語辭典》（萌典）':'https://www.moedict.tw/#####',
-                 '國字標準字體筆順學習網':'https://stroke-order.learningweb.moe.edu.tw/charactersQueryResult.do?words=#####',
+                 '國字標準字體筆順學習網':'https://stroke-order.learningweb.moe.edu.tw/searchW.jsp?ID2=1&WORD=#####',
                  '《國語辭典簡編本》':'https://dict.concised.moe.edu.tw/search.jsp?word=#####',
                  '《重編國語辭典修訂本》':'https://dict.revised.moe.edu.tw/search.jsp?word=#####',
                  '《成語典》':'https://dict.idioms.moe.edu.tw/idiomList.jsp?idiom=#####',
