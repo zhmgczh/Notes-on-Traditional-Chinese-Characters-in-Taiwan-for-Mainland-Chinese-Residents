@@ -119,7 +119,16 @@ for (const key of Object.keys(dictionary)) {
     var stroke_link = '' != stroke[key][sub_key] ? '<button onclick="load_stroke(' + "'" + key + "','" + sub_key + "'" + ');">開關</button>' : '-';
     var check_box = '<input type="checkbox" id="duizhao_' + key + '-' + sub_key + '" onclick="checkbox_onclick(' + "'" + key + '-' + sub_key + "'" + ')"' + (records_array.includes(key + '-' + sub_key) ? ' checked' : '') + '>';
     var note = get_note(key, sub_key);
-    main_string += '<tr><td>' + key + '</td><td>' + sub_key + '</td><td>' + dictionary_link + '</td><td>' + stroke_link + '</td><td>' + note + '</td><td>' + check_box + '</td></tr>';
+    if ((key in no_notes_multiple_formal && no_notes_multiple_formal[key] != sub_key) ||
+      ((!(key in no_notes_multiple_formal)) && Object.keys(dictionary[key]).length > 1 && '-' == note)) {
+      display_key = '<del style="text-decoration-color: red;text-decoration-thickness: 3px;">' + key + '</del>';
+      display_sub_key = '<del style="text-decoration-color: red;text-decoration-thickness: 3px;">' + sub_key + '</del>';
+    }
+    else {
+      display_key = key;
+      display_sub_key = sub_key;
+    }
+    main_string += '<tr><td style="font-size: 36px;">' + display_key + '</td><td style="font-size: 36px;">' + display_sub_key + '</td><td>' + dictionary_link + '</td><td>' + stroke_link + '</td><td>' + note + '</td><td>' + check_box + '</td></tr>';
   }
 }
 var main = document.getElementById('main_對照_table');
@@ -128,7 +137,9 @@ var my_table = null;
 try {
   $(document).ready(function () {
     my_table = $('#myTable').DataTable({
-      'ordering': false, 'stateSave': true, 'stateDuration': 60 * 60 * 24 * 3650, search: { smart: true }, language: {
+      'ordering': false, 'stateSave': true, 'stateDuration': 60 * 60 * 24 * 3650, search: { smart: true },
+      lengthMenu: [10, 25, 50, 100, 500, 1000, -1],
+      language: {
         "decimal": "",
         "emptyTable": "表中無可顯示之條目",
         "info": "正在顯示編號在_START_至_END_之間的條目（共_TOTAL_條）",
@@ -137,6 +148,9 @@ try {
         "infoPostFix": "",
         "thousands": ",",
         "lengthMenu": "每頁顯示_MENU_條",
+        "lengthLabels": {
+            '-1': '所有'
+        },
         "loadingRecords": "正在加載……",
         "processing": "正在處理……",
         "search": "查詢：",

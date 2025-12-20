@@ -67,7 +67,7 @@ var records_array = ('' != records ? records.split(',') : []);
 result.sort((a, b) => a.localeCompare(b, 'zh-Hant-TW'));
 var main_string = '';
 for (var i = 0; i < result.length; ++i) {
-  var title_tag = result[i].substring('一簡多繁辨析之'.length);
+  var title_tag = result[i].substring('一簡多繁辨析之'.length).replaceAll('「', '').replaceAll('」', '');
   main_string += '<tr><td>' + title_tag + '</td><td>' + '<a href="/一簡多繁辨析/' + result[i] + '" target="_blank">點擊打開</a>' + '</td><td>' + '<input type="checkbox" id="yijianduofanbianxi_' + title_tag + '" onclick="checkbox_onclick(' + "'" + title_tag + "'" + ')"' + (records_array.includes(title_tag) ? ' checked' : '') + '>' + '</td></tr>';
 }
 var main = document.getElementById('main_一簡多繁辨析_table');
@@ -76,7 +76,9 @@ var my_table = null;
 try {
   $(document).ready(function () {
     my_table = $('#myTable').DataTable({
-      'ordering': false, 'stateSave': true, 'stateDuration': 60 * 60 * 24 * 3650, search: { smart: true }, language: {
+      'ordering': false, 'stateSave': true, 'stateDuration': 60 * 60 * 24 * 3650, search: { smart: true },
+      lengthMenu: [10, 25, 50, 100, 500, -1],
+      language: {
         "decimal": "",
         "emptyTable": "表中無可顯示之條目",
         "info": "正在顯示編號在_START_至_END_之間的條目（共_TOTAL_條）",
@@ -85,6 +87,9 @@ try {
         "infoPostFix": "",
         "thousands": ",",
         "lengthMenu": "每頁顯示_MENU_條",
+        "lengthLabels": {
+            '-1': '所有'
+        },
         "loadingRecords": "正在加載……",
         "processing": "正在處理……",
         "search": "查詢：",

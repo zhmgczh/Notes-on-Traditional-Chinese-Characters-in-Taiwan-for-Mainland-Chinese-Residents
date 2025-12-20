@@ -1,31 +1,34 @@
 <style>
   input[type=text] {
-    width: 40%;
+    width: 30%;
   }
   input[type=search] {
-    width: 40%;
+    width: 30%;
   }
 </style>
 <div style="text-align: center;">
   <a
     href="/%e3%80%8c%e4%b8%80%e7%b0%a1%e5%a4%9a%e7%b9%81%e8%be%a8%e6%9e%90%e3%80%8d%e5%ad%b8%e7%bf%92%e7%b4%a2%e5%bc%95%e8%a1%a8/"><button>跳轉到「一簡多繁辨析」學習索引表</button></a>
 </div><br />
-<p>注意表中每一行的「非正字<!--非正體字-->」與「正字<!--臺灣正體-->」之間並不一定是「大陸簡化字」和「臺灣正體字」之間的嚴格對應關係。表中每一行的嚴格定義如下：「非正字<!--非正體字-->」有一個出現於<a href="https://zh.wikisource.org/wiki/%E9%80%9A%E7%94%A8%E8%A7%84%E8%8C%83%E6%B1%89%E5%AD%97%E8%A1%A8#%E9%99%84%E4%BB%B61._%E8%A7%84%E8%8C%83%E5%AD%97%E4%B8%8E%E7%B9%81%E4%BD%93%E5%AD%97%E3%80%81%E5%BC%82%E4%BD%93%E5%AD%97%E5%AF%B9%E7%85%A7%E8%A1%A8" target="_blank" rel="noopener">《通用規範漢字表》附件：1.規範字與繁體字、異體字對照表</a>中的異體字與「正字<!--臺灣正體-->」的一個出現於<a href="https://dict.variants.moe.edu.tw/" target="_blank" rel="noopener">《教育部異體字字典》</a>中異體字相同。</p>
-<link href='/wp-content/themes/rowling/DataTables-1.10.21/media/css/jquery.dataTables.min.css' rel='stylesheet'>
+<p>若無特殊標注，表中每一行的「簡字<!--非正體字-->」與「正字<!--臺灣正體-->」之間就是「大陸簡化字」和「臺灣正體字」之間的嚴格對應關係，但若出現紅色刪除線則為例外。</p>
+<p>表中每一行的嚴格定義如下：「簡字<!--非正體字-->」有一個出現於<a href="https://zh.wikisource.org/wiki/%E9%80%9A%E7%94%A8%E8%A7%84%E8%8C%83%E6%B1%89%E5%AD%97%E8%A1%A8#%E9%99%84%E4%BB%B61._%E8%A7%84%E8%8C%83%E5%AD%97%E4%B8%8E%E7%B9%81%E4%BD%93%E5%AD%97%E3%80%81%E5%BC%82%E4%BD%93%E5%AD%97%E5%AF%B9%E7%A6%B1%E6%A0%B9" target="_blank" rel="noopener">《通用規範漢字表》附件：1.規範字與繁體字、異體字對照表</a>中的異體字與「正字<!--臺灣正體-->」的一個出現於<a href="https://dict.variants.moe.edu.tw/" target="_blank" rel="noopener">《教育部異體字字典》</a>中異體字相同。</p>
+<!-- <link href='/wp-content/themes/rowling/DataTables-1.10.21/media/css/jquery.dataTables.min.css' rel='stylesheet'>
 </link>
 <script src='/wp-content/themes/rowling/DataTables-1.10.21/jquery-3.7.1.min.js'></script>
-<script src='/wp-content/themes/rowling/DataTables-1.10.21/media/js/jquery.dataTables.min.js'></script>
+<script src='/wp-content/themes/rowling/DataTables-1.10.21/media/js/jquery.dataTables.min.js'></script> -->
+<link rel="stylesheet" href="/wp-content/themes/rowling/DataTables/datatables.css" />
+<script src="/wp-content/themes/rowling/DataTables/datatables.js"></script>
 <table id="myTable"
   style="border-collapse: collapse; border: 3px solid purple; table-layout: fixed; text-align: center; width: 100%;"
   class="display">
   <thead>
     <tr>
-      <th>非正字<!--非正體字--></th>
-      <th>正字<!--臺灣正體--></th>
-      <th>字典<!--官方字典--></th>
-      <th>筆順<!--筆順學習--></th>
-      <th>講義<!--辨析講義--></th>
-      <th>已學<!--已學習--></th>
+      <th class="dt-head-center">簡字<!--非正體字--></th>
+      <th class="dt-head-center">正字<!--臺灣正體--></th>
+      <th class="dt-head-center">字典<!--官方字典--></th>
+      <th class="dt-head-center">筆順<!--筆順學習--></th>
+      <th class="dt-head-center">講義<!--辨析講義--></th>
+      <th class="dt-head-center">已學<!--已學習--></th>
     </tr>
   </thead>
   <tbody id="main_對照_table">
@@ -55,5 +58,6 @@
 <!-- <script src="https://stroke-order.learningweb.moe.edu.tw/js/playerShare.js"></script> -->
 <script>
   var yijianduofanbianxi = {{CODE_yijianduofanbianxi}};
+  var no_notes_multiple_formal = {{CODE_no_notes_multiple_formal}};
   {{CODEmain_function}}
 </script>
