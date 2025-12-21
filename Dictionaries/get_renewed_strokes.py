@@ -135,7 +135,9 @@ def main():
     ) as manually_added_dictionary_entries:
         manually_added_dictionary_entries = json.load(manually_added_dictionary_entries)
         final_json = deep_merge(final_json, manually_added_dictionary_entries)
-        stroke_json = deep_merge_key(stroke_json, manually_added_dictionary_entries, "")
+    with open("manually_added_stroke_entries.json") as manually_added_stroke_entries:
+        manually_added_stroke_entries = json.load(manually_added_stroke_entries)
+        stroke_json = deep_merge(stroke_json, manually_added_stroke_entries)
     for key in stroke_json:
         for sub_key in stroke_json[key]:
             if sub_key in entries:
