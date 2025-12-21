@@ -1,6 +1,24 @@
 import json, requests, time, random, sys, os, pickle
 from urllib.parse import quote
 from collections import OrderedDict
+from copy import deepcopy
+
+
+def deep_merge(d1, d2):
+    """
+    將 d2 合併進 d1（不改動原始 dict）
+    規則：
+    - 兩邊都是 dict -> 遞迴合併
+    - 否則 -> d2 覆蓋 d1
+    """
+    result = deepcopy(d1)
+    for k, v in d2.items():
+        if k in result and isinstance(result[k], dict) and isinstance(v, dict):
+            result[k] = deep_merge(result[k], v)
+        else:
+            result[k] = deepcopy(v)
+    return result
+
 
 headers = {
     "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
