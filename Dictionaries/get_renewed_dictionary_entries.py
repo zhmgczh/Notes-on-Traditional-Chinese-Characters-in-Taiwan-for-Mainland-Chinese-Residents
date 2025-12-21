@@ -1,6 +1,5 @@
 import json, requests, time, random, sys, os, pickle
 from urllib.parse import quote
-from collections import OrderedDict
 from copy import deepcopy
 
 
@@ -17,6 +16,18 @@ def deep_merge(d1, d2):
             result[k] = deep_merge(result[k], v)
         else:
             result[k] = deepcopy(v)
+    return result
+
+
+def deep_merge_key(d1, d2, added_value=""):
+    result = deepcopy(d1)
+    for k, v in d2.items():
+        if isinstance(v, dict):
+            if k not in result:
+                result[k] = {}
+            result[k] = deep_merge_key(result[k], v, added_value)
+        else:
+            result[k] = added_value
     return result
 
 
@@ -42,14 +53,14 @@ entries = {}
 
 
 def load_entries():
-    if os.path.isfile("entries.pkl"):
-        with open("entries.pkl", "rb") as inp:
+    if os.path.isfile("dictionary_entries.pkl"):
+        with open("dictionary_entries.pkl", "rb") as inp:
             global entries
             entries = pickle.load(inp)
 
 
 def write_entries():
-    with open("entries.pkl", "wb") as outp:
+    with open("dictionary_entries.pkl", "wb") as outp:
         global entries
         pickle.dump(entries, outp, pickle.HIGHEST_PROTOCOL)
 
@@ -66,7 +77,7 @@ def get_id_from_response(response):
     if -1 == normal_tag:
         id = ""
     else:
-        id = html[:normal_tag].split('href="dictView.jsp?ID=')[-1].split('&q=1"')[0]
+        id = html[:normal_tag].split('href="dictView.jsp?ID=')[-1].split('&')[0]
     if "" == id:
         url_tag = html.find("location.href='dictView.jsp?ID=")
         if -1 != url_tag:
@@ -115,6 +126,13 @@ def main():
         final_json = json.load(final_table)
     with open("stroke_table_normalized.json") as stroke_table:
         stroke_json = json.load(stroke_table)
+    with open(
+        "manually_added_dictionary_entries.json"
+    ) as manually_added_dictionary_entries:
+        manually_added_dictionary_entries = json.load(manually_added_dictionary_entries)
+        final_json = deep_merge(final_json, manually_added_dictionary_entries)
+        
+        stroke_json = deep_merge_key(stroke_json, manually_added_dictionary_entries, "")
     for key in final_json:
         for sub_key in final_json[key]:
             if sub_key in entries:
@@ -123,14 +141,14 @@ def main():
                 final_json[key][sub_key] = get_id(
                     sub_key, "" != final_json[key][sub_key]
                 )
-    final = OrderedDict(
+    final = dict(
         sorted(
             final_json.items(),
             reverse=True,
             key=lambda t: len(final_json[t[0]].items()),
         )
     )
-    stroke = OrderedDict(
+    stroke = dict(
         sorted(
             stroke_json.items(),
             reverse=True,
@@ -138,7 +156,7 @@ def main():
         )
     )
     for key in final.keys():
-        final[key] = OrderedDict(
+        final[key] = dict(
             sorted(
                 final[key].items(),
                 reverse=True,
@@ -146,7 +164,7 @@ def main():
                 + (0 if "" == stroke[key][t[0]] else 1),
             )
         )
-        stroke[key] = OrderedDict(
+        stroke[key] = dict(
             sorted(
                 stroke[key].items(),
                 reverse=True,
