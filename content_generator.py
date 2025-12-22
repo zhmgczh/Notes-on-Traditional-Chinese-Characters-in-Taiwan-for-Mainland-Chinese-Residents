@@ -81,9 +81,9 @@ def convert_all_pinyin(text):
             '<span style="font-family: GBPinyinok;">'
             + all_pinyin[i]
             + "</span>"
-            + "["
+            + '[<span style="font-family: eduKai;">'
             + converter_dictionary[all_pinyin[i]]
-            + "]",
+            + "</span>]",
         )
     return text
 
@@ -416,7 +416,10 @@ def main(mode=0, email=False):
             pure_text = "\n".join(pure_text)
             article = '<p style="font-family: eduSong; font-size: 150%;">'
             for i in range(1, len(full_text) - 1):
-                article += full_text[i] + '</p>\n<p style="font-family: eduSong; font-size: 150%;">'
+                article += (
+                    full_text[i]
+                    + '</p>\n<p style="font-family: eduSong; font-size: 150%;">'
+                )
             article += full_text[-1] + "</p>\n"
             img_url = (
                 "https://cdn.githubraw.com/zhmgczh/Notes-on-Traditional-Chinese-Characters-in-Taiwan-for-Mainland-Chinese-Residents/master/"
