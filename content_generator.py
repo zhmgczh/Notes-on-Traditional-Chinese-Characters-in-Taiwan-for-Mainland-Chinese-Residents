@@ -140,7 +140,7 @@ def get_text(filename, id):
             for i in range(len(table)):
                 table[i] = [table[i]]
             text = tabulate(table, tablefmt="unsafehtml").replace(
-                "<table>", '<table style="font-family: eduSong;">'
+                "<table>", '<table style="font-family: eduSong; font-size: 150%;">'
             )
             full_text.append(text)
         else:
@@ -225,7 +225,7 @@ def get_mistakes(character):
         return ""
     entries = mistakes_dict[character]
     addition = (
-        '<p style="font-family: eduSong;">誤用舉例──「'
+        '<p style="font-family: eduSong; font-size: 150%;">誤用舉例──「'
         + character
         + '」：</p>\n<div style="text-align:center;">\n'
     )
@@ -235,7 +235,7 @@ def get_mistakes(character):
             + quote(entry[0])
         )
         addition += (
-            '<div style="font-family: eduSong;"><a href="'
+            '<div style="font-family: eduSong; font-size: 150%;"><a href="'
             + img_url
             + '" target="_blank"><img src="'
             + img_url
@@ -244,7 +244,7 @@ def get_mistakes(character):
             + '"></a></div>\n'
         )
         addition += (
-            '<div style="font-family: eduSong;">'
+            '<div style="font-family: eduSong; font-size: 150%;">'
             + entry[1].replace("\\n", "<br/>\n")
             + "</div><br/>\n"
         )
@@ -256,7 +256,7 @@ final_json = {}
 stroke_json = {}
 dictionary_links_html = """
 <tag id="stroke_pos"></tag>
-<center><button onclick="close_stroke()" style="font-family: eduSong;">關閉「筆順學習」</button></center>
+<center><button onclick="close_stroke()" style="font-family: eduSong; font-size: 150%;">關閉「筆順學習」</button></center>
 <center>
   <!-- <div id="stroke_player" style="width:348px;height:470px;display:none;">載入中，請稍後...</div> -->
   <iframe id="stroke_player" src="" frameborder=0 style="width:300px;height:520px;display:none;" allow="fullscreen"></iframe>
@@ -369,7 +369,7 @@ def get_dictionary_links(characters):
             )
     table.append(strokes)
     return (
-        '<p style="font-family: eduSong;">文獻連結：</p>\n<div style="text-align:center;font-family: eduSong;">\n'
+        '<p style="font-family: eduSong; font-size: 150%;">文獻連結：</p>\n<div style="text-align:center;font-family: eduSong; font-size: 150%;">\n'
         + tabulate(table, tablefmt="unsafehtml")
         + "</div>"
         + dictionary_links_html
@@ -414,9 +414,9 @@ def main(mode=0, email=False):
             full_text, pure_text = get_text(name, id)
             check_brackets(pure_text)
             pure_text = "\n".join(pure_text)
-            article = '<p style="font-family: eduSong;">'
+            article = '<p style="font-family: eduSong; font-size: 150%;">'
             for i in range(1, len(full_text) - 1):
-                article += full_text[i] + '</p>\n<p style="font-family: eduSong;">'
+                article += full_text[i] + '</p>\n<p style="font-family: eduSong; font-size: 150%;">'
             article += full_text[-1] + "</p>\n"
             img_url = (
                 "https://cdn.githubraw.com/zhmgczh/Notes-on-Traditional-Chinese-Characters-in-Taiwan-for-Mainland-Chinese-Residents/master/"

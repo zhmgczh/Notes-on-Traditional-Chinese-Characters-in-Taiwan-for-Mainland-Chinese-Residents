@@ -73,7 +73,7 @@ for (var i = 0; i < result.length; ++i) {
   if (filename.length > 22) {
     filename = filename.substring(0, 22);
   }
-  main_string += '<tr><td>' + display_title_tag + '</td><td>' + '<a href="/一簡多繁辨析/' + filename + '" target="_blank">點擊打開</a>' + '</td><td>' + '<input type="checkbox" id="yijianduofanbianxi_' + title_tag + '" onclick="checkbox_onclick(' + "'" + title_tag + "'" + ')"' + (records_array.includes(title_tag) ? ' checked' : '') + '>' + '</td></tr>';
+  main_string += '<tr><td>' + display_title_tag + '</td><td>' + '<a href="/一簡多繁辨析/' + filename + '" target="_blank">打開</a>' + '</td><td>' + '<input type="checkbox" id="yijianduofanbianxi_' + title_tag + '" onclick="checkbox_onclick(' + "'" + title_tag + "'" + ')"' + (records_array.includes(title_tag) ? ' checked' : '') + '>' + '</td></tr>';
 }
 var main = document.getElementById('main_一簡多繁辨析_table');
 main.innerHTML = main_string;

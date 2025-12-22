@@ -132,7 +132,7 @@ for (const key of Object.keys(dictionary)) {
       display_key = key;
       display_sub_key = sub_key;
     }
-    main_string += '<tr><td style="font-size: 200%; font-family: ZhongYiSong;">' + display_key + '</td><td style="font-size: 200%;">' + display_sub_key + '</td><td>' + dictionary_link + '</td><td>' + stroke_link + '</td><td>' + note + '</td><td>' + check_box + '</td></tr>';
+    main_string += '<tr><td style="font-size: 150%; font-family: ZhongYiSong;">' + display_key + '</td><td style="font-size: 150%;">' + display_sub_key + '</td><td>' + dictionary_link + '</td><td>' + stroke_link + '</td><td>' + note + '</td><td>' + check_box + '</td></tr>';
   }
 }
 var main = document.getElementById('main_對照_table');
