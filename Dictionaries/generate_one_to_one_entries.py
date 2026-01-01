@@ -252,8 +252,8 @@ def main(diff_generate=True):
             + '<span style="font-family: ZhongYiSong; font-size: 750%;">（'
             + jian
             + "）</span></div>\n"
-            + get_dictionary_links([fan])
             + get_mistakes(fan)
+            + get_dictionary_links([fan])
         )
         h = hashlib.new("sha256")
         h.update(
