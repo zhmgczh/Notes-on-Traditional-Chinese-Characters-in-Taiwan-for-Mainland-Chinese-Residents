@@ -110,6 +110,19 @@ for (var i = 0; i < yijianduofanbianxi.length; ++i) {
     }
   }
 }
+for (var i = 0; i < yijianyifanduiying.length; ++i) {
+  characters = yijianyifanduiying[i].substr('一簡一繁對應之「'.length);
+  characters = characters.substr(0, characters.length - '」'.length);
+  characters = characters.split('」→「');
+  if (undefined === yijianduofanbianxi_notes[characters[1]]){
+    yijianduofanbianxi_notes[characters[1]] = {};
+  }
+  filename = yijianyifanduiying[i];
+  if (filename.length > 22) {
+    filename = filename.substr(0, 22);
+  }
+  yijianduofanbianxi_notes[characters[1]][characters[0]] = ['/一簡一繁對應/' + filename, yijianyifanduiying[i]];
+}
 function get_note(key, sub_key) {
   if (undefined == yijianduofanbianxi_notes[key] || undefined == yijianduofanbianxi_notes[key][sub_key]) {
     return '-';
