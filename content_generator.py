@@ -496,18 +496,28 @@ def main(mode=0, email=False):
 
 
 if "__main__" == __name__:
-    import sys
+    import sys, fire
 
-    if 3 == len(sys.argv):
-        main(int(sys.argv[1]), bool(sys.argv[2]))
-    elif 2 == len(sys.argv):
-        main(int(sys.argv[1]))
+    if 1 < len(sys.argv):
+        fire.Fire(main)
     else:
         main()
         input(
             'Do you want to continue to generate a whole content backup? (Press Enter to reply "YES") '
         )
         main(1)
+        input(
+            'Do you want to continue to generate the changes of the one to one entries? (Press Enter to reply "YES") '
+        )
+        from Dictionaries import generate_one_to_one_entries
+
+        os.chdir("./Dictionaries/")
+        generate_one_to_one_entries.main()
+        input(
+            'Do you want to continue to generate a whole backup of the one to one entries? (Press Enter to reply "YES") '
+        )
+        generate_one_to_one_entries.main(False)
+        os.chdir("../")
         input(
             'Do you want to continue to generate a whole website? (Press Enter to reply "YES") '
         )

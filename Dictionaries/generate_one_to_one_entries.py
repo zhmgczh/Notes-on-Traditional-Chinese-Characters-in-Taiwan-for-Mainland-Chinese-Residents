@@ -187,11 +187,8 @@ def get_dictionary_links(characters):
     )
 
 
-one_to_one_entries = {}
-
-
 def load_one_to_one_entries():
-    global one_to_one_entries
+    one_to_one_entries = {}
     with open("總表.html", "r", encoding="utf-8") as one_to_one_file:
         one_to_one_table = one_to_one_file.read().split("<tbody", 1)[1]
         duplicates = set()
@@ -229,11 +226,13 @@ def load_one_to_one_entries():
             #         "</del>", 1
             #     )[0].strip()
             one_to_one_table = one_to_one_table.split("</tr>", 1)[1]
+    return one_to_one_entries
 
 
 def main(diff_generate=True):
-    original_directory = os.getcwd()
-    os.chdir(os.path.dirname(os.path.abspath(__file__)))
+    if "__main__" == __name__:
+        original_directory = os.getcwd()
+        os.chdir(os.path.dirname(os.path.abspath(__file__)))
     if diff_generate and os.path.exists("atom.pkl"):
         with open("atom.pkl", "rb") as inp:
             hashcodes = pickle.load(inp)
@@ -241,7 +240,7 @@ def main(diff_generate=True):
         hashcodes = {}
     load_mistakes()
     load_dictionaries()
-    load_one_to_one_entries()
+    one_to_one_entries = load_one_to_one_entries()
     article_library = [["id", "title", "content", "excerpt", "category"]]
     index = 1
     json_table = []
@@ -255,19 +254,6 @@ def main(diff_generate=True):
             + "）</span></div>\n"
             + get_dictionary_links([fan])
             + get_mistakes(fan)
-        )
-        article_library.append(
-            [
-                index,
-                "一簡一繁對應之「" + fan + "」→「" + jian + "」",
-                content,
-                "《大陸居民臺灣正體字講義》一簡一繁對應之「"
-                + fan
-                + "」→「"
-                + jian
-                + "」",
-                "一簡一繁對應",
-            ]
         )
         h = hashlib.new("sha256")
         h.update(
@@ -286,13 +272,30 @@ def main(diff_generate=True):
                 )
             ).encode()
         )
-        if diff_generate:
-            if jian not in hashcodes or h.hexdigest() != hashcodes[jian]:
-                hashcodes[index] = h.hexdigest()
-                json_table.append("一簡一繁對應之「" + fan + "」→「" + jian + "」")
-        else:
-            hashcodes[index] = h.hexdigest()
-            json_table.append("一簡一繁對應之「" + fan + "」→「" + jian + "」")
+        # print(
+        #     jian,
+        #     jian not in hashcodes,
+        #     h.hexdigest(),
+        #     hashcodes.get(jian, ""),
+        #     h.hexdigest() != hashcodes.get(jian, ""),
+        # )
+        if jian not in hashcodes or h.hexdigest() != hashcodes[jian]:
+            print(fan, "→", jian, sep="")
+            article_library.append(
+                [
+                    index,
+                    "一簡一繁對應之「" + fan + "」→「" + jian + "」",
+                    content,
+                    "《大陸居民臺灣正體字講義》一簡一繁對應之「"
+                    + fan
+                    + "」→「"
+                    + jian
+                    + "」",
+                    "一簡一繁對應",
+                ]
+            )
+            hashcodes[jian] = h.hexdigest()
+        json_table.append("一簡一繁對應之「" + fan + "」→「" + jian + "」")
         index += 1
     with open("one_to_one_entries.json", "w", encoding="utf-8") as f:
         json.dump(json_table, f)
@@ -301,7 +304,8 @@ def main(diff_generate=True):
         writer.writerows(article_library)
     with open("atom.pkl", "wb") as outp:
         pickle.dump(hashcodes, outp, pickle.HIGHEST_PROTOCOL)
-    os.chdir(original_directory)
+    if "__main__" == __name__:
+        os.chdir(original_directory)
 
 
 if "__main__" == __name__:
