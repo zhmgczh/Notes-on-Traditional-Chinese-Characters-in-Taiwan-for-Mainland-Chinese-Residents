@@ -20,7 +20,7 @@
 					year.innerHTML = '中華民國' + (current_year - 1911) + '年（西元' + current_year + '）'
 				</script>
 				<p style="font-size:13.5px;text-align:center;">
- 					For non-commercial educational purposes only. All rights reserved except for contents from the Ministry of Education, R.O.C. (中華民國教育部).<br />
+ 					For non-commercial educational purposes only. All rights reserved except for content from the Ministry of Education, R.O.C. (中華民國教育部).<br />
 					<a href="/copyright-and-disclaimer-%e7%89%88%e6%ac%8a%e5%92%8c%e5%85%8d%e8%b2%ac%e8%81%b2%e6%98%8e/">Copyright and Disclaimer (版權和免責聲明)</a>
 				</p>
 				
