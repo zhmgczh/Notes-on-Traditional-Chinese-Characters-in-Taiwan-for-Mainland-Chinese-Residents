@@ -1,8 +1,5 @@
-import os, docx, pickle, csv, smtplib, hashlib, io, base64, json, functools
+import os, pickle, csv, hashlib, json
 from urllib.parse import quote
-from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
-from PIL import Image
 from tabulate import tabulate
 
 # sample_of_mistakes.csv
@@ -234,9 +231,14 @@ def load_one_to_one_entries():
             one_to_one_table = one_to_one_table.split("</tr>", 1)[1]
 
 
-def main():
+def main(diff_generate=True):
     original_directory = os.getcwd()
     os.chdir(os.path.dirname(os.path.abspath(__file__)))
+    if diff_generate and os.path.exists("atom.pkl"):
+        with open("atom.pkl", "rb") as inp:
+            hashcodes = pickle.load(inp)
+    else:
+        hashcodes = {}
     load_mistakes()
     load_dictionaries()
     load_one_to_one_entries()
@@ -259,11 +261,20 @@ def main():
                 index,
                 "一簡一繁對應之「" + fan + "」→「" + jian + "」",
                 content,
-                "《大陸居民臺灣正體字講義》一簡一繁對應之「" + fan + "」→「" + jian + "」",
+                "《大陸居民臺灣正體字講義》一簡一繁對應之「"
+                + fan
+                + "」→「"
+                + jian
+                + "」",
                 "一簡一繁對應",
             ]
         )
-        json_table.append("一簡一繁對應之「" + fan + "」→「" + jian + "」")
+        h = hashlib.new("sha256")
+        h.update(("#####".join(article_library[-1])).encode())
+        if diff_generate:
+            if jian not in hashcodes or h.hexdigest() != hashcodes[jian]:
+                hashcodes[index] = h.hexdigest()
+                json_table.append("一簡一繁對應之「" + fan + "」→「" + jian + "」")
         index += 1
     with open("one_to_one_entries.json", "w", encoding="utf-8") as f:
         json.dump(json_table, f)
@@ -274,4 +285,6 @@ def main():
 
 
 if "__main__" == __name__:
-    main()
+    import fire
+
+    fire.Fire(main)
