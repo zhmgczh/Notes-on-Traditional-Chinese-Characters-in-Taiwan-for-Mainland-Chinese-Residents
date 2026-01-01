@@ -270,17 +270,37 @@ def main(diff_generate=True):
             ]
         )
         h = hashlib.new("sha256")
-        h.update(("#####".join(article_library[-1])).encode())
+        h.update(
+            (
+                "#####".join(
+                    [
+                        "一簡一繁對應之「" + fan + "」→「" + jian + "」",
+                        content,
+                        "《大陸居民臺灣正體字講義》一簡一繁對應之「"
+                        + fan
+                        + "」→「"
+                        + jian
+                        + "」",
+                        "一簡一繁對應",
+                    ]
+                )
+            ).encode()
+        )
         if diff_generate:
             if jian not in hashcodes or h.hexdigest() != hashcodes[jian]:
                 hashcodes[index] = h.hexdigest()
                 json_table.append("一簡一繁對應之「" + fan + "」→「" + jian + "」")
+        else:
+            hashcodes[index] = h.hexdigest()
+            json_table.append("一簡一繁對應之「" + fan + "」→「" + jian + "」")
         index += 1
     with open("one_to_one_entries.json", "w", encoding="utf-8") as f:
         json.dump(json_table, f)
     with open("import_one_to_one.csv", "w", encoding="utf-8") as import_file:
         writer = csv.writer(import_file)
         writer.writerows(article_library)
+    with open("atom.pkl", "wb") as outp:
+        pickle.dump(hashcodes, outp, pickle.HIGHEST_PROTOCOL)
     os.chdir(original_directory)
 
 
