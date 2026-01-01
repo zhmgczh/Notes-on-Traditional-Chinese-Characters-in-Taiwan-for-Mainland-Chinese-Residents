@@ -252,7 +252,7 @@ def main():
             + jian
             + "）</span></div>\n"
             + get_dictionary_links([fan])
-            + get_mistakes(jian)
+            + get_mistakes(fan)
         )
         article_library.append(
             [
