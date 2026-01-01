@@ -1,0 +1,124 @@
+function set_cookie(cname, cvalue, exdays = 3650) {
+    // var d = new Date();
+    // d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    // var expires = 'expires=' + d.toGMTString();
+    // document.cookie = cname + '=' + encodeURI(cvalue) + ';' + expires;
+    localStorage.setItem(cname, cvalue);
+}
+function get_cookie(cname) {
+    // var name = cname + '=';
+    // var ca = document.cookie.split(';');
+    // for (var i = 0; i < ca.length; ++i) {
+    //   var c = ca[i].trim();
+    //   if (0 == c.indexOf(name)) {
+    //     return decodeURI(c.substring(name.length, c.length));
+    //   }
+    // }
+    // return '';
+    // Retrieve
+    var value = localStorage.getItem(cname)
+    return null === value ? '' : value;
+}
+function add_favorite() {
+    var title = document.title;
+    var URL = document.URL;
+    if (document.all) {
+        window.external.addFavorite(URL, title);
+    }
+    else if (window.sidebar) {
+        try {
+            window.sidebar.addPanel(title, URL, '');
+        }
+        catch (e) {
+            alert("抱歉, 您所使用的瀏覽器無法完成此操作.\n\n加入收藏失敗, 請使用Ctrl+D進行添加.");
+        }
+    }
+}
+function get_request(url) {
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', url, false);
+    xhr.send(null);
+    const result = xhr.responseText;
+    return result;
+}
+function checkbox_onclick(s) {
+    var checkbox = document.getElementById('yijianyifanduiying_' + s);
+    var records_array = '' != records ? records.split(',') : [];
+    if (checkbox.checked && !records_array.includes(s)) {
+        records_array[records_array.length] = s;
+    }
+    else if ((!checkbox.checked) && records_array.includes(s)) {
+        records_array.splice(records_array.indexOf(s), 1);
+    }
+    records = '';
+    for (var i = 0; i < records_array.length; ++i) {
+        if (0 != i) {
+            records += ',';
+        }
+        records += records_array[i];
+    }
+    set_cookie('records', records);
+}
+var records = get_cookie('records');
+if ('' != records) {
+    set_cookie('records', records);
+}
+var records_array = ('' != records ? records.split(',') : []);
+result.sort((a, b) => a.localeCompare(b, 'zh-Hant-TW'));
+var main_string = '';
+for (var i = 0; i < result.length; ++i) {
+    var title_tag = result[i].substring('一簡一繁對應之'.length).replaceAll('「', '').replaceAll('」', '');
+    var display_title_tags = (title_tag.replace('→', '→<span style="font-family: ZhongYiSong;">') + '</span>').split('→');
+    filename = result[i];
+    if (filename.length > 22) {
+        filename = filename.substring(0, 22);
+    }
+    main_string += '<tr><td>' + display_title_tags[0] + '</td><td>' + display_title_tags[1] + '</td><td>' + '<a href="/一簡一繁對應/' + filename + '" target="_blank">打開</a>' + '</td><td>' + '<input type="checkbox" id="yijianyifanduiying_' + title_tag + '" onclick="checkbox_onclick(' + "'" + title_tag + "'" + ')"' + (records_array.includes(title_tag) ? ' checked' : '') + '>' + '</td></tr>';
+}
+var main = document.getElementById('main_一簡一繁對應_table');
+main.innerHTML = main_string;
+var my_table = null;
+try {
+    $(document).ready(function () {
+        my_table = $('#myTable').DataTable({
+            'ordering': false, 'stateSave': true, 'stateDuration': 60 * 60 * 24 * 3650, search: { smart: true },
+            lengthMenu: [10, 25, 50, 100, 500, 1000, 2000, -1],
+            language: {
+                "decimal": "",
+                "emptyTable": "表中無可顯示之條目",
+                "info": "正在顯示編號在_START_至_END_之間的條目（共_TOTAL_條）",
+                "infoEmpty": "表中無可顯示之條目",
+                "infoFiltered": "（從全部_MAX_條條目中篩選）",
+                "infoPostFix": "",
+                "thousands": ",",
+                "lengthMenu": "每頁顯示_MENU_條",
+                "lengthLabels": {
+                    '-1': '所有'
+                },
+                "loadingRecords": "正在加載……",
+                "processing": "正在處理……",
+                "search": "查詢：",
+                "zeroRecords": "沒有找到匹配的條目",
+                "paginate": {
+                    "first": "首頁",
+                    "last": "尾頁",
+                    "next": "下一頁",
+                    "previous": "上一頁"
+                },
+                "aria": {
+                    "sortAscending": ": activate to sort column ascending",
+                    "sortDescending": ": activate to sort column descending"
+                }
+            }
+        });
+    });
+} catch (error) {
+    window.location.reload();
+}
+function jump_page() {
+    page_index_jump = parseInt(document.getElementById('page_index_jump').value) - 1;
+    if (isNaN(page_index_jump) || page_index_jump < 0 || page_index_jump >= my_table.page.info().pages) {
+        return;
+    }
+    my_table.page(page_index_jump).draw(false);
+}
