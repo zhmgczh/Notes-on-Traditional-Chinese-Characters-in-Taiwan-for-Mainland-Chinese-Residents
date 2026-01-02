@@ -379,13 +379,13 @@ def get_dictionary_links(characters):
 def main(mode=0, email=False):
     original_directory = os.getcwd()
     os.chdir(os.path.dirname(os.path.abspath(__file__)))
-    if 0 == mode:
+    if 0 == mode and os.path.exists("atom.pkl"):
         with open("atom.pkl", "rb") as inp:
             atom = pickle.load(inp)
             indices = pickle.load(inp)
             hashcodes = pickle.load(inp)
     else:
-        atom = set()
+        atom = list()
         indices = {-1}
         hashcodes = {}
     max_index = max(indices)
@@ -397,6 +397,7 @@ def main(mode=0, email=False):
         initialize_smtp()
     else:
         article_library = [["id", "title", "content", "excerpt", "category"]]
+    docx_file_names = []
     for name in file_names:
         if (
             (not name.startswith("._"))
@@ -404,71 +405,7 @@ def main(mode=0, email=False):
             and 0 < name.count("→")
             and name.endswith(".docx")
         ):
-            index = int(name.split(".")[0])
-            max_index = max(index, max_index)
-            id = name.split(".")[1].strip()
-            corresponding_png = name.replace(".docx", "_01.png")
-            if corresponding_png not in file_names:
-                print("Error:", name, "does not have a corresponding png file!")
-                exit()
-            full_text, pure_text = get_text(name, id)
-            check_brackets(pure_text)
-            pure_text = "\n".join(pure_text)
-            article = '<p style="font-family: eduSong; font-size: 150%;">'
-            for i in range(1, len(full_text) - 1):
-                article += (
-                    full_text[i]
-                    + '</p>\n<p style="font-family: eduSong; font-size: 150%;">'
-                )
-            article += full_text[-1] + "</p>\n"
-            img_url = (
-                "https://cdn.githubraw.com/zhmgczh/Notes-on-Traditional-Chinese-Characters-in-Taiwan-for-Mainland-Chinese-Residents/master/"
-                + quote(corresponding_png)
-            )
-            article += (
-                '<a href="'
-                + img_url
-                + '" target="_blank"><img src="'
-                + img_url
-                + '" alt="'
-                + full_text[0]
-                + '"></a>'
-            )
-            characters = id.split("→")[0].split("、")
-            for character in characters:
-                article += get_mistakes(character)
-            article += get_dictionary_links(characters)
-            title = full_text[0][len("《大陸居民臺灣正體字講義》") :]
-            h = hashlib.new("sha256")
-            h.update(
-                (
-                    str(id)
-                    + "#####"
-                    + title
-                    + "#####"
-                    + article
-                    + "#####"
-                    + pure_text
-                    + "#####"
-                ).encode()
-            )
-            if (
-                index in indices
-                and index in hashcodes
-                and h.hexdigest() == hashcodes[index]
-            ):
-                continue
-            else:
-                hashcodes[index] = h.hexdigest()
-                print(id)
-            if email:
-                send_article(title, article)
-            else:
-                article_library.append(
-                    [index, title, article, pure_text, "一簡多繁辨析"]
-                )
-            atom.add(title)
-            indices.add(index)
+            docx_file_names.append(name)
         if (
             (not name.startswith("._"))
             and 0 < name.count("→")
@@ -476,6 +413,71 @@ def main(mode=0, email=False):
         ):
             if name.replace("_01.png", ".docx") not in file_names:
                 print("Warning:", name, "does not have a corresponding docx file!")
+    docx_file_names = sorted(docx_file_names, key=lambda x: int(x.split(".")[0]))
+    for name in docx_file_names:
+        index = int(name.split(".")[0])
+        max_index = max(index, max_index)
+        id = name.split(".")[1].strip()
+        corresponding_png = name.replace(".docx", "_01.png")
+        if corresponding_png not in file_names:
+            print("Error:", name, "does not have a corresponding png file!")
+            exit()
+        full_text, pure_text = get_text(name, id)
+        check_brackets(pure_text)
+        pure_text = "\n".join(pure_text)
+        article = '<p style="font-family: eduSong; font-size: 150%;">'
+        for i in range(1, len(full_text) - 1):
+            article += (
+                full_text[i]
+                + '</p>\n<p style="font-family: eduSong; font-size: 150%;">'
+            )
+        article += full_text[-1] + "</p>\n"
+        img_url = (
+            "https://cdn.githubraw.com/zhmgczh/Notes-on-Traditional-Chinese-Characters-in-Taiwan-for-Mainland-Chinese-Residents/master/"
+            + quote(corresponding_png)
+        )
+        article += (
+            '<a href="'
+            + img_url
+            + '" target="_blank"><img src="'
+            + img_url
+            + '" alt="'
+            + full_text[0]
+            + '"></a>'
+        )
+        characters = id.split("→")[0].split("、")
+        for character in characters:
+            article += get_mistakes(character)
+        article += get_dictionary_links(characters)
+        title = full_text[0][len("《大陸居民臺灣正體字講義》") :]
+        h = hashlib.new("sha256")
+        h.update(
+            (
+                str(id)
+                + "#####"
+                + title
+                + "#####"
+                + article
+                + "#####"
+                + pure_text
+                + "#####"
+            ).encode()
+        )
+        if (
+            index in indices
+            and index in hashcodes
+            and h.hexdigest() == hashcodes[index]
+        ):
+            continue
+        else:
+            hashcodes[index] = h.hexdigest()
+            print(id)
+        if email:
+            send_article(title, article)
+        else:
+            article_library.append([index, title, article, pure_text, "一簡多繁辨析"])
+        atom.append(title)
+        indices.add(index)
     if email:
         server.quit()
     else:
@@ -486,7 +488,7 @@ def main(mode=0, email=False):
     if 0 != len(difference_set):
         print("Error: Indices not found ", difference_set)
     with open("atom.js", "w", encoding="utf-8") as atom_file:
-        atom_file.write(str(list(atom)))
+        atom_file.write(str(atom))
     write_converter_log("pinyin_zhuyin_converter_log.csv")
     with open("atom.pkl", "wb") as outp:
         pickle.dump(atom, outp, pickle.HIGHEST_PROTOCOL)
