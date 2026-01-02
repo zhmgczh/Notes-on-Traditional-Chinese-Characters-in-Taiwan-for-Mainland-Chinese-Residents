@@ -390,7 +390,7 @@ def main(mode=0, email=False):
         hashcodes = {}
     max_index = max(indices)
     current_directory = os.getcwd()
-    file_names = set(os.listdir(current_directory))
+    file_names = set(os.listdir(os.path.join(current_directory, "./一簡多繁辨析講義/")))
     load_mistakes()
     load_dictionaries()
     if email:
@@ -422,7 +422,9 @@ def main(mode=0, email=False):
         if corresponding_png not in file_names:
             print("Error:", name, "does not have a corresponding png file!")
             exit()
-        full_text, pure_text = get_text(name, id)
+        full_text, pure_text = get_text(
+            os.path.join(current_directory, "./一簡多繁辨析講義/", name), id
+        )
         check_brackets(pure_text)
         pure_text = "\n".join(pure_text)
         article = '<p style="font-family: eduSong; font-size: 150%;">'
@@ -433,7 +435,7 @@ def main(mode=0, email=False):
             )
         article += full_text[-1] + "</p>\n"
         img_url = (
-            "https://cdn.githubraw.com/zhmgczh/Notes-on-Traditional-Chinese-Characters-in-Taiwan-for-Mainland-Chinese-Residents/master/"
+            "https://cdn.githubraw.com/zhmgczh/Notes-on-Traditional-Chinese-Characters-in-Taiwan-for-Mainland-Chinese-Residents/master/一簡多繁辨析講義/"
             + quote(corresponding_png)
         )
         article += (
