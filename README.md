@@ -13,7 +13,7 @@
 
 - [一簡多繁辨析講義](%E4%B8%80%E7%B0%A1%E5%A4%9A%E7%B9%81%E8%BE%A8%E6%9E%90%E8%AC%9B%E7%BE%A9/): 此資料夾包含本講義中所有「一簡多繁辨析」系列的DOCX文案和它們生成的PNG圖片；
 - [Sample_of_Mistakes](Sample_of_Mistakes/)：此資料夾包含本講義中收集的所有「正體字誤用」示例（圖片和CSV登記表）；
-- [content_generator.py](content_generator.py)：此Python程式可生成用於導入WordPress的「一簡多繁辨析」系列的CSV檔案，在默認模式下還會調用其他程式同時生成「一簡一繁對應」系列的CSV檔案以及調用靜態網站生成器生成整個靜態站（需要將倉庫[WebsiteGenerator](https://github.com/zhmgczh/WebsiteGenerator)資料夾放入本倉庫的根目錄中方可運行）；
+- [content_generator.py](content_generator.py)：此Python程式可生成用於導入WordPress的「一簡多繁辨析」系列的CSV檔案，在默認模式下還會調用其他程式同時生成「一簡一繁對應」系列的CSV檔案以及調用靜態網站生成器生成整個靜態站（需要將倉庫[WebsiteGenerator](/zhmgczh/WebsiteGenerator)資料夾放入本倉庫的根目錄中方可運行）；
 - [Dictionaries](Dictionaries/)：此資料夾包含本講義生成所需的全部字表，並含有「一簡一繁對應」系列的Python生成器和生成的CSV檔案；
 - [WordPress](WordPress/)：此資料夾包含搭建WordPress網站所需的模板（以及對模板的修改之處）、所有頁面的HTML原稿（以及對應的別名、程式碼片段等）、「漢字趣談」系列的文章HTML原稿和網站所需的部分外掛程式，其中包含網站首頁及文章頁面的樣本圖片；
 - [extract_key_characters.py](extract_key_characters.py)：此Python程式可從「一簡多繁辨析」系列的CSV檔案中提取大陸居民經常混淆的易錯字，易混簡化字表在[simplified_characters.txt](simplified_characters.txt)，易混正體字表在[tranditional_characters.txt](tranditional_characters.txt)；
