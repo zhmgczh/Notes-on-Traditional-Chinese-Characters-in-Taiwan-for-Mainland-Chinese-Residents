@@ -440,12 +440,12 @@ def main(mode=0, email=False):
                 + '</p>\n<p style="font-family: eduSong; font-size: 150%;">'
             )
         article += full_text[-1] + "</p>\n"
-        img_url = quote(
-            "https://raw.githubusercontent.com/zhmgczh/Notes-on-Traditional-Chinese-Characters-in-Taiwan-for-Mainland-Chinese-Residents/master/一簡多繁辨析講義/"
+        img_url = "https://" + quote(
+            "raw.githubusercontent.com/zhmgczh/Notes-on-Traditional-Chinese-Characters-in-Taiwan-for-Mainland-Chinese-Residents/master/一簡多繁辨析講義/"
             + corresponding_png
         )
-        error_img_url = quote(
-            "https://mainland-proxy.zh-tw.dpdns.org/zhmgczh/Notes-on-Traditional-Chinese-Characters-in-Taiwan-for-Mainland-Chinese-Residents/master/一簡多繁辨析講義/"
+        error_img_url = "https://" + quote(
+            "mainland-proxy.zh-tw.dpdns.org/zhmgczh/Notes-on-Traditional-Chinese-Characters-in-Taiwan-for-Mainland-Chinese-Residents/master/一簡多繁辨析講義/"
             + corresponding_png
         )
         article += (
