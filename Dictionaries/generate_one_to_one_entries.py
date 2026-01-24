@@ -42,7 +42,11 @@ def get_mistakes(character):
     )
     for entry in entries:
         img_url = (
-            "https://cdn.githubraw.com/zhmgczh/Notes-on-Traditional-Chinese-Characters-in-Taiwan-for-Mainland-Chinese-Residents/master/Sample_of_Mistakes/"
+            "https://raw.githubusercontent.com/zhmgczh/Notes-on-Traditional-Chinese-Characters-in-Taiwan-for-Mainland-Chinese-Residents/master/Sample_of_Mistakes/"
+            + quote(entry[0])
+        )
+        error_img_url = (
+            "https://mainland-proxy.zh-tw.dpdns.org/zhmgczh/Notes-on-Traditional-Chinese-Characters-in-Taiwan-for-Mainland-Chinese-Residents/master/Sample_of_Mistakes/"
             + quote(entry[0])
         )
         addition += (
@@ -52,7 +56,9 @@ def get_mistakes(character):
             + img_url
             + '" alt="'
             + entry[1].replace("\\n", " ")
-            + '"></a></div>\n'
+            + '" onerror="if(!this.dataset.fallback){this.dataset.fallback=1; this.src=\''
+            + error_img_url
+            + "';}\"></a></div>\n"
         )
         addition += (
             '<div style="font-family: eduSong; font-size: 150%;">'

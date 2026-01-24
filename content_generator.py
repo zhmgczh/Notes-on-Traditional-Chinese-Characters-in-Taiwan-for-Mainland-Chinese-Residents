@@ -231,7 +231,11 @@ def get_mistakes(character):
     )
     for entry in entries:
         img_url = (
-            "https://cdn.githubraw.com/zhmgczh/Notes-on-Traditional-Chinese-Characters-in-Taiwan-for-Mainland-Chinese-Residents/master/Sample_of_Mistakes/"
+            "https://raw.githubusercontent.com/zhmgczh/Notes-on-Traditional-Chinese-Characters-in-Taiwan-for-Mainland-Chinese-Residents/master/Sample_of_Mistakes/"
+            + quote(entry[0])
+        )
+        error_img_url = (
+            "https://mainland-proxy.zh-tw.dpdns.org/zhmgczh/Notes-on-Traditional-Chinese-Characters-in-Taiwan-for-Mainland-Chinese-Residents/master/Sample_of_Mistakes/"
             + quote(entry[0])
         )
         addition += (
@@ -241,7 +245,9 @@ def get_mistakes(character):
             + img_url
             + '" alt="'
             + entry[1].replace("\\n", " ")
-            + '"></a></div>\n'
+            + '" onerror="if(!this.dataset.fallback){this.dataset.fallback=1; this.src=\''
+            + error_img_url
+            + "';}\"></a></div>\n"
         )
         addition += (
             '<div style="font-family: eduSong; font-size: 150%;">'
@@ -435,7 +441,11 @@ def main(mode=0, email=False):
             )
         article += full_text[-1] + "</p>\n"
         img_url = (
-            "https://cdn.githubraw.com/zhmgczh/Notes-on-Traditional-Chinese-Characters-in-Taiwan-for-Mainland-Chinese-Residents/master/一簡多繁辨析講義/"
+            "https://raw.githubusercontent.com/zhmgczh/Notes-on-Traditional-Chinese-Characters-in-Taiwan-for-Mainland-Chinese-Residents/master/一簡多繁辨析講義/"
+            + quote(corresponding_png)
+        )
+        error_img_url = (
+            "https://mainland-proxy.zh-tw.dpdns.org/zhmgczh/Notes-on-Traditional-Chinese-Characters-in-Taiwan-for-Mainland-Chinese-Residents/master/一簡多繁辨析講義/"
             + quote(corresponding_png)
         )
         article += (
@@ -445,7 +455,9 @@ def main(mode=0, email=False):
             + img_url
             + '" alt="'
             + full_text[0]
-            + '"></a>'
+            + '" onerror="if(!this.dataset.fallback){this.dataset.fallback=1; this.src=\''
+            + error_img_url
+            + "';}\"></a>"
         )
         characters = id.split("→")[0].split("、")
         for character in characters:
