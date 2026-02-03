@@ -55,6 +55,7 @@ CNS2TAX.txt,MapingTables.zip,檔案,CNS對財稅交換碼的對照表
 Properties.zip,-,檔案,全字庫屬性資料 ZIP 壓縮檔
 CNS_cangjei.txt,Properties.zip,檔案,全字庫的倉頡資料表格
 CNS_component.txt,Properties.zip,檔案,全字庫的部件資料表格
+CNS_component_ref.txt,Properties.zip,檔案,全字庫的部件代號對照表格
 CNS_component_word.txt,Properties.zip,檔案,全字庫的部件代號資料表格
 CNS_component_word.zip,Properties.zip,檔案,全字庫的部件圖檔
 CNS_phonetic.txt,Properties.zip,檔案,全字庫的注音資料表格
