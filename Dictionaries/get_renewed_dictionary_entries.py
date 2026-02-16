@@ -4,12 +4,6 @@ from copy import deepcopy
 
 
 def deep_merge(d1, d2):
-    """
-    將 d2 合併進 d1（不改動原始 dict）
-    規則：
-    - 兩邊都是 dict -> 遞迴合併
-    - 否則 -> d2 覆蓋 d1
-    """
     result = deepcopy(d1)
     for k, v in d2.items():
         if k in result and isinstance(result[k], dict) and isinstance(v, dict):
@@ -139,7 +133,6 @@ def main():
     ) as manually_added_dictionary_entries:
         manually_added_dictionary_entries = json.load(manually_added_dictionary_entries)
         final_json = deep_merge(final_json, manually_added_dictionary_entries)
-
         stroke_json = deep_merge_key(stroke_json, manually_added_dictionary_entries, "")
     for key in final_json:
         for sub_key in final_json[key]:

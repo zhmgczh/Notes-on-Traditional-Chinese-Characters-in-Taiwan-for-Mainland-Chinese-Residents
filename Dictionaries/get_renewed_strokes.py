@@ -1,15 +1,10 @@
 import json, requests, time, random, sys, os, pickle
 from urllib.parse import quote
 from copy import deepcopy
+import pandas as pd
 
 
 def deep_merge(d1, d2):
-    """
-    將 d2 合併進 d1（不改動原始 dict）
-    規則：
-    - 兩邊都是 dict -> 遞迴合併
-    - 否則 -> d2 覆蓋 d1
-    """
     result = deepcopy(d1)
     for k, v in d2.items():
         if k in result and isinstance(result[k], dict) and isinstance(v, dict):
@@ -54,10 +49,27 @@ entries = {}
 
 
 def load_entries():
+    global entries
     if os.path.isfile("stroke_entries.pkl"):
         with open("stroke_entries.pkl", "rb") as inp:
-            global entries
             entries = pickle.load(inp)
+    if os.path.isfile(
+        "../補充資料/國字標準字體筆順學習網/全筆順動畫嵌入碼網址列表.csv"
+    ):
+        table = pd.read_csv(
+            "../補充資料/國字標準字體筆順學習網/全筆順動畫嵌入碼網址列表.csv",
+            index_col=0,
+        )
+        for i in range(table.shape[0]):
+            entry = table.iloc[i, :]
+            stroke_id = (
+                entry.loc["iframe網址"]
+                .split(
+                    "<iframe src='https://stroke-order.learningweb.moe.edu.tw/dictFrame.jsp?ID="
+                )[1]
+                .split("' frameborder=0")[0]
+            )
+            entries[entry.loc["國字"]] = stroke_id
 
 
 def write_entries():
