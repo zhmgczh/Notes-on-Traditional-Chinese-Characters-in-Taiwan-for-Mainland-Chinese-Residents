@@ -527,13 +527,11 @@ if "__main__" == __name__:
         )
         from Dictionaries import generate_one_to_one_entries
 
-        os.chdir("./Dictionaries/")
         generate_one_to_one_entries.main()
         input(
             'Do you want to continue to generate a whole backup of the one to one entries? (Press Enter to reply "YES") '
         )
         generate_one_to_one_entries.main(False)
-        os.chdir("../")
         input(
             'Do you want to continue to generate a whole website? (Press Enter to reply "YES") '
         )

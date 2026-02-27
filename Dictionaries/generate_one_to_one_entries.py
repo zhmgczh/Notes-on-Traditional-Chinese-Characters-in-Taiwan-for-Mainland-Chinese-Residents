@@ -236,9 +236,8 @@ def load_one_to_one_entries():
 
 
 def main(diff_generate=True):
-    if "__main__" == __name__:
-        original_directory = os.getcwd()
-        os.chdir(os.path.dirname(os.path.abspath(__file__)))
+    original_directory = os.getcwd()
+    os.chdir(os.path.dirname(os.path.abspath(__file__)))
     if diff_generate and os.path.exists("atom.pkl"):
         with open("atom.pkl", "rb") as inp:
             hashcodes = pickle.load(inp)
@@ -310,8 +309,7 @@ def main(diff_generate=True):
         writer.writerows(article_library)
     with open("atom.pkl", "wb") as outp:
         pickle.dump(hashcodes, outp, pickle.HIGHEST_PROTOCOL)
-    if "__main__" == __name__:
-        os.chdir(original_directory)
+    os.chdir(original_directory)
 
 
 if "__main__" == __name__:
