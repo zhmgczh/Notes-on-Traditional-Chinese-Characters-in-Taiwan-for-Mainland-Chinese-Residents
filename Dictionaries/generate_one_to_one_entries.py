@@ -1,6 +1,7 @@
 import os, pickle, csv, hashlib, json
 from urllib.parse import quote
 from tabulate import tabulate
+import pandas as pd
 
 # sample_of_mistakes.csv
 # filename,character,comment
@@ -232,6 +233,9 @@ def load_one_to_one_entries():
             #         "</del>", 1
             #     )[0].strip()
             one_to_one_table = one_to_one_table.split("</tr>", 1)[1]
+    addtional = pd.read_csv("additional_one_to_one.csv", encoding="utf-8", header=0)
+    for i in range(addtional.shape[0]):
+        one_to_one_entries[addtional.iloc[i, 0]] = addtional.iloc[i, 1]
     return one_to_one_entries
 
 

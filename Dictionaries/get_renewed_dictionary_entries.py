@@ -95,6 +95,7 @@ def get_id(key, character, force_found=False, max_retries=10):
     sys.stdout.flush()
     successful = False
     times = 0
+    id = ""
     while not successful and times < max_retries:
         try:
             response = session.get(url, headers=headers)

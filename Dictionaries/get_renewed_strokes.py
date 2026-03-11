@@ -101,7 +101,7 @@ def get_id_from_response(response: requests.Response):
     return id
 
 
-def get_id(character, force_found=False):
+def get_id(character, force_found=False, use_requests=False):
     global session, entries
     url = "https://stroke-order.learningweb.moe.edu.tw/searchW.jsp?ID2=1&WORD=" + quote(
         character
@@ -116,17 +116,19 @@ def get_id(character, force_found=False):
         end=" ) : ",
     )
     sys.stdout.flush()
-    successful = False
-    while not successful:
-        try:
-            response = session.get(url, headers=headers)
-            id = get_id_from_response(response)
-            successful = True
-            if force_found and "" == id:
-                successful = False
+    id = ""
+    if use_requests:
+        successful = False
+        while not successful:
+            try:
+                response = session.get(url, headers=headers)
+                id = get_id_from_response(response)
+                successful = True
+                if force_found and "" == id:
+                    successful = False
+                    restart_session()
+            except:
                 restart_session()
-        except:
-            restart_session()
     if "" != id:
         entries[character] = id
         write_entries()
